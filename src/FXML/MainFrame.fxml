@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Activities.Controller">
+    <ImageView fitHeight="700" fitWidth="700" pickOnBounds="true">
+        <Image url="@../Resources/logo.png" />
+    </ImageView>
+    <Label alignment="CENTER" text="NexTrip" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <font>
+         <Font name="Cocon Light" size="64.0" />
+      </font></Label>
+   <BorderPane prefHeight="200.0" prefWidth="200.0" />
+    <stylesheets>
+        <URL value="@../CSSFiles/Root.css" />
+    </stylesheets>
+</GridPane>
