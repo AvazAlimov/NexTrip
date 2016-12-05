@@ -6,6 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.control.Label?>
+
 <GridPane alignment="CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="Activities.StartActivity">
 
@@ -13,7 +14,7 @@
         <Image url="@../Resources/logo.png"/>
     </ImageView>
 
-    <Label GridPane.halignment="CENTER" text="NexTrip"/>
+    <Label fx:id="logoName" GridPane.halignment="CENTER" text="NexTrip" onMouseClicked="#nextWindow"/>
 
     <stylesheets>
         <URL value="@../CSSFiles/Start.css"/>
