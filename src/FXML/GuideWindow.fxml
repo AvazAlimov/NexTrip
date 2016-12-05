@@ -21,7 +21,19 @@
 
 
     <ImageView fitHeight="400" fitWidth="600">
-        <Image url="@../Resources/organ.jpg"/>
+        <Image fx:id="first" url="@../Resources/organ.jpg"/>
+    </ImageView>
+
+    <ImageView visible="false" fitHeight="400" fitWidth="600">
+        <Image fx:id="second" url="@../Resources/123.jpg" />
+    </ImageView>
+
+    <ImageView visible="false" fitHeight="400" fitWidth="600">
+        <Image fx:id="third" url="@../Resources/111.jpg" />
+    </ImageView>
+
+    <ImageView visible="false" fitHeight="400" fitWidth="600">
+        <Image fx:id="fourth" url="@../Resources/222.png" />
     </ImageView>
 
     <Label GridPane.halignment="CENTER" text="TEXT" GridPane.rowIndex="1"/>
