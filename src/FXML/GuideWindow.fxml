@@ -20,19 +20,19 @@
 
     <HBox spacing="40" alignment="CENTER" GridPane.rowIndex="1">
 
-        <Button id="prevImage" onAction="#switchPrevImage"/>
+        <Button fx:id="prevImage" id="prevImage" onAction="#switchPrevImage"/>
 
         <ImageView fx:id="imageView" fitHeight="500" fitWidth="800">
             <Image url="@../Resources/1.jpg"/>
         </ImageView>
 
-        <Button id="nextImage" onAction="#switchNextImage"/>
+        <Button fx:id="nextImage" id="nextImage" onAction="#switchNextImage"/>
 
     </HBox>
 
     <Label fx:id="text" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
 
-    <HBox alignment="CENTER" spacing="10" GridPane.rowIndex="3">
+    <HBox alignment="CENTER" spacing="20" GridPane.rowIndex="3">
         <Button id="0" onAction="#switchImage"/>
         <Button id="1" onAction="#switchImage"/>
         <Button id="2" onAction="#switchImage"/>

@@ -14,6 +14,8 @@ import java.util.ResourceBundle;
 public class GuideActivity implements Initializable {
     public ImageView imageView;
     public Button skipButton;
+    public Button prevImage;
+    public Button nextImage;
     private String[] texts;
     private String[] paths;
     private int index;
@@ -21,6 +23,9 @@ public class GuideActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        prevImage.setText("<");
+        nextImage.setText(">");
+
         paths = new String[]{String.valueOf(getClass().getClassLoader().getResource("Resources/1.jpg")),
                 String.valueOf(getClass().getClassLoader().getResource("Resources/2.jpg")),
                 String.valueOf(getClass().getClassLoader().getResource("Resources/3.png"))};

@@ -36,3 +36,27 @@
 #skipButton:pressed{
     -fx-background-color: #ef6c00;
 }
+
+#prevImage{
+    -fx-background-color: transparent;
+    -fx-font-size: 100;
+    -fx-text-fill: white;
+    -fx-pref-width: 300;
+    -fx-pref-height: 300;
+}
+
+#prevImage:pressed{
+    -fx-text-fill: #757575;
+}
+
+#nextImage{
+    -fx-background-color: transparent;
+    -fx-font-size: 100;
+    -fx-text-fill: white;
+    -fx-pref-width: 300;
+    -fx-pref-height: 300;
+}
+
+#nextImage:pressed{
+    -fx-text-fill: #757575;
+}
