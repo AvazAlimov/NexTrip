@@ -2,15 +2,22 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Separator?>
-<GridPane alignment="CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+<GridPane alignment="CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="Activities.SignInActivity">
+
+
+    <ImageView>
+        <Image url="@../Resources/background.jpg"/>
+    </ImageView>
 
     <GridPane fx:id="firstGrid" alignment="CENTER" vgap="20">
 
@@ -20,15 +27,15 @@
             <RowConstraints/>
         </rowConstraints>
 
-        <Button fx:id="continueButton" id="continue" onAction="#doAction" text="Continue" GridPane.halignment="CENTER"/>
-        <Button fx:id="signInButton" id="signIn" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER"
+        <Button id="continue" fx:id="continueButton" onAction="#doAction" text="Continue" GridPane.halignment="CENTER"/>
+        <Button id="signIn" fx:id="signInButton" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER"
                 GridPane.rowIndex="1"/>
-        <Button fx:id="signUpButton" id="signUp" onAction="#doAction" text="Sign Up" GridPane.halignment="CENTER"
+        <Button id="signUp" fx:id="signUpButton" onAction="#doAction" text="Sign Up" GridPane.halignment="CENTER"
                 GridPane.rowIndex="2"/>
 
     </GridPane>
 
-    <GridPane fx:id="secondGrid" visible="false" opacity="0.0" alignment="CENTER" vgap="20">
+    <GridPane fx:id="secondGrid" alignment="CENTER" opacity="0.0" vgap="20" visible="false">
 
         <rowConstraints>
             <RowConstraints/>
@@ -36,21 +43,19 @@
             <RowConstraints/>
         </rowConstraints>
 
-        <TextField fx:id="usernameText" promptText="username"
-                   GridPane.halignment="CENTER"/>
-        <PasswordField fx:id="passwordText" promptText="password"
-                       GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
+        <TextField fx:id="usernameText" promptText="username" GridPane.halignment="CENTER"/>
+        <PasswordField fx:id="passwordText" promptText="password" GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
 
         <HBox GridPane.halignment="CENTER" GridPane.rowIndex="2">
-            <Button fx:id="actionButton" id="action" onAction="#doAction" text="Sign Up"/>
+            <Button id="action" fx:id="actionButton" onAction="#doAction" text="Sign Up"/>
             <Separator prefWidth="20" visible="false"/>
             <Button id="cancelButton" onAction="#doAction" text="Cancel"/>
         </HBox>
-
 
     </GridPane>
 
     <stylesheets>
         <URL value="@../CSSFiles/SignIn.css"/>
     </stylesheets>
+
 </GridPane>

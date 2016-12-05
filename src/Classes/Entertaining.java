@@ -6,7 +6,6 @@ public class Entertaining extends Guidance {
     private ArrayList<Feature> features;
 
     public Entertaining(){
-
     }
 
     public Entertaining(ArrayList<Feature> features) {
