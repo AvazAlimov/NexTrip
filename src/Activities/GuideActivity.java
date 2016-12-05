@@ -19,6 +19,7 @@ public class GuideActivity implements Initializable {
     public Image second;
     public Image third;
     public Image fourth;
+    public Button SkipButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

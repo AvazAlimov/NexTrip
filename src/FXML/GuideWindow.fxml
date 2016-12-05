@@ -45,6 +45,8 @@
         <Button />
         <Button fx:id="nextImage"/>
     </HBox>
+
+    <Button fx:id="SkipButton" alignment="CENTER" text="Skip" />
     <stylesheets>
         <URL value="@../CSSFiles/Guide.css"/>
     </stylesheets>
