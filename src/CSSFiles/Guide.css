@@ -1,11 +1,38 @@
-.root{
+.root {
     -fx-background-color: #009688;
 }
 
-.button{
+.button {
     -fx-background-color: #FFC107;
     -fx-pref-width: 30;
     -fx-pref-height: 30;
     -fx-background-radius: 15;
     -fx-font-size: 14;
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
+}
+
+.button:pressed{
+    -fx-background-color: #ef6c00;
+}
+
+.label {
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
+    -fx-font-size: 24;
+    -fx-font-weight: bolder;
+    -fx-text-fill: white;
+}
+
+.image-view {
+    -fx-effect: dropshadow(gaussian, black, 15, 0, 0, 0);
+}
+
+#skipButton{
+    -fx-pref-width: 100;
+    -fx-background-color: #FFC107;
+    -fx-font-size: 20;
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
+}
+
+#skipButton:pressed{
+    -fx-background-color: #ef6c00;
 }

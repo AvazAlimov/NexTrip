@@ -7,12 +7,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    public static Stage stage;
+    static Stage stage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/StartWindow.fxml"));
         primaryStage.setTitle("NexTrip");
         primaryStage.setScene(new Scene(root));
         primaryStage.setMinWidth(1280);

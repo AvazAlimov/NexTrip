@@ -10,19 +10,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GuideActivity implements Initializable {
-
     public Button prevImage;
     public Button nextImage;
-    public Image first;
-    public Image second;
-    public Image third;
-    public Image fourth;
-    public Button SkipButton;
+    public Button skipButton;
+    public Image imageView;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
 
     }
 }
