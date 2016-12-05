@@ -3,7 +3,6 @@ package Activities;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 
 import java.net.URL;
