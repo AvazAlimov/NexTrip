@@ -108,7 +108,7 @@ public class SignInActivity implements Initializable {
     }
 
     private void nextWindow() throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("FXML/MainFrame.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("FXML/SignInWindow.fxml"));
         Scene scene = new Scene(parent);
         Main.stage.setScene(scene);
     }
