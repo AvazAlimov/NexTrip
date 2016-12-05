@@ -1,21 +1,55 @@
 package Activities;
 
-
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GuideActivity implements Initializable {
-    public Button prevImage;
-    public Button nextImage;
+    public ImageView imageView;
     public Button skipButton;
-    public Image imageView;
+    private String[] texts;
+    private String[] paths;
+    private int index;
+    public Label text;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        paths = new String[]{String.valueOf(getClass().getClassLoader().getResource("Resources/1.jpg")),
+                String.valueOf(getClass().getClassLoader().getResource("Resources/2.jpg")),
+                String.valueOf(getClass().getClassLoader().getResource("Resources/3.png"))};
+        texts = new String[]{"First Feature", "Second Feature", "Third Feature"};
+        index = 0;
+        imageView.setImage(new Image(paths[index]));
+        text.setText(texts[index]);
+    }
 
+    public void switchPrevImage() {
+        if (index == 0)
+            return;
+        index--;
+        imageView.setImage(new Image(paths[index]));
+        text.setText(texts[index]);
+    }
+
+    public void switchNextImage() {
+        if (index == 2)
+            return;
+        index++;
+        imageView.setImage(new Image(paths[index]));
+        text.setText(texts[index]);
+    }
+
+    public void switchImage(ActionEvent event) {
+        String id = ((Control) event.getSource()).getId();
+        index = Integer.parseInt(id);
+        imageView.setImage(new Image(paths[index]));
+        text.setText(texts[index]);
     }
 }

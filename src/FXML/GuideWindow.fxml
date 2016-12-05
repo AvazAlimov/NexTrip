@@ -20,22 +20,22 @@
 
     <HBox spacing="40" alignment="CENTER" GridPane.rowIndex="1">
 
-        <Button fx:id="prevImage"/>
+        <Button id="prevImage" onAction="#switchPrevImage"/>
 
-        <ImageView fitHeight="500" fitWidth="800">
-            <Image fx:id="imageView" url="@../Resources/background.jpg"/>
+        <ImageView fx:id="imageView" fitHeight="500" fitWidth="800">
+            <Image url="@../Resources/1.jpg"/>
         </ImageView>
 
-        <Button fx:id="nextImage"/>
+        <Button id="nextImage" onAction="#switchNextImage"/>
 
     </HBox>
 
-    <Label GridPane.halignment="CENTER" text="TEXT" GridPane.rowIndex="2"/>
+    <Label fx:id="text" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
 
     <HBox alignment="CENTER" spacing="10" GridPane.rowIndex="3">
-        <Button/>
-        <Button/>
-        <Button/>
+        <Button id="0" onAction="#switchImage"/>
+        <Button id="1" onAction="#switchImage"/>
+        <Button id="2" onAction="#switchImage"/>
     </HBox>
 
     <Button fx:id="skipButton" text="Skip" GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
