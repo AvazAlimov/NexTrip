@@ -5,7 +5,9 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
+<?import java.net.URL?>
 <GridPane
+        alignment="CENTER"
         xmlns:fx="http://javafx.co/fxml/1"
         xmlns="http://javafx.com/javafx/2.2"
         fx:controller="Activities.GuideActivity">
@@ -18,18 +20,21 @@
     </rowConstraints>
 
 
-    <ImageView fitHeight="600" fitWidth="800">
+    <ImageView fitHeight="400" fitWidth="600">
         <Image url="@../Resources/organ.jpg"/>
     </ImageView>
 
-    <Label text="TEXT" GridPane.rowIndex="1"/>
+    <Label GridPane.halignment="CENTER" text="TEXT" GridPane.rowIndex="1"/>
 
-    <HBox spacing="10">
+    <HBox  alignment="CENTER" spacing="10" GridPane.rowIndex="2">
+        <Button fx:id="prevImage" />
         <Button />
         <Button />
         <Button />
-        <Button />
-        <Button />
+        <Button fx:id="nextImage"/>
     </HBox>
+    <stylesheets>
+        <URL value="@../CSSFiles/Guide.css"/>
+    </stylesheets>
 
 </GridPane>
