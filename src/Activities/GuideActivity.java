@@ -37,7 +37,7 @@ public class GuideActivity implements Initializable {
 
     public void switchPrevImage() {
         if (index == 0)
-            return;
+            index = 3;
         index--;
         imageView.setImage(new Image(paths[index]));
         text.setText(texts[index]);
@@ -45,7 +45,7 @@ public class GuideActivity implements Initializable {
 
     public void switchNextImage() {
         if (index == 2)
-            return;
+            index = -1;
         index++;
         imageView.setImage(new Image(paths[index]));
         text.setText(texts[index]);
