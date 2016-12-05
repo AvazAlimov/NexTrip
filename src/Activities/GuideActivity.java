@@ -6,7 +6,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Guide implements Initializable {
+public class GuideActivity implements Initializable {
 
 
 
