@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.GridPane?>
+
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.RowConstraints?>
+<GridPane alignment="TOP_CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="Activities.MainActivity">
+
+    <rowConstraints>
+        <RowConstraints prefHeight="60"/>
+        <RowConstraints/>
+        <RowConstraints />
+    </rowConstraints>
+
+    <Button fx:id="menuButton" text="***"/>
+
+    <HBox alignment="TOP_CENTER" GridPane.rowIndex="1">
+        <TextField promptText="Location" fx:id="LocationTextField" prefWidth="1000" prefHeight="30" />
+        <Button fx:id="searchButton" text="Search" prefHeight="10"/>
+    </HBox>
+
+
+
+    <stylesheets>
+        <URL value="@../CSSFiles/Main.css"/>
+    </stylesheets>
+
+</GridPane>

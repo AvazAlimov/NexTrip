@@ -11,8 +11,6 @@ import java.util.ResourceBundle;
 
 public class GuideActivity implements Initializable {
 
-
-    public Label Comment;
     public Button prevImage;
     public Button nextImage;
     public Image first;

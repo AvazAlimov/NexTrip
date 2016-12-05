@@ -1,0 +1,12 @@
+.root{
+    -fx-background-image: url("/Resources/background.jpg");
+    -fx-border-image-repeat: stretch;
+}
+
+.button{
+    -fx-background-color: #FFC107;
+    -fx-font-size: 16px;
+    -fx-background-radius: 40px;
+
+
+}
