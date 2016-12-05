@@ -1,5 +1,5 @@
 .root {
-    -fx-background-color: #009688;
+    -fx-background-image: url("/Resources/blur.png");
 }
 
 .button {
@@ -23,7 +23,7 @@
 }
 
 .image-view {
-    -fx-effect: dropshadow(gaussian, black, 15, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, black, 20, 0, 0, 0);
 }
 
 #skipButton{
@@ -35,4 +35,28 @@
 
 #skipButton:pressed{
     -fx-background-color: #ef6c00;
+}
+
+#prevImage{
+    -fx-background-color: transparent;
+    -fx-font-size: 100;
+    -fx-text-fill: white;
+    -fx-pref-width: 300;
+    -fx-pref-height: 300;
+}
+
+#prevImage:pressed{
+    -fx-text-fill: #757575;
+}
+
+#nextImage{
+    -fx-background-color: transparent;
+    -fx-font-size: 100;
+    -fx-text-fill: white;
+    -fx-pref-width: 300;
+    -fx-pref-height: 300;
+}
+
+#nextImage:pressed{
+    -fx-text-fill: #757575;
 }
