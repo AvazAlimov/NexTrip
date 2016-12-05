@@ -7,6 +7,41 @@
     -fx-background-color: #FFC107;
     -fx-font-size: 16px;
     -fx-background-radius: 40px;
+    -fx-effect: dropshadow(two-pass-box, #000, 10, 0.2, 0, 0);
+}
+.text-field{
+    -fx-effect: dropshadow(two-pass-box, #000, 10, 0.2, 0, 0);
+    -fx-font-size: 15px;
+    -fx-text-fill: #212121;
+    -fx-font-family: "Cocon";
+    -fx-prompt-text-fill: #757575;
 
+}
 
+.address .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.address .scroll-bar .increment-button {
+    visibility: hidden;
+}
+
+.address .scroll-bar .decrement-button {
+    visibility: hidden;
+}
+
+.address .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.address .scroll-bar:vertical .track-background {
+    visibility: hidden;
+}
+
+.address .scroll-bar:vertical .track {
+    visibility: hidden;
+}
+
+.address .hide-thumb .scroll-bar:vertical .thumb {
+    -fx-background-color: transparent;
 }
