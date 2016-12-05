@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/SignInWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/GuideWindow.fxml"));
         primaryStage.setTitle("NexTrip");
         primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.setMinHeight(600);
