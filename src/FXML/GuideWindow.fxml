@@ -38,7 +38,7 @@
         <Button id="2" onAction="#switchImage"/>
     </HBox>
 
-    <Button fx:id="skipButton" text="Skip" GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
+    <Button fx:id="skipButton" onAction="#nextWindow" text="Skip" GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
 
     <stylesheets>
         <URL value="@../CSSFiles/Guide.css"/>

@@ -1,98 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<GridPane alignment="TOP_CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="Activities.MainActivity">
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Activities.MainActivity">
+    <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
 
-    <GridPane alignment="CENTER">
-
-        <rowConstraints>
-            <RowConstraints prefHeight="60"/>
-            <RowConstraints/>
-            <RowConstraints/>
-            <RowConstraints/>
-        </rowConstraints>
-
-        <Button fx:id="menuButton" text="***"/>
-
-        <HBox alignment="CENTER" GridPane.rowIndex="1">
-            <TextField fx:id="LocationTextField" prefHeight="30" prefWidth="1000" promptText="Location"/>
-            <Separator prefHeight="10" prefWidth="20" visible="false"/>
-            <Button fx:id="searchButton" prefHeight="10" text="Search"/>
-        </HBox>
         <columnConstraints>
-            <ColumnConstraints/>
+            <ColumnConstraints hgrow="ALWAYS"/>
         </columnConstraints>
 
-    </GridPane>
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints vgrow="SOMETIMES"/>
+        </rowConstraints>
 
 
-    <VBox visible="false">
+        <HBox>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Hotels" prefHeight="40"/>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Restaurants" prefHeight="40"/>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Entertaining" prefHeight="40"/>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Things To Do" prefHeight="40"/>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Log In" prefHeight="40"/>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Settings" prefHeight="40"/>
+        </HBox>
 
-        <Button fx:id="hotelButton" prefHeight="30" prefWidth="200" text="Hotel"/>
-        <Separator prefHeight="10" prefWidth="20" visible="false"/>
-        <Button fx:id="restaurantButton" prefHeight="30" prefWidth="200" text="Restaurant"/>
-        <Separator prefHeight="10" prefWidth="20" visible="false"/>
-        <Button fx:id="entertainingButton" prefHeight="30" prefWidth="200" text="Entertaining"/>
-        <Separator prefHeight="10" prefWidth="20" visible="false"/>
-        <Button fx:id="thingsToDoButton" prefHeight="30" prefWidth="200" text="Things To Do"/>
-        <Separator prefHeight="10" prefWidth="20" visible="false"/>
-        <Button fx:id="settingsButton" prefHeight="30" prefWidth="200" text="Settings"/>
-        <Separator prefHeight="10" prefWidth="20" visible="false"/>
-        <Button fx:id="logInButton" prefHeight="30" prefWidth="200" text="Log In"/>
+        <HBox alignment="CENTER" prefHeight="100.0" GridPane.rowIndex="1" spacing="10">
+            <TextField prefWidth="1000.0" promptText="Location"/>
+            <Button style="-fx-font-size: 18;
+            -fx-label-padding: -5;
+            -fx-background-radius: 4;
+            -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);" prefWidth="40.0" text="🔍"/>
+        </HBox>
 
-    </VBox>
-    <GridPane GridPane.rowIndex="2">
+        <ScrollPane fitToWidth="true" GridPane.rowIndex="2" GridPane.rowSpan="2">
+            <VBox>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #AAFFC107">
 
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
 
-        <ScrollPane prefWidth="1200" style="-fx-base : transparent;">
-        <VBox spacing="20" style="-fx-background-color: transparent;">
-            <HBox style="-fx-background-color: #BBBDBDBD">
-                <ImageView fx:id="image1" fitHeight="96" fitWidth="96">
-                    <Image url="@../Resources/4.jpg"/>
-                </ImageView>
-                <Separator prefWidth="20" prefHeight="10" visible="false"/>
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
 
-                <Label alignment="CENTER" prefWidth="1000" text="----------Info-------------"/>
-                <Separator prefWidth="20" prefHeight="10" visible="false"/>
-                <CheckBox text="Rating"/>
-
-            </HBox>
-
-            <HBox style="-fx-background-color: #AABDBDBD">
-                <ImageView fx:id="image2" fitHeight="96" fitWidth="96">
-                    <Image url="@../Resources/4.jpg"/>
-                </ImageView>
-                <Separator prefWidth="20" prefHeight="10" visible="false"/>
-
-                <Label alignment="CENTER" prefWidth="1000" text="----------Info-------------"/>
-                <Separator prefWidth="20" prefHeight="10" visible="false"/>
-                <CheckBox text="Rating"/>
-
-            </HBox>
-
-        </VBox>
+                </GridPane>
+            </VBox>
         </ScrollPane>
 
     </GridPane>
 
-
     <stylesheets>
         <URL value="@../CSSFiles/Main.css"/>
     </stylesheets>
+</AnchorPane>
 
-</GridPane>
