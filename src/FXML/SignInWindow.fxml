@@ -16,7 +16,7 @@
 
 
     <ImageView>
-        <Image url="@../Resources/background.jpg"/>
+        <Image url="@../Resources/blur.jpg"/>
     </ImageView>
 
     <GridPane fx:id="firstGrid" alignment="CENTER" vgap="20">
