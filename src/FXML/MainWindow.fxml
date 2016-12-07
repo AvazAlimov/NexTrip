@@ -40,8 +40,288 @@
         </HBox>
 
         <ScrollPane fitToWidth="true" GridPane.rowIndex="2" GridPane.rowSpan="2">
-            <VBox>
-                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #AAFFC107">
+            <VBox spacing="2.5">
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #80E8FF;">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox fx:id="ratesBox" GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Button fx:id="button1" prefWidth="40" prefHeight="40"/>
+                        <Button fx:id="button2" prefWidth="40" prefHeight="40"/>
+                        <Button fx:id="button3" prefWidth="40" prefHeight="40"/>
+                        <Button fx:id="button4" prefWidth="40" prefHeight="40"/>
+                        <Button fx:id="button5" prefWidth="40" prefHeight="40"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
+
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints hgrow="SOMETIMES"/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+
+                    <Circle radius="50" style="-fx-background-color: #ef6c00"/>
+                    <Label GridPane.columnIndex="1" style="-fx-font-size: 24;"
+                           text="Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! "/>
+                    <HBox GridPane.columnIndex="2" alignment="CENTER_LEFT" spacing="5">
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                        <Rectangle width="20" height="20"/>
+                    </HBox>
+
+                </GridPane>
+                <GridPane hgap="10" style="-fx-padding: 10; -fx-background-color: #EEFFC107">
 
                     <columnConstraints>
                         <ColumnConstraints/>

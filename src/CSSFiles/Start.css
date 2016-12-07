@@ -1,5 +1,6 @@
 .root {
-    -fx-background-image: url("/Resources/blur.jpg");
+    -fx-background-image: url("/Resources/background.jpg");
+    -fx-background-size: stretch;
 }
 
 .label {
