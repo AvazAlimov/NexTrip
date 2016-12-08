@@ -1,6 +1,6 @@
 .root {
-    -fx-background-image: url("/Resources/blur.jpg");
-    -fx-background-repeat: stretch;
+    -fx-background-image: url("/Resources/7.jpg");
+    -fx-background-size: cover ;
 }
 
 .button {

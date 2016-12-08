@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<GridPane alignment="CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="Activities.SettingsActivity">
+
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+    </rowConstraints>
+
+    <columnConstraints>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+    </columnConstraints>
+
+    <HBox alignment="CENTER">
+        <Button fx:id="imageButton" prefHeight="200" prefWidth="600"/>
+        <Separator prefWidth="20" visible="false"/>
+        <Button fx:id="imageButton2" prefHeight="200" prefWidth="600" GridPane.columnIndex="1"/>
+    </HBox>
+    <Separator prefWidth="20" visible="false"/>
+    <HBox alignment="CENTER" GridPane.rowIndex="1">
+        <Button fx:id="imageButton3" prefHeight="200" prefWidth="600"/>
+        <Separator prefWidth="20" visible="false"/>
+        <Button fx:id="imageButton4" prefHeight="200" prefWidth="600" GridPane.columnIndex="1"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@../CSSFiles/SignIn.css"/>
+    </stylesheets>
+
+</GridPane>
