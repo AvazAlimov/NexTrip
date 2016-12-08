@@ -6,11 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Locale;
+
 public class Main extends Application {
     static Stage stage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("../FXML/HotelWindow.fxml"));
         primaryStage.setTitle("NexTrip");

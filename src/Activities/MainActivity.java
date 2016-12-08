@@ -19,7 +19,8 @@ public class MainActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        container.getChildren().add(fillItem());
+        for(int i = 0; i<10; i++)
+            container.getChildren().add(fillItem());
     }
 
     private GridPane fillItem() {
@@ -32,7 +33,7 @@ public class MainActivity implements Initializable {
         item.getColumnConstraints().addAll(col1, col2, col3);
 
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.2);");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.3);");
         String url = String.valueOf(getClass().getResource("../Resources/2.jpg"));
         Image value = new Image(url, 100.0, 100.0, false, false);
         ImageView image = new ImageView(value);
