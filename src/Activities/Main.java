@@ -15,7 +15,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/HotelWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/SettingsWindow.fxml"));
         primaryStage.setTitle("NexTrip");
         primaryStage.setScene(new Scene(root));
         primaryStage.setMinWidth(1280);

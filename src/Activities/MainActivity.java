@@ -1,10 +1,11 @@
 package Activities;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -14,13 +15,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainActivity implements Initializable {
-
     public VBox container;
+    public HBox datePane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for(int i = 0; i<10; i++)
-            container.getChildren().add(fillItem());
+        container.getChildren().add(fillItem());
     }
 
     private GridPane fillItem() {
@@ -33,7 +33,7 @@ public class MainActivity implements Initializable {
         item.getColumnConstraints().addAll(col1, col2, col3);
 
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.3);");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
         String url = String.valueOf(getClass().getResource("../Resources/2.jpg"));
         Image value = new Image(url, 100.0, 100.0, false, false);
         ImageView image = new ImageView(value);
@@ -58,5 +58,34 @@ public class MainActivity implements Initializable {
         }
         item.add(ratingBox, 2, 0);
         return item;
+    }
+
+    public void switchTabs(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        HBox box = (HBox) btn.getParent();
+        for (Node item : box.getChildren())
+            item.setStyle("-fx-background-color: #FFC107;");
+
+
+        switch (btn.getText()) {
+            case "Hotels":
+                datePane.setVisible(false);
+                break;
+            case "Restaurants":
+                datePane.setVisible(false);
+                break;
+            case "Entertaining":
+                datePane.setVisible(false);
+                break;
+            case "Things To Do":
+                datePane.setVisible(true);
+                break;
+            case "Log In":
+                break;
+            case "Settings":
+                break;
+        }
+
+        btn.setStyle("-fx-background-color: #da8c00;");
     }
 }
