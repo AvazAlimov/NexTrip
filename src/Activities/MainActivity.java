@@ -1,6 +1,5 @@
 package Activities;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
