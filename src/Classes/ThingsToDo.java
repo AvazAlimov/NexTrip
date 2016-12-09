@@ -10,7 +10,7 @@ public class ThingsToDo extends Guidance {
     private Date endDate;
     private double price;
 
-    public ThingsToDo(){
+    public ThingsToDo() {
 
     }
 
@@ -20,8 +20,8 @@ public class ThingsToDo extends Guidance {
         this.price = price;
     }
 
-    public ThingsToDo(String name, Location location, VideoTrack video, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info, Date startDate, Date endDate, double price) {
-        super(name, location, video, photos, rating, contacts, comments, amenties, info);
+    public ThingsToDo(String name, Location location, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info, Date startDate, Date endDate, double price) {
+        super(name, location, photos, rating, contacts, comments, amenties, info);
         this.startDate = startDate;
         this.endDate = endDate;
         this.price = price;

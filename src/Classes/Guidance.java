@@ -1,29 +1,25 @@
 package Classes;
 
 import javafx.scene.image.Image;
-import javafx.scene.media.VideoTrack;
-
 import java.util.ArrayList;
 
 public class Guidance {
-    private String name;
-    private Location location;
-    private VideoTrack video;
-    private ArrayList<Image> photos;
     private int rating;
+    private String name;
+    private String info;
+    private Location location;
+    private ArrayList<Image> photos;
     private ArrayList<Contact> contacts;
     private ArrayList<Comment> comments;
     private ArrayList<String> amenties;
-    private String info;
 
-    public Guidance(){
+    public Guidance() {
 
     }
 
-    public Guidance(String name, Location location, VideoTrack video, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info) {
+    public Guidance(String name, Location location, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info) {
         this.name = name;
         this.location = location;
-        this.video = video;
         this.photos = photos;
         this.rating = rating;
         this.contacts = contacts;
@@ -46,14 +42,6 @@ public class Guidance {
 
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    public VideoTrack getVideo() {
-        return video;
-    }
-
-    public void setVideo(VideoTrack video) {
-        this.video = video;
     }
 
     public ArrayList<Image> getPhotos() {

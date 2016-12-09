@@ -24,8 +24,8 @@ public class Restaurant extends Guidance {
         this.menu = menu;
     }
 
-    public Restaurant(String name, Location location, VideoTrack video, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info, Type type, ArrayList<Table> tables, Menu menu) {
-        super(name, location, video, photos, rating, contacts, comments, amenties, info);
+    public Restaurant(String name, Location location, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info, Type type, ArrayList<Table> tables, Menu menu) {
+        super(name, location, photos, rating, contacts, comments, amenties, info);
         this.type = type;
         this.tables = tables;
         this.menu = menu;

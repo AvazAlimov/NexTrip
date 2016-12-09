@@ -16,8 +16,8 @@ public class Hotel extends Guidance {
         this.rooms = rooms;
     }
 
-    public Hotel(String name, Location location, VideoTrack video, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info, ArrayList<Room> rooms) {
-        super(name, location, video, photos, rating, contacts, comments, amenties, info);
+    public Hotel(String name, Location location, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info, ArrayList<Room> rooms) {
+        super(name, location, photos, rating, contacts, comments, amenties, info);
         this.rooms = rooms;
     }
 
