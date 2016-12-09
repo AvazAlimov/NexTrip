@@ -1,8 +1,12 @@
 package Activities;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -10,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -80,11 +85,20 @@ public class MainActivity implements Initializable {
                 datePane.setVisible(true);
                 break;
             case "Log In":
+                try {
+                    Parent parent = FXMLLoader.load(getClass().getResource("../FXML/SignInWindow.fxml"));
+                    Scene scene = new Scene(parent);
+                    Main.stage.hide();
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+                } catch (IOException e) {
+                    System.out.println("FXML file was not founded");
+                }
                 break;
             case "Settings":
+                //TODO: settings window
                 break;
         }
-
         btn.setStyle("-fx-background-color: #da8c00;");
     }
 }

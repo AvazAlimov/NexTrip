@@ -5,19 +5,12 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
 <GridPane alignment="CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="Activities.SignInActivity">
-
-
-    <ImageView>
-        <Image url="@../Resources/blur.jpg"/>
-    </ImageView>
 
     <GridPane fx:id="firstGrid" alignment="CENTER" vgap="20">
 
@@ -27,11 +20,12 @@
             <RowConstraints/>
         </rowConstraints>
 
-        <Button id="continue" fx:id="continueButton" onAction="#doAction" text="Continue" GridPane.halignment="CENTER"/>
-        <Button id="signIn" fx:id="signInButton" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER"
-                GridPane.rowIndex="1"/>
+        <Button id="signIn" fx:id="signInButton" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER"/>
         <Button id="signUp" fx:id="signUpButton" onAction="#doAction" text="Sign Up" GridPane.halignment="CENTER"
-                GridPane.rowIndex="2"/>
+                GridPane.rowIndex="1"/>
+        <Button id="back" fx:id="continueButton" onAction="#doAction" text="Cancel" GridPane.rowIndex="2"
+                GridPane.halignment="CENTER"/>
+
 
     </GridPane>
 

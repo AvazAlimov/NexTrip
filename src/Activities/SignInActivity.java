@@ -38,8 +38,12 @@ public class SignInActivity implements Initializable {
         String id = ((Control) event.getSource()).getId();
 
         switch (id) {
-            case "continue":
-                //TODO: open main Window
+            case "back":
+                Parent parent = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
+                Scene scene = new Scene(parent);
+                Main.stage.hide();
+                Main.stage.setScene(scene);
+                Main.stage.show();
                 break;
             case "signIn":
                 animate(true);
