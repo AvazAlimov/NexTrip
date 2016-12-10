@@ -2,7 +2,7 @@ package Classes;
 
 public class Contact {
     public enum Type{
-        Facebook, Site, PhoneNumber, Mail, Other
+        Facebook, Site, PhoneNumber, Mail, Telegram, Other
     }
     private Type type;
     private String source;

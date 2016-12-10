@@ -1,31 +1,35 @@
 package Classes;
 
-import javafx.scene.image.Image;
-import javafx.scene.media.VideoTrack;
-
-import java.util.ArrayList;
-
 public class Hotel extends Guidance {
-    private ArrayList<Room> rooms;
+    private double startingPrice;
+    private double endingPrice;
+    private int numberOfRooms;
 
     public Hotel() {
 
     }
 
-    public Hotel(ArrayList<Room> rooms) {
-        this.rooms = rooms;
+    public double getStartingPrice() {
+        return startingPrice;
     }
 
-    public Hotel(String name, Location location, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info, ArrayList<Room> rooms) {
-        super(name, location, photos, rating, contacts, comments, amenties, info);
-        this.rooms = rooms;
+    public void setStartingPrice(double startingPrice) {
+        this.startingPrice = startingPrice;
     }
 
-    public void setRooms(ArrayList<Room> rooms) {
-        this.rooms = rooms;
+    public double getEndingPrice() {
+        return endingPrice;
     }
 
-    public ArrayList<Room> getRooms() {
-        return rooms;
+    public void setEndingPrice(double endingPrice) {
+        this.endingPrice = endingPrice;
+    }
+
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public void setNumberOfRooms(int numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
     }
 }

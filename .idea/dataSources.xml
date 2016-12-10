@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Sqlite (Xerial) - database.db" uuid="5ab26073-24d6-4ca6-80ee-6da025303bb3">
+    <data-source source="LOCAL" name="Sqlite (Xerial) - database.db" uuid="26fe3a6c-f38c-4d34-ab6a-ad6c2e738ed5">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../NexTrip\src\Databases\database.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src\Databases\database.db</jdbc-url>
     </data-source>
   </component>
 </project>

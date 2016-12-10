@@ -4,10 +4,11 @@ import javafx.scene.image.Image;
 import java.util.ArrayList;
 
 public class Guidance {
+    private int id;
     private int rating;
     private String name;
     private String info;
-    private Location location;
+    private String location;
     private ArrayList<Image> photos;
     private ArrayList<Contact> contacts;
     private ArrayList<Comment> comments;
@@ -17,31 +18,12 @@ public class Guidance {
 
     }
 
-    public Guidance(String name, Location location, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info) {
-        this.name = name;
-        this.location = location;
-        this.photos = photos;
-        this.rating = rating;
-        this.contacts = contacts;
-        this.comments = comments;
-        this.amenties = amenties;
-        this.info = info;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
     }
 
     public ArrayList<Image> getPhotos() {
@@ -90,5 +72,21 @@ public class Guidance {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

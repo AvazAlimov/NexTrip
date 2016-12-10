@@ -1,8 +1,5 @@
 package Classes;
 
-import javafx.scene.image.Image;
-import javafx.scene.media.VideoTrack;
-
 import java.util.ArrayList;
 
 public class Restaurant extends Guidance {
@@ -10,41 +7,24 @@ public class Restaurant extends Guidance {
         cafe, fastfood, cuisine, sitDown
     }
 
-    private Type type;
-    private ArrayList<Table> tables;
+    private ArrayList<Type> type;
     private Menu menu;
+    private int numberOfSeats;
 
-    public Restaurant(){
-
+    public int getNumberOfSeats() {
+        return numberOfSeats;
     }
 
-    public Restaurant(Type type, ArrayList<Table> tables, Menu menu) {
-        this.type = type;
-        this.tables = tables;
-        this.menu = menu;
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
     }
 
-    public Restaurant(String name, Location location, ArrayList<Image> photos, int rating, ArrayList<Contact> contacts, ArrayList<Comment> comments, ArrayList<String> amenties, String info, Type type, ArrayList<Table> tables, Menu menu) {
-        super(name, location, photos, rating, contacts, comments, amenties, info);
-        this.type = type;
-        this.tables = tables;
-        this.menu = menu;
-    }
-
-    public Type getType() {
+    public ArrayList<Type> getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(ArrayList<Type> type) {
         this.type = type;
-    }
-
-    public ArrayList<Table> getTables() {
-        return tables;
-    }
-
-    public void setTables(ArrayList<Table> tables) {
-        this.tables = tables;
     }
 
     public Menu getMenu() {

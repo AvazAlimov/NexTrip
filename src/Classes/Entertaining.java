@@ -1,22 +1,35 @@
 package Classes;
 
-import java.util.ArrayList;
-
 public class Entertaining extends Guidance {
-    private ArrayList<Feature> features;
+    private double price;
+    private String rules;
+    private int ageLimit;
 
     public Entertaining(){
+
     }
 
-    public Entertaining(ArrayList<Feature> features) {
-        this.features = features;
+    public double getPrice() {
+        return price;
     }
 
-    public void setFeatures(ArrayList<Feature> features) {
-        this.features = features;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public ArrayList<Feature> getFeatures() {
-        return features;
+    public String getRules() {
+        return rules;
+    }
+
+    public void setRules(String rules) {
+        this.rules = rules;
+    }
+
+    public int getAgeLimit() {
+        return ageLimit;
+    }
+
+    public void setAgeLimit(int ageLimit) {
+        this.ageLimit = ageLimit;
     }
 }
