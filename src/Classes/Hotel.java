@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Hotel extends Guidance {
     private ArrayList<Room> rooms;
 
-    public Hotel(){
+    public Hotel() {
 
     }
 
