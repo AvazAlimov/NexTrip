@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.AnchorPane?>
-
-
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.HotelActivity">
 
@@ -16,20 +21,109 @@
                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <VBox spacing="5">
 
-            <HBox>
-                <Button/>
-                <ImageView />
-                <Button/>
+            <HBox spacing="40" alignment="CENTER">
+                <GridPane HBox.hgrow="ALWAYS" alignment="CENTER">
+                    <ImageView fx:id="imageView" fitHeight="500" fitWidth="1200">
+                        <Image url="@../Resources/1.jpg"/>
+                    </ImageView>
+                    <HBox alignment="CENTER">
+                        <Button fx:id="prevImage" id="prevImage" onAction="#switchPrevImage"/>
+
+                        <Separator HBox.hgrow="ALWAYS" visible="false"/>
+
+                        <Button fx:id="nextImage" id="nextImage" onAction="#switchNextImage"/>
+                    </HBox>
+                </GridPane>
+
+
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label alignment="CENTER" text=" Name of the Hotel" stylesheets="@../CSSFiles/SignIn.css"/>
+
             </HBox>
 
-            <Label alignment="CENTER"/>
+            <HBox spacing="5" alignment="CENTER">
 
-            <HBox spacing="5">
-                <Button/>
-                <Label maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                <Label maxWidth="Infinity" text="Location of the Hotel"/>
+                <!-- HBox.hgrow="ALWAYS"-->
+                <Button fx:id="locationButton"/>
             </HBox>
+            <GridPane>
+                <rowConstraints>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                </rowConstraints>
+
+                <columnConstraints>
+                    <ColumnConstraints/>
+                    <ColumnConstraints/>
+                </columnConstraints>
+
+                <Button prefHeight="10" prefWidth="10" fx:id="firstFeatureButton"/>
+                <Label text="    Free Wifi" GridPane.columnIndex="1"/>
+                <Button GridPane.rowIndex="1" prefHeight="10" prefWidth="10" fx:id="secondFeatureButton"/>
+                <Label text="    Free parking" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Button prefHeight="10" prefWidth="10" GridPane.rowIndex="2" fx:id="thirdFeatureButton"/>
+                <Label text="    Another feature" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+
+            </GridPane>
+            <HBox alignment="CENTER">
+                <Label fx:id="infoText" textAlignment="CENTER" HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <HBox spacing="1" alignment="BOTTOM_RIGHT" stylesheets="@../CSSFiles/hotelButton.css">
+                <Button fx:id="mail_icon" alignment="BASELINE_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/mail_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Separator visible="false"/>
+                <Button fx:id="phone_icon">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/phone_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Separator visible="false"/>
+                <Button fx:id="facebook_icon" alignment="BASELINE_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/facebook_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Separator visible="false"/>
+                <Button fx:id="telegram_icon" alignment="BASELINE_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/telegram_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT">
+                <Label text="Comments" stylesheets="@../CSSFiles/hotelButton.css"/>
+            </HBox>
+
+            <TextField prefWidth="800.0" promptText="Comments"/>
+            <HBox alignment="BOTTOM_RIGHT">
+                <Button text="Add" style="-fx-font-size: 12"/>
+            </HBox>
+
 
         </VBox>
     </ScrollPane>
+
+    <stylesheets>
+        <URL value="@../CSSFiles/Hotel.css"/>
+    </stylesheets>
 
 </AnchorPane>
