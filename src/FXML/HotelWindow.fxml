@@ -78,7 +78,7 @@
                         maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="/Resources/mail_icon(128px).png" smooth="false"/>
+                            <Image url="/Resources/mail_icon1(128px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
