@@ -128,7 +128,6 @@ public class Date {
         return string;
     }
 
-
     private void setDay(int day) {
         if (month != -1)
             upperLimit = getDayLimit();
