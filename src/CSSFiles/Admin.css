@@ -1,0 +1,18 @@
+.root {
+    -fx-background-color: #009688;
+}
+
+.button {
+    -fx-background-color: #FFC107;
+    -fx-background-radius: 15;
+    -fx-font-size: 20;
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
+}
+
+.button:hover{
+    -fx-background-color: #FFA107;
+}
+
+.button:pressed{
+    -fx-background-color: #ef6c00;
+}

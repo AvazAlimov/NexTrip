@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.Rectangle?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Activities.AdminActivity">
+
+    <GridPane fx:id="mainPane" visible="false" vgap="10.0" hgap="10.0" alignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+        <columnConstraints>
+            <ColumnConstraints/>
+            <ColumnConstraints/>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <Button prefWidth="200" prefHeight="60" text="Add Client" onAction="#switchPane"/>
+        <Button prefWidth="200" prefHeight="60" text="Edit Client" GridPane.columnIndex="1"/>
+        <Button prefWidth="200" prefHeight="60" text="Remove Client" GridPane.rowIndex="1"/>
+        <Button prefWidth="200" prefHeight="60" text="Remove Object" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <Button AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Back" onAction="#switchPane"/>
+
+    <GridPane fx:id="addPane"  vgap="10.0" hgap="10.0" alignment="CENTER" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="100.0">
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <TextField fx:id="username" prefWidth="300" prefHeight="50" promptText="username"/>
+        <TextField fx:id="password" GridPane.rowIndex="1" prefWidth="300" prefHeight="50" promptText="password"/>
+        <HBox alignment="CENTER" GridPane.rowIndex="2" spacing="10.0">
+            <Label HBox.hgrow="ALWAYS" text="Set number of credits"/>
+            <HBox alignment="CENTER">
+                <TextField fx:id="credits" text="0" prefWidth="60" prefHeight="50"/>
+                <VBox alignment="CENTER">
+                    <Rectangle height="25" width="25" style="-fx-fill: #FFC107; -fx-stroke: #000000; -fx-stroke-width: 1;"/>
+                    <Rectangle height="25" width="25" style="-fx-fill: #FFC107; -fx-stroke: #000000; -fx-stroke-width: 1;"/>
+                </VBox>
+            </HBox>
+        </HBox>
+        <HBox alignment="CENTER" GridPane.rowIndex="3" spacing="10.0">
+            <DatePicker fx:id="startDate" promptText="start date" HBox.hgrow="ALWAYS" prefHeight="50.0"/>
+            <DatePicker fx:id="endDate" promptText="expiry date" HBox.hgrow="ALWAYS" prefHeight="50.0"/>
+        </HBox>
+        <HBox alignment="CENTER" GridPane.rowIndex="4" spacing="10.0">
+            <Button prefWidth="100" prefHeight="50" text="Done" onAction="#addClient"/>
+            <Button prefWidth="100" prefHeight="50" text="Cancel"/>
+        </HBox>
+    </GridPane>
+
+    <stylesheets>
+        <URL value="@../CSSFiles/Admin.css"/>
+    </stylesheets>
+
+</AnchorPane>
+

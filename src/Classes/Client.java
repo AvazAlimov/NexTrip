@@ -1,21 +1,12 @@
 package Classes;
 
-public class Client extends User{
+public class Client extends User {
     private int numberOfCredits;
-    private int numberOfUsedCredits;
+    private int[] objectId;
     private Date startDate;
     private Date endDate;
 
-    public Client(){
-
-    }
-
-    public Client(String login, String password, int numberOfCredits, int numberOfUsedCredits, Date startDate, Date endDate) {
-        super(login, password);
-        this.numberOfCredits = numberOfCredits;
-        this.numberOfUsedCredits = numberOfUsedCredits;
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public Client() {
     }
 
     public void setEndDate(Date endDate) {
@@ -24,10 +15,7 @@ public class Client extends User{
 
     public void setNumberOfCredits(int numberOfCredits) {
         this.numberOfCredits = numberOfCredits;
-    }
-
-    public void setNumberOfUsedCredits(int numberOfUsedCredits) {
-        this.numberOfUsedCredits = numberOfUsedCredits;
+        objectId = new int[numberOfCredits];
     }
 
     public void setStartDate(Date startDate) {
@@ -46,7 +34,18 @@ public class Client extends User{
         return numberOfCredits;
     }
 
-    public int getNumberOfUsedCredits() {
-        return numberOfUsedCredits;
+    public int[] getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(int[] objectId) {
+        this.objectId = objectId;
+    }
+
+    public String getIds() {
+        String ids = "";
+        for (int i = 0; i < numberOfCredits; i++)
+            ids += objectId[i] + "/";
+        return ids.substring(0,ids.length() - 1);
     }
 }

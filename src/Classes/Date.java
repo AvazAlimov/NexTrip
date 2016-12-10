@@ -9,14 +9,14 @@ public class Date {
     private int year = -1;
     private int[][] map;
 
-    Date(int day, int month, int year) {
+    public Date(int day, int month, int year) {
         init();
         setYear(year);
         setMonth(month);
         setDay(day);
     }
 
-    Date(String date) {
+    public Date(String date) {
         init();
         isValid(date);
         setDate(date);
