@@ -3,6 +3,7 @@ package Activities;
 import Classes.Client;
 import Classes.Date;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
@@ -181,15 +182,15 @@ public class AdminActivity implements Initializable {
 
     public void searchClient() {
         client = Tools.searchClient(search.getText());
-        if(client == null){
+        if (client == null) {
             searchError.setText("Client with this username was not found");
             return;
         }
         username.setText(client.getUsername());
         password.setText(client.getPassword());
         credits.setText(client.getNumberOfCredits() + "");
-        startDate.setValue(LocalDate.of(client.getStartDate().getYear(),client.getStartDate().getMonth(),client.getStartDate().getDay()));
-        endDate.setValue(LocalDate.of(client.getEndDate().getYear(),client.getEndDate().getMonth(),client.getEndDate().getDay()));
+        startDate.setValue(LocalDate.of(client.getStartDate().getYear(), client.getStartDate().getMonth(), client.getStartDate().getDay()));
+        endDate.setValue(LocalDate.of(client.getEndDate().getYear(), client.getEndDate().getMonth(), client.getEndDate().getDay()));
         mainPane.setVisible(false);
         searchPane.setVisible(false);
         addPane.setVisible(true);
@@ -200,7 +201,7 @@ public class AdminActivity implements Initializable {
     }
 
     public void doAction() {
-        switch(doButton.getId()){
+        switch (doButton.getId()) {
             case "add":
                 System.out.println("Hello");
                 addClient();
@@ -209,7 +210,8 @@ public class AdminActivity implements Initializable {
                 editClient();
                 break;
             case "remove":
-
+                SQLDataBase.removeClient(client.getUsername());
+                Tools.clients.remove(client);
                 break;
         }
     }
