@@ -3,7 +3,6 @@ package Activities;
 import Classes.Client;
 import Classes.Date;
 import javafx.event.ActionEvent;
-import javafx.event.EventType;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
