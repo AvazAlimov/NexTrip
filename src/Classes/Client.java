@@ -2,7 +2,7 @@ package Classes;
 
 public class Client extends User {
     private int numberOfCredits;
-    private int[] objectId;
+    private String[] objectId;
     private Date startDate;
     private Date endDate;
 
@@ -15,7 +15,7 @@ public class Client extends User {
 
     public void setNumberOfCredits(int numberOfCredits) {
         this.numberOfCredits = numberOfCredits;
-        objectId = new int[numberOfCredits];
+        objectId = new String[numberOfCredits];
     }
 
     public void setStartDate(Date startDate) {
@@ -34,18 +34,26 @@ public class Client extends User {
         return numberOfCredits;
     }
 
-    public int[] getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(int[] objectId) {
-        this.objectId = objectId;
-    }
-
     public String getIds() {
         String ids = "";
         for (int i = 0; i < numberOfCredits; i++)
             ids += objectId[i] + "/";
         return ids.substring(0,ids.length() - 1);
+    }
+
+    public void setObjectId(String objects) {
+        int index = 0;
+        int start = 0;
+        for (int i = 0; i < objects.length(); i++)
+            if (objects.charAt(i) == '/' || i == objects.length() - 1) {
+                int last = i == objects.length() - 1 ? i + 1 : i;
+                objectId[index] = objects.substring(start, last);
+                start = i + 1;
+                index++;
+            }
+    }
+
+    public String[] getObjectId() {
+        return objectId;
     }
 }

@@ -6,6 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.text.DateFormatter;
+import java.text.DateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Locale;
 
 public class Main extends Application {
@@ -31,7 +39,10 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        Tools.init();
         SQLDataBase.connect();
+        SQLDataBase.loadClients();
+
         launch(args);
     }
 }

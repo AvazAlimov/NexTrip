@@ -35,7 +35,6 @@ public class Date {
         separateDay(day);
     }
 
-
     private void separateDay(int day) {
         if (day > 0 && day < 31) {
             setMonth(1);
@@ -112,20 +111,20 @@ public class Date {
 
         for (int i = 0; i < statement.length(); i++)
             if (statement.charAt(i) == 'D' && isDay) {
-                string += day + " ";
+                string += day + "/";
                 isDay = false;
             } else if (statement.charAt(i) == 'M' && isMonth) {
                 if (i < statement.length() - 1 && statement.charAt(i + 1) == 'M') {
-                    string += months[month - 1] + " ";
+                    string += months[month - 1] + "/";
                     i++;
                 } else
-                    string += month + " ";
+                    string += month + "/";
                 isMonth = false;
             } else if (statement.charAt(i) == 'Y' && isYear) {
-                string += year + " ";
+                string += year + "/";
                 isYear = false;
             }
-        return string;
+        return string.substring(0,string.length() - 1);
     }
 
     private void setDay(int day) {
@@ -149,5 +148,17 @@ public class Date {
             this.year = year;
         else
             throw new NullPointerException("Year is out of a range");
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
     }
 }
