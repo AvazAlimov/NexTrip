@@ -2,6 +2,7 @@ package Activities;
 
 import javafx.animation.*;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -36,11 +37,13 @@ public class SignInActivity implements Initializable {
 
     public void doAction(ActionEvent event) throws IOException {
         String id = ((Control) event.getSource()).getId();
-
+        Parent parent = null;
+        Scene scene;
+        System.out.println(actionButton.getText());
         switch (id) {
             case "back":
-                Parent parent = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
-                Scene scene = new Scene(parent);
+                parent = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
+                scene = new Scene(parent);
                 Main.stage.hide();
                 Main.stage.setScene(scene);
                 Main.stage.show();
@@ -54,7 +57,22 @@ public class SignInActivity implements Initializable {
                 actionButton.setText("Sign Up");
                 break;
             case "action":
-                //TODO: register and open main Window
+                switch (actionButton.getText()) {
+                    case "Sign In":
+                        if (usernameText.getText().equals("admin") && passwordText.getText().equals("admin")) {
+                            parent = FXMLLoader.load(getClass().getResource("../FXML/AdminWindow.fxml"));
+                        }
+
+                        if (parent == null)
+                            return;
+                        scene = new Scene(parent);
+                        Main.stage.hide();
+                        Main.stage.setScene(scene);
+                        Main.stage.show();
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case "cancelButton":
                 animate(false);
@@ -109,11 +127,5 @@ public class SignInActivity implements Initializable {
                 secondAnimation.play();
             }
         }
-    }
-
-    private void nextWindow() throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("FXML/SignInWindow.fxml"));
-        Scene scene = new Scene(parent);
-        Main.stage.setScene(scene);
     }
 }

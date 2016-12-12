@@ -3,13 +3,17 @@ package Activities;
 import Classes.Client;
 import Classes.Date;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -36,7 +40,7 @@ public class AdminActivity implements Initializable {
 
     }
 
-    public void switchPane(ActionEvent event) {
+    public void switchPane(ActionEvent event) throws IOException {
         String text = ((Button) event.getSource()).getText();
         switch (text) {
             case "Add Client":
@@ -66,6 +70,13 @@ public class AdminActivity implements Initializable {
                 searchPane.setVisible(false);
                 mainPane.setVisible(true);
                 addPane.setVisible(false);
+                break;
+            case "Back":
+                Parent parent = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
+                Scene scene = new Scene(parent);
+                Main.stage.hide();
+                Main.stage.setScene(scene);
+                Main.stage.show();
             default:
                 break;
         }
@@ -213,5 +224,8 @@ public class AdminActivity implements Initializable {
                 Tools.clients.remove(client);
                 break;
         }
+        searchPane.setVisible(false);
+        mainPane.setVisible(true);
+        addPane.setVisible(false);
     }
 }

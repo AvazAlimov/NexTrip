@@ -40,9 +40,8 @@
         <TextField fx:id="usernameText" promptText="username" GridPane.halignment="CENTER"/>
         <PasswordField fx:id="passwordText" promptText="password" GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
 
-        <HBox GridPane.halignment="CENTER" GridPane.rowIndex="2">
+        <HBox GridPane.halignment="CENTER" GridPane.rowIndex="2" spacing="20.0">
             <Button id="action" fx:id="actionButton" onAction="#doAction" text="Sign Up"/>
-            <Separator prefWidth="20" visible="false"/>
             <Button id="cancelButton" onAction="#doAction" text="Cancel"/>
         </HBox>
 
