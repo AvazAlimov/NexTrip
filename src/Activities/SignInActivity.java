@@ -39,7 +39,6 @@ public class SignInActivity implements Initializable {
         String id = ((Control) event.getSource()).getId();
         Parent parent = null;
         Scene scene;
-        System.out.println(actionButton.getText());
         switch (id) {
             case "back":
                 parent = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));

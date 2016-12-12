@@ -106,6 +106,10 @@ public class AdminActivity implements Initializable {
         client.setEndDate(new Date(String.format("%02d/%02d/%04d", endDate.getValue().getDayOfMonth(), endDate.getValue().getMonthValue(), endDate.getValue().getYear())));
         SQLDataBase.addClient(client);
         Tools.clients.add(client);
+
+        searchPane.setVisible(false);
+        mainPane.setVisible(true);
+        addPane.setVisible(false);
     }
 
     private void editClient() {
@@ -133,6 +137,10 @@ public class AdminActivity implements Initializable {
         SQLDataBase.editClient(client, this.client.getUsername());
         Tools.clients.remove(this.client);
         Tools.clients.add(client);
+
+        searchPane.setVisible(false);
+        mainPane.setVisible(true);
+        addPane.setVisible(false);
     }
 
     private boolean checkAddFilled() {
@@ -224,8 +232,5 @@ public class AdminActivity implements Initializable {
                 Tools.clients.remove(client);
                 break;
         }
-        searchPane.setVisible(false);
-        mainPane.setVisible(true);
-        addPane.setVisible(false);
     }
 }

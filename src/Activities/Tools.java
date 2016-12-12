@@ -112,6 +112,4 @@ class SQLDataBase {
             e.printStackTrace();
         }
     }
-
-
 }
