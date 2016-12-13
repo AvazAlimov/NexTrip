@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Activities.ClientActivity">
+
+    <GridPane fx:id="mainPane" vgap="10.0" hgap="10.0" alignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+        <columnConstraints>
+            <ColumnConstraints/>
+            <ColumnConstraints/>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <Button prefWidth="200" prefHeight="60" text="Add Object" onAction="#switchPane"/>
+        <Button prefWidth="200" prefHeight="60" text="Edit Object" GridPane.columnIndex="1" onAction="#switchPane"/>
+
+    </GridPane>
+
+    <GridPane visible="false" fx:id="addChoicePane" vgap="20.0" hgap="20.0" alignment="CENTER" AnchorPane.rightAnchor="100.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0">
+
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <columnConstraints>
+            <ColumnConstraints/>
+            <ColumnConstraints/>
+        </columnConstraints>
+
+        <Button prefWidth="200" prefHeight="200" text="Hotel" onAction="#switchObjectPane"/>
+        <Button prefWidth="200" prefHeight="200" text="Restaurant" GridPane.columnIndex="1" onAction="#switchObjectPane"/>
+        <Button prefWidth="200" prefHeight="200" text="Entertaining" GridPane.rowIndex="1" onAction="#switchObjectPane"/>
+        <Button prefWidth="200" prefHeight="200" text="Things To Do" GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#switchObjectPane"/>
+
+    </GridPane>
+
+    <GridPane visible="false" fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"  AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="100.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES"/>
+        </columnConstraints>
+
+        <ScrollPane fitToWidth="true">
+            <VBox alignment="CENTER" spacing="10.0">
+                <TextField fx:id="nameText" prefWidth="400" prefHeight="50" promptText="name"/>
+                <TextField fx:id="locationText" prefWidth="400" prefHeight="50" promptText="location"/>
+            </VBox>
+        </ScrollPane>
+
+    </GridPane>
+
+    <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Log Out" onAction="#switchPane"/>
+    <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"/>
+
+    <stylesheets>
+        <URL value="@../CSSFiles/Admin.css"/>
+    </stylesheets>
+
+</AnchorPane>
+

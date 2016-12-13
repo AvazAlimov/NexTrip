@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import javax.swing.text.DateFormatter;
@@ -24,6 +25,7 @@ public class Main extends Application {
         Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("../FXML/StartWindow.fxml"));
+        primaryStage.getIcons().add(new Image("Resources/icon.png"));
         primaryStage.setTitle("NexTrip");
         primaryStage.setScene(new Scene(root));
         primaryStage.setMinWidth(1280);

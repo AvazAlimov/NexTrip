@@ -16,13 +16,10 @@
         <rowConstraints>
             <RowConstraints/>
             <RowConstraints/>
-            <RowConstraints/>
         </rowConstraints>
 
         <Button id="signIn" fx:id="signInButton" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER"/>
-        <Button id="signUp" fx:id="signUpButton" onAction="#doAction" text="Sign Up" GridPane.halignment="CENTER"
-                GridPane.rowIndex="1"/>
-        <Button id="back" fx:id="continueButton" onAction="#doAction" text="Cancel" GridPane.rowIndex="2"
+        <Button id="back" fx:id="continueButton" onAction="#doAction" text="Cancel" GridPane.rowIndex="1"
                 GridPane.halignment="CENTER"/>
 
 

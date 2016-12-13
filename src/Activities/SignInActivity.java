@@ -1,5 +1,6 @@
 package Activities;
 
+import Classes.Client;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.control.Control;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -21,7 +23,6 @@ import java.util.ResourceBundle;
 public class SignInActivity implements Initializable {
     public Button continueButton;
     public Button signInButton;
-    public Button signUpButton;
     public TextField usernameText;
     public PasswordField passwordText;
     public Button actionButton;
@@ -32,7 +33,6 @@ public class SignInActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     public void doAction(ActionEvent event) throws IOException {
@@ -51,15 +51,17 @@ public class SignInActivity implements Initializable {
                 animate(true);
                 actionButton.setText("Sign In");
                 break;
-            case "signUp":
-                animate(true);
-                actionButton.setText("Sign Up");
-                break;
             case "action":
                 switch (actionButton.getText()) {
                     case "Sign In":
                         if (usernameText.getText().equals("admin") && passwordText.getText().equals("admin")) {
                             parent = FXMLLoader.load(getClass().getResource("../FXML/AdminWindow.fxml"));
+                        }else{
+                            Client client = Tools.logInClient(usernameText.getText(), passwordText.getText());
+                            if(client == null)
+                                return;
+                            Tools.client = client;
+                            parent = FXMLLoader.load(getClass().getResource("../FXML/ClientWindow.fxml"));
                         }
 
                         if (parent == null)
