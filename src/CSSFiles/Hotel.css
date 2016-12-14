@@ -156,6 +156,7 @@
 #firstFeatureButton:hover{
     -fx-background-color: blue;
 }
+
 #secondFeatureButton{
     -fx-background-color: mediumblue;
     -fx-pref-width: 30;
@@ -204,4 +205,15 @@
 
 #nextImage:pressed{
     -fx-text-fill: #2196F3;
+}
+#firstFeatureButton{
+    -fx-background-color: transparent;
+
+}
+#secondFeatureButton{
+    -fx-background-color: transparent;
+}
+
+#thirdFeatureButton{
+    -fx-background-color: transparent;
 }

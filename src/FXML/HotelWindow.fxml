@@ -32,9 +32,7 @@
                     </ImageView>
                     <HBox alignment="CENTER">
                         <Button fx:id="prevImage" id="prevImage" onAction="#switchPrevImage"/>
-
                         <Separator HBox.hgrow="ALWAYS" visible="false"/>
-
                         <Button fx:id="nextImage" id="nextImage" onAction="#switchNextImage"/>
                     </HBox>
                 </GridPane>
@@ -64,11 +62,35 @@
                     <ColumnConstraints/>
                 </columnConstraints>
 
-                <Button prefHeight="10" prefWidth="10" fx:id="firstFeatureButton"/>
+                <Button fx:id="firstFeatureButton" alignment="BASELINE_LEFT" contentDisplay="RIGHT"
+                        maxHeight="-Infinity"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
                 <Label text="    Free Wifi" GridPane.columnIndex="1"/>
-                <Button GridPane.rowIndex="1" prefHeight="10" prefWidth="10" fx:id="secondFeatureButton"/>
+                <Button GridPane.rowIndex="1" fx:id="secondFeatureButton" alignment="BASELINE_LEFT"
+                        contentDisplay="RIGHT" maxHeight="-Infinity"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
                 <Label text="    Free parking" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-                <Button prefHeight="10" prefWidth="10" GridPane.rowIndex="2" fx:id="thirdFeatureButton"/>
+                <Button GridPane.rowIndex="2" fx:id="thirdFeatureButton" alignment="BASELINE_LEFT"
+                        contentDisplay="RIGHT" maxHeight="-Infinity"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
                 <Label text="    Another feature" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
 
@@ -119,7 +141,13 @@
 
             <TextField prefWidth="800.0" promptText="Comments"/>
             <HBox alignment="BOTTOM_RIGHT">
-                <Button text="Add" style="-fx-font-size: 12"/>
+                <Button text="Add" style="-fx-font-size: 12" prefHeight="40" prefWidth="70">
+                    <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/plus_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
             </HBox>
 
 

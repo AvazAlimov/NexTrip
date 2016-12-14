@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("/Resources/blur.jpg");
+    -fx-background-image: url("/Resources/SignIn_window(128px).jpg");
     -fx-background-size: stretch;
 }
 
@@ -19,6 +19,7 @@
 .button:pressed{
     -fx-background-color: #ef6c00;
 }
+
 
 .separator:vertical .line {
     -fx-border-color: transparent transparent transparent -fx-shadow-highlight-color,

@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
+
 <GridPane alignment="CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="Activities.SignInActivity">
 
@@ -18,7 +19,8 @@
             <RowConstraints/>
         </rowConstraints>
 
-        <Button id="signIn" fx:id="signInButton" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER"/>
+
+        <Button id="signIn" fx:id="signInButton" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER" />
         <Button id="back" fx:id="continueButton" onAction="#doAction" text="Cancel" GridPane.rowIndex="1"
                 GridPane.halignment="CENTER"/>
 

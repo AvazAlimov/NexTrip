@@ -37,7 +37,7 @@ public class AdminActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        addPane.setStyle("-fx-background-image: url('/Resources/adminWindow_background.jpg');");
     }
 
     public void switchPane(ActionEvent event) throws IOException {

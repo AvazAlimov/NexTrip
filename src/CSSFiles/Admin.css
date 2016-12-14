@@ -1,18 +1,49 @@
 .root {
-    -fx-background-color: #009688;
+    -fx-background-image: url("/Resources/111.jpg");
+
 }
 
 .button {
-    -fx-background-color: #FFC107;
-    -fx-background-radius: 15;
+    -fx-background-color: #EA80FC;
+    -fx-background-radius: 10;
     -fx-font-size: 20;
-    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
+    /*-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);*/
+    -fx-font-style: oblique;
+}
+.button:disabled{
+    -fx-opacity: 4.0;
 }
 
+
 .button:hover{
-    -fx-background-color: #FFA107;
+    -fx-background-color: #D500F9;
 }
 
 .button:pressed{
-    -fx-background-color: #ef6c00;
+    -fx-background-color: #AA00FF;
+}
+
+.label{
+    -fx-text-fill: black;
+    -fx-text-alignment: center;
+    -fx-font-family: fantasy;
+    -fx-font-size: 16;
+}
+
+.date-picker{
+    -fx-base: #EA80FC;
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
+}
+
+.date-picker-popup > .calendar-grid {
+    -fx-background-color: derive(#EA80FC, 60%);
+    -fx-padding: 0;
+}
+
+.date-picker-popup > * > .week-number-cell {
+    -fx-border-width: 0px;
+}
+
+.date-picker-popup > * > .day-cell {
+    -fx-border-width: 0px;
 }
