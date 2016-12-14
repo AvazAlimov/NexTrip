@@ -1,6 +1,5 @@
 package Classes;
 
-import javafx.scene.image.Image;
 import java.util.ArrayList;
 
 public class Guidance {
@@ -9,13 +8,41 @@ public class Guidance {
     private String name;
     private String info;
     private String location;
-    private ArrayList<Image> photos;
+    private ArrayList<String> photos;
     private ArrayList<Contact> contacts;
     private ArrayList<Comment> comments;
     private ArrayList<String> amenties;
 
     public Guidance() {
 
+    }
+
+    public String ammenityToString() {
+        String string = "";
+        for (String amenity : amenties)
+            string += amenity + "■";
+        return string.substring(0, string.length() - 1);
+    }
+
+    public String commentsToString() {
+        String string = "";
+        for (Comment comment : comments)
+            string += comment.toString() + "■";
+        return string.substring(0, string.length() - 1);
+    }
+
+    public String contactsToString() {
+        String string = "";
+        for (Contact contact : contacts)
+            string += contact.toString() + "■";
+        return string.substring(0, string.length() - 1);
+    }
+
+    public String getImageLinks() {
+        String string = "";
+        for (String image : photos)
+            string += image + "■";
+        return string.substring(0, string.length() - 1);
     }
 
     public String getName() {
@@ -26,14 +53,6 @@ public class Guidance {
         this.name = name;
     }
 
-    public ArrayList<Image> getPhotos() {
-        return photos;
-    }
-
-    public void setPhotos(ArrayList<Image> photos) {
-        this.photos = photos;
-    }
-
     public int getRating() {
         return rating;
     }
@@ -41,6 +60,68 @@ public class Guidance {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setImages(String string) {
+        int index = 0;
+        for (int i = 0; i < string.length(); i++)
+            if (string.charAt(i) == '■' || i == string.length() - 1) {
+                photos.add(string.substring(index, i));
+                index = i + 1;
+            }
+    }
+
+    public void setContacts(String string) {
+        int index = 0;
+        for (int i = 0; i < string.length(); i++)
+            if (string.charAt(i) == '■' || i == string.length() - 1) {
+                contacts.add(new Contact(string.substring(index, i)));
+                index = i + 1;
+            }
+    }
+
+    public void setComments(String string) {
+        int index = 0;
+        for (int i = 0; i < string.length(); i++)
+            if (string.charAt(i) == '■' || i == string.length() - 1) {
+                comments.add(new Comment(string.substring(index, i)));
+                index = i + 1;
+            }
+    }
+
+    public void setAmenities(String string) {
+        int index = 0;
+        for (int i = 0; i < string.length(); i++)
+            if (string.charAt(i) == '■' || i == string.length() - 1) {
+                amenties.add(string.substring(index, i));
+                index = i + 1;
+            }
+    }
+
+
 
     public ArrayList<Contact> getContacts() {
         return contacts;
@@ -66,27 +147,11 @@ public class Guidance {
         this.amenties = amenties;
     }
 
-    public String getInfo() {
-        return info;
+    public void setPhotos(ArrayList<String> photos) {
+        this.photos = photos;
     }
 
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public ArrayList<String> getPhotos() {
+        return photos;
     }
 }

@@ -33,9 +33,9 @@ public class Tools {
         return null;
     }
 
-    public static Client logInClient(String username, String password){
-        for(Client client : clients)
-            if(client.getUsername().equals(username) && client.getPassword().equals(password))
+    public static Client logInClient(String username, String password) {
+        for (Client client : clients)
+            if (client.getUsername().equals(username) && client.getPassword().equals(password))
                 return client;
         return null;
     }
@@ -62,6 +62,8 @@ class SQLDataBase {
         }
     }
 
+
+    //region Client
     public static void addClient(Client client) {
         try {
             Statement statement = connection.createStatement();
@@ -121,6 +123,89 @@ class SQLDataBase {
             e.printStackTrace();
         }
     }
+    //endregion
 
 
+    //region Hotel
+    public static void loadHotels() {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Hotel;";
+            ResultSet result = statement.executeQuery(query);
+            while (result.next()){
+                Hotel hotel = new Hotel();
+                hotel.setId(result.getInt("Id"));
+                hotel.setRating(result.getInt("Rating"));
+                hotel.setName(result.getString("Name"));
+                hotel.setInfo(result.getString("Info"));
+                hotel.setLocation(result.getString("Location"));
+                hotel.setImages(result.getString("Images"));
+                hotel.setContacts(result.getString("Contacts"));
+                hotel.setComments(result.getString("Comments"));
+                hotel.setAmenities(result.getString("Amenities"));
+                hotel.setStartingPrice(result.getDouble("StartPrice"));
+                hotel.setEndingPrice(result.getDouble("EndPrice"));
+                hotel.setNumberOfRooms(result.getInt("Rooms"));
+
+                Tools.hotels.add(hotel);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static int lastHotelId(){
+        int id = 0;
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT Id FROM Hotel ORDER BY Id DESC;";
+            ResultSet result = statement.executeQuery(query);
+            if(result.next())
+                id = result.getInt("Id") + 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+
+    public static void addHotel(Hotel hotel) {
+        int id = lastHotelId();
+        int rating = hotel.getRating();
+        String name = hotel.getName();
+        String info = hotel.getInfo();
+        String location = hotel.getLocation();
+        String images = hotel.getImageLinks();
+        String contacts = hotel.contactsToString();
+        String comments = hotel.commentsToString();
+        String amenitites = hotel.ammenityToString();
+        double startPrice = hotel.getStartingPrice();
+        double endPrice = hotel.getEndingPrice();
+        int rooms = hotel.getNumberOfRooms();
+
+        try {
+            Statement statement = connection.createStatement();
+            String query = String.format("INSERT INTO Hotel(Id,Rating,Name,Info,Location,Images,Contacts,Comments,Amenities,StartPrice,EndPrice,Rooms) VALUES('%d','%d','%s','%s','%s','%s','%s','%s','%s','%f','%f','%d');", id, rating, name, info, location, images, contacts, comments, amenitites, startPrice, endPrice, rooms);
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void editHotel(Hotel hotel, String id){
+
+    }
+
+    public static void deleteHotel(String id){
+        try {
+            Statement statement = connection.createStatement();
+            String query = "DELETE FROM Hotel WHERE Id='" + id + "';";
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    //endregion
 }
