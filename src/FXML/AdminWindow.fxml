@@ -16,120 +16,137 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Activities.AdminActivity">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Activities.AdminActivity">
 
-    <GridPane fx:id="mainPane" alignment="CENTER" hgap="10.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-
-
+    <GridPane fx:id="mainPane" alignment="CENTER" hgap="10.0" vgap="10.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
         </rowConstraints>
 
         <Button onAction="#switchPane" opacity="0.83" prefHeight="40" prefWidth="200" text="Add Client">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                    <Image smooth="false" url="/Resources/add_user(128px).png" />
+                    <Image smooth="false" url="/Resources/add_user(128px).png"/>
                 </ImageView>
             </graphic>
         </Button>
-        <Separator prefHeight="30" visible="false" />
-        <Button onAction="#switchPane" opacity="0.83" prefHeight="40" prefWidth="200" text="Edit Client" GridPane.rowIndex="1">
+        <Separator prefHeight="30" visible="false"/>
+        <Button onAction="#switchPane" opacity="0.83" prefHeight="40" prefWidth="200" text="Edit Client"
+                GridPane.rowIndex="1">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                    <Image smooth="false" url="/Resources/edit_user(128px).png" />
+                    <Image smooth="false" url="/Resources/edit_user(128px).png"/>
                 </ImageView>
             </graphic>
         </Button>
-        <Separator prefHeight="30" visible="false" />
-        <Button onAction="#switchPane" opacity="0.83" prefHeight="40" prefWidth="200" text="Remove Client" GridPane.rowIndex="2">
+        <Separator prefHeight="30" visible="false"/>
+        <Button onAction="#switchPane" opacity="0.83" prefHeight="40" prefWidth="200" text="Remove Client"
+                GridPane.rowIndex="2">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                    <Image smooth="false" url="/Resources/delete_user(128px).png" />
+                    <Image smooth="false" url="/Resources/delete_user(128px).png"/>
                 </ImageView>
             </graphic>
         </Button>
-        <Separator prefHeight="30" visible="false" />
-        <Button onAction="#switchPane" opacity="0.83" prefHeight="40" prefWidth="200" text="Remove Object" GridPane.rowIndex="3">
+        <Separator prefHeight="30" visible="false"/>
+        <Button onAction="#switchPane" opacity="0.83" prefHeight="40" prefWidth="200" text="Remove Object"
+                GridPane.rowIndex="3">
             <graphic>
                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                    <Image smooth="false" url="/Resources/remove_object(128px).png" />
+                    <Image smooth="false" url="/Resources/remove_object(128px).png"/>
                 </ImageView>
             </graphic>
         </Button>
-      <columnConstraints>
-         <ColumnConstraints />
-      </columnConstraints>
+        <columnConstraints>
+            <ColumnConstraints/>
+        </columnConstraints>
 
     </GridPane>
 
-    <Button onAction="#switchPane"  text="Back" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+    <Button onAction="#switchPane" text="Back" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
         <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                <Image smooth="false" url="/Resources/back_icon(128px).png" />
+                <Image smooth="false" url="/Resources/back_icon(128px).png"/>
             </ImageView>
         </graphic>
     </Button>
 
-    <GridPane fx:id="addPane" alignment="CENTER" hgap="10.0" vgap="10.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <GridPane fx:id="addPane" alignment="CENTER" hgap="10.0" vgap="10.0" visible="false" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
         </rowConstraints>
 
         <TextField fx:id="username" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="300" promptText="username"/>
-        <TextField fx:id="password" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="300" promptText="password" GridPane.rowIndex="1" />
+        <TextField fx:id="password" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="300" promptText="password"
+                   GridPane.rowIndex="1"/>
         <HBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="2">
-            <Label text="Set number of credits" HBox.hgrow="ALWAYS" />
+            <Label text="Set number of credits" HBox.hgrow="ALWAYS"/>
             <HBox alignment="CENTER">
-                <TextField fx:id="credits" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="60" text="1" />
+                <TextField fx:id="credits" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="60" text="1"/>
                 <VBox alignment="CENTER">
-                    <Rectangle id="up" height="25" onMouseClicked="#updateCredits" style="-fx-fill: #D500F9; -fx-stroke: #000000; -fx-stroke-width: 1;" width="25" />
-                    <Rectangle id="down" height="25" onMouseClicked="#updateCredits" style="-fx-fill: #D500F9; -fx-stroke: #000000; -fx-stroke-width: 1;" width="25" />
+                    <Rectangle id="up" height="25" onMouseClicked="#updateCredits"
+                               style="-fx-fill: #1976D2; -fx-stroke: #000000; -fx-stroke-width: 1;" width="25"/>
+                    <Rectangle id="down" height="25" onMouseClicked="#updateCredits"
+                               style="-fx-fill: #1976D2; -fx-stroke: #000000; -fx-stroke-width: 1;" width="25"/>
                 </VBox>
             </HBox>
         </HBox>
         <HBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="3">
-            <DatePicker fx:id="startDate" onMouseClicked="#datePressed" prefHeight="50.0" promptText="start date" HBox.hgrow="ALWAYS" />
-            <DatePicker fx:id="endDate" onMouseClicked="#datePressed" prefHeight="50.0" promptText="expiry date" HBox.hgrow="ALWAYS" />
+            <DatePicker fx:id="startDate" onMouseClicked="#datePressed" prefHeight="50.0" promptText="start date"
+                        HBox.hgrow="ALWAYS"/>
+            <DatePicker fx:id="endDate" onMouseClicked="#datePressed" prefHeight="50.0" promptText="expiry date"
+                        HBox.hgrow="ALWAYS"/>
         </HBox>
-        <Label fx:id="dateError" GridPane.rowIndex="4" />
+        <Label fx:id="dateError" GridPane.rowIndex="4"/>
         <HBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="5">
-            <Button fx:id="doButton" onAction="#doAction" prefHeight="50" prefWidth="100" text="Done" />
-            <Button onAction="#switchPane" prefHeight="50" prefWidth="100" text="Cancel" />
+            <Button fx:id="doButton" onAction="#doAction" prefHeight="30" prefWidth="150" style="-fx-background-color: #1976D2;
+    -fx-background-radius: 10;
+    -fx-font-size: 20;
+    -fx-font-style: oblique;
+    -fx-text-fill: white"/>
+            <Button onAction="#switchPane" prefHeight="30" prefWidth="150" text="Cancel" fx:id="cancelButton"/>
         </HBox>
-      <columnConstraints>
-         <ColumnConstraints />
-      </columnConstraints>
+        <columnConstraints>
+            <ColumnConstraints/>
+        </columnConstraints>
     </GridPane>
 
-    <GridPane fx:id="searchPane" alignment="CENTER" hgap="10.0" vgap="10.0" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
+    <GridPane fx:id="searchPane" alignment="CENTER" hgap="10.0" vgap="10.0" visible="false"
+              AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0"
+              AnchorPane.topAnchor="100.0">
         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
         </rowConstraints>
 
         <HBox alignment="CENTER" spacing="10">
-            <TextField fx:id="search" onKeyTyped="#searchTyped" prefHeight="50" prefWidth="300" promptText="search client" />
-            <Button fx:id="searchButton" onAction="#searchClient" prefHeight="50" prefWidth="50" text="🔍" />
+            <TextField fx:id="search" onKeyTyped="#searchTyped" prefHeight="50" prefWidth="300"
+                       promptText="search client"/>
+            <Button fx:id="searchButton" onAction="#searchClient" prefHeight="50" prefWidth="50" text="🔍"/>
         </HBox>
-        <Label fx:id="searchError" GridPane.rowIndex="1" />
-        <Button alignment="CENTER" onAction="#switchPane" prefHeight="50" prefWidth="100" text="Cancel" GridPane.rowIndex="2" />
-      <columnConstraints>
-         <ColumnConstraints />
-      </columnConstraints>
+        <Label fx:id="searchError" GridPane.rowIndex="1"/>
+        <Button alignment="CENTER" onAction="#switchPane" prefHeight="50" prefWidth="100" text="Cancel"
+                GridPane.rowIndex="2"/>
+        <columnConstraints>
+            <ColumnConstraints/>
+        </columnConstraints>
 
     </GridPane>
 
     <stylesheets>
-        <URL value="@../CSSFiles/Admin.css" />
+        <URL value="@../CSSFiles/Admin.css"/>
     </stylesheets>
 
 </AnchorPane>

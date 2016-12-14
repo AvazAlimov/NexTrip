@@ -4,6 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.MainActivity">
     <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
@@ -21,12 +23,48 @@
 
         <HBox>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Hotels" prefHeight="40" onAction="#switchTabs"
-                    style="-fx-background-color: #da8c00;"/>
-            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Restaurants" prefHeight="40" onAction="#switchTabs"/>
-            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Entertaining" prefHeight="40" onAction="#switchTabs"/>
-            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Things To Do" prefHeight="40" onAction="#switchTabs"/>
-            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Log In" prefHeight="40" onAction="#switchTabs"/>
-            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Settings" prefHeight="40" onAction="#switchTabs"/>
+                    style="-fx-background-color: #FFA000;">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/hotel_icon(128px).png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Restaurants" prefHeight="40" onAction="#switchTabs">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/restaurant_icon(128px).png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Entertaining" prefHeight="40" onAction="#switchTabs">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/entertaining_icon(128px).png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Things To Do" prefHeight="40" onAction="#switchTabs">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/thingToDo_icon(128px).png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Log In" prefHeight="40" onAction="#switchTabs">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/logIn_icon1(128px) (3).png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Settings" prefHeight="40" onAction="#switchTabs">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/settings_icon(128px).png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
         </HBox>
 
         <VBox GridPane.rowIndex="1" spacing="10">
@@ -36,7 +74,13 @@
                 <Button style="-fx-font-size: 18;
                     -fx-label-padding: -5;
                     -fx-background-radius: 4;
-                    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);" prefWidth="40.0" text="🔍"/>
+                    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);" prefWidth="40.0" >
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <Image smooth="false" url="/Resources/search_icon2(128px).png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
             </HBox>
 
             <HBox fx:id="datePane" visible="false" alignment="CENTER" spacing="10">

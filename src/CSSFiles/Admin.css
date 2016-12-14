@@ -7,36 +7,51 @@
     -fx-background-color: #EA80FC;
     -fx-background-radius: 10;
     -fx-font-size: 20;
-    /*-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);*/
     -fx-font-style: oblique;
+    /*-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);*/
 }
-.button:disabled{
+
+.button:disabled {
     -fx-opacity: 4.0;
 }
 
-
-.button:hover{
+.button:hover {
     -fx-background-color: #D500F9;
 }
 
-.button:pressed{
+.button:pressed {
     -fx-background-color: #AA00FF;
 }
 
-.label{
+
+#cancelButton{
+    -fx-background-color: #1976D2;
+    -fx-background-radius: 10;
+    -fx-font-size: 20;
+    -fx-font-style: oblique;
+    -fx-text-fill: white;
+}
+#cancelButton:hover{
+    -fx-background-color: #1565C0;
+}
+#cancelButton:pressed{
+    -fx-background-color: #0D47A1;
+}
+
+.label {
     -fx-text-fill: black;
     -fx-text-alignment: center;
     -fx-font-family: fantasy;
     -fx-font-size: 16;
 }
 
-.date-picker{
-    -fx-base: #EA80FC;
+.date-picker {
+    -fx-base: #82B1FF;
     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
 
 .date-picker-popup > .calendar-grid {
-    -fx-background-color: derive(#EA80FC, 60%);
+    -fx-background-color: derive(#82B1FF, 60%);
     -fx-padding: 0;
 }
 

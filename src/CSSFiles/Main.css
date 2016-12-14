@@ -11,7 +11,7 @@
     -fx-background-radius: 0;
     -fx-background-color: #FFC107;
     -fx-font-size: 16;
-    -fx-text-fill: #212121;
+    -fx-text-fill: #000;
     -fx-font-weight: bolder;
 }
 
@@ -22,6 +22,7 @@
 .button:hover {
     -fx-background-color: #FFA107;
 }
+
 
 .text-field {
     -fx-effect: dropshadow(two-pass-box, #000, 10, 0.2, 0, 0);
@@ -147,3 +148,4 @@
 .date-picker-popup > * > .day-cell {
     -fx-border-width: 0px;
 }
+

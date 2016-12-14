@@ -99,6 +99,6 @@ public class MainActivity implements Initializable {
                 //TODO: settings window
                 break;
         }
-        btn.setStyle("-fx-background-color: #da8c00;");
+        btn.setStyle("-fx-background-color: #FFA000;");
     }
 }
