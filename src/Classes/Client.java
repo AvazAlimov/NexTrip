@@ -56,4 +56,13 @@ public class Client extends User {
     public String[] getObjectId() {
         return objectId;
     }
+
+    public boolean addObjectId(String id) {
+        for(int i = 0; i < objectId.length; i++)
+            if(objectId[i].equals("null")){
+                objectId[i] = id;
+                return true;
+            }
+        return false;
+    }
 }

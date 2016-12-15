@@ -1,5 +1,6 @@
 package Activities;
 
+import Classes.Hotel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +15,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,10 +27,11 @@ public class MainActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        container.getChildren().add(fillItem());
+        for (Hotel hotel : Tools.hotels)
+            container.getChildren().add(fillItem(hotel));
     }
 
-    private GridPane fillItem() {
+    private GridPane fillItem(Hotel hotel) {
         GridPane item = new GridPane();
 
         ColumnConstraints col1 = new ColumnConstraints();
@@ -38,8 +42,21 @@ public class MainActivity implements Initializable {
 
         item.setHgap(10);
         item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
-        String url = String.valueOf(getClass().getResource("../Resources/2.jpg"));
-        Image value = new Image(url, 100.0, 100.0, false, false);
+
+
+        URL url = null;
+        try {
+            url = new File(hotel.getPhotos().get(0)).toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+
+        Image value = null;
+        if (url != null) {
+            value = new Image(url.toString(), 100.0, 100.0, false, false);
+        }
+
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
         circle.setCenterX(50.0);
@@ -47,13 +64,14 @@ public class MainActivity implements Initializable {
         image.setClip(circle);
         item.add(image, 0, 0);
 
-        Label info = new Label("Just as I thought, there had to be the obvious way that I just didn't find. Thanks a lot for your answer! ");
+        Label info = new Label("Price: " + hotel.getStartingPrice() + " - " + hotel.getEndingPrice() + "\n" + hotel.getInfo());
         info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
-
         item.add(info, 1, 0);
+
         HBox ratingBox = new HBox(5.0);
         ratingBox.setStyle("-fx-alignment: center;");
-        for (int i = 0; i < 5; i++) {
+
+        for (int i = 0; i < hotel.getRating(); i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
             star.setStyle("-fx-shape: " + Tools.filledStar);

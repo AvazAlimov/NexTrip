@@ -3,7 +3,6 @@ package Activities;
 import Classes.Client;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -13,7 +12,6 @@ import javafx.scene.control.Control;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -37,7 +35,7 @@ public class SignInActivity implements Initializable {
 
     public void doAction(ActionEvent event) throws IOException {
         String id = ((Control) event.getSource()).getId();
-        Parent parent = null;
+        Parent parent;
         Scene scene;
         switch (id) {
             case "back":

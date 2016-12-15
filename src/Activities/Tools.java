@@ -169,8 +169,14 @@ class SQLDataBase {
         return id;
     }
 
-    public static void addHotel(Hotel hotel) {
+    public static void addHotel(Hotel hotel, Client client) {
         int id = lastHotelId();
+
+        if(!client.addObjectId("H" + client))
+            return;
+
+        System.out.println("hello");
+
         int rating = hotel.getRating();
         String name = hotel.getName();
         String info = hotel.getInfo();

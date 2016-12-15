@@ -3,7 +3,12 @@
 }
 
 .root{
-    -fx-background-color: #009688;
+    -fx-background-image: url("/Resources/blur.jpg");
+}
+
+.label{
+    -fx-font-family: FuturaExtended;
+    -fx-font-size: 32;
 }
 
 .button {
