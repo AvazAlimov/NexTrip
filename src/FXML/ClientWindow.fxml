@@ -4,6 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.ClientActivity">
 
@@ -52,6 +54,41 @@
             <VBox alignment="CENTER" spacing="10.0">
                 <TextField fx:id="nameText" prefWidth="400" prefHeight="50" promptText="name"/>
                 <TextField fx:id="locationText" prefWidth="400" prefHeight="50" promptText="location"/>
+                <TextArea fx:id="infoText" promptText="information"/>
+                <HBox spacing="20.0" alignment="CENTER_LEFT">
+                    <TextField fx:id="startPrice" promptText="starting price" HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="endPrice" promptText="high price" HBox.hgrow="SOMETIMES"/>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER_LEFT">
+                    <ImageView fitWidth="60" fitHeight="60">
+                        <Image url="/Resources/facebook_icon(128px).png"/>
+                    </ImageView>
+                    <TextField HBox.hgrow="SOMETIMES"/>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER_LEFT">
+                    <ImageView fitWidth="60" fitHeight="60">
+                        <Image url="/Resources/telegram_icon(128px).png"/>
+                    </ImageView>
+                    <TextField HBox.hgrow="SOMETIMES"/>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER_LEFT">
+                    <ImageView fitWidth="60" fitHeight="60">
+                        <Image url="/Resources/mail_icon(128px).png"/>
+                    </ImageView>
+                    <TextField HBox.hgrow="SOMETIMES"/>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER_LEFT">
+                    <ImageView fitWidth="60" fitHeight="60">
+                        <Image url="/Resources/phone_icon(128px).png"/>
+                    </ImageView>
+                    <TextField HBox.hgrow="SOMETIMES"/>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER_LEFT">
+                    <ImageView fitWidth="60" fitHeight="60">
+                        <Image url="/Resources/facebook_icon(128px).png"/>
+                    </ImageView>
+                    <TextField HBox.hgrow="SOMETIMES"/>
+                </HBox>
             </VBox>
         </ScrollPane>
 
