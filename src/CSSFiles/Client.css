@@ -1,8 +1,13 @@
+@font-face {
+    src: url('/Resources/FuturaExtended.ttf');
+}
+
 .root{
     -fx-background-color: #009688;
 }
 
 .button {
+    -fx-font-family: FuturaExtended;
     -fx-cursor: hand;
     -fx-background-color: transparent;
     -fx-background-radius: 4;
