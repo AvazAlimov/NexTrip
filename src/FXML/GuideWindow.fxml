@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 <?import java.net.URL?>
+<?import javafx.scene.control.Separator?>
 <GridPane vgap="20" alignment="CENTER" xmlns:fx="http://javafx.co/fxml/1" xmlns="http://javafx.com/javafx/2.2"
           fx:controller="Activities.GuideActivity">
 
@@ -37,7 +38,7 @@
         <Button id="1" onAction="#switchImage"/>
         <Button id="2" onAction="#switchImage"/>
     </HBox>
-
+    <Separator prefHeight="10" visible="false"/>
     <Button fx:id="skipButton" onAction="#nextWindow" text="Skip" GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
 
     <stylesheets>

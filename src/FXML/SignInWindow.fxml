@@ -20,9 +20,9 @@
         </rowConstraints>
 
 
-        <Button id="signIn" fx:id="signInButton" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER" />
+        <Button id="signIn" fx:id="signInButton" onAction="#doAction" text="Sign In" GridPane.halignment="CENTER" opacity="0.83" />
         <Button id="back" fx:id="continueButton" onAction="#doAction" text="Cancel" GridPane.rowIndex="1"
-                GridPane.halignment="CENTER"/>
+                GridPane.halignment="CENTER" opacity="0.83"/>
 
 
     </GridPane>

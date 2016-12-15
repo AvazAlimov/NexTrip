@@ -61,7 +61,7 @@
     <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"/>
 
     <stylesheets>
-        <URL value="@../CSSFiles/Client.css"/>
+        <URL value="@../CSSFiles/Admin_Client.css"/>
     </stylesheets>
 
 </AnchorPane>

@@ -61,6 +61,7 @@ public class GuideActivity implements Initializable {
         index = Integer.parseInt(id);
         imageView.setImage(new Image(paths[index]));
         text.setText(texts[index]);
+
     }
 
     public void nextWindow() throws IOException {
