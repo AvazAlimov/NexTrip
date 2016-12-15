@@ -21,7 +21,7 @@ public class Guidance {
     }
 
     public String ammenityToString() {
-        if(amenties.size() == 0)
+        if (amenties.size() == 0)
             return "";
 
         String string = "";
@@ -31,7 +31,7 @@ public class Guidance {
     }
 
     public String commentsToString() {
-        if(comments.size() == 0)
+        if (comments.size() == 0)
             return "";
 
         String string = "";
@@ -42,7 +42,7 @@ public class Guidance {
     }
 
     public String contactsToString() {
-        if(contacts.size() == 0)
+        if (contacts.size() == 0)
             return "";
 
         String string = "";
@@ -52,7 +52,7 @@ public class Guidance {
     }
 
     public String getImageLinks() {
-        if(photos.size() == 0)
+        if (photos.size() == 0)
             return "";
         String string = "";
         for (String image : photos)
@@ -135,7 +135,6 @@ public class Guidance {
                 index = i + 1;
             }
     }
-
 
 
     public ArrayList<Contact> getContacts() {

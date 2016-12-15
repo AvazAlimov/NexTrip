@@ -2,7 +2,6 @@ package Activities;
 
 import Classes.Hotel;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -27,8 +26,9 @@ public class MainActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (Hotel hotel : Tools.hotels)
-            container.getChildren().add(fillItem(hotel));
+        for (int i = 0; i < 15; i++)
+            for (Hotel hotel : Tools.hotels)
+                container.getChildren().add(fillItem(hotel));
     }
 
     private GridPane fillItem(Hotel hotel) {
@@ -51,7 +51,6 @@ public class MainActivity implements Initializable {
             e.printStackTrace();
         }
 
-
         Image value = null;
         if (url != null) {
             value = new Image(url.toString(), 100.0, 100.0, false, false);
@@ -64,21 +63,31 @@ public class MainActivity implements Initializable {
         image.setClip(circle);
         item.add(image, 0, 0);
 
-        Label info = new Label("Price: " + hotel.getStartingPrice() + " - " + hotel.getEndingPrice() + "\n" + hotel.getInfo());
+        Label info = new Label("Price: " + hotel.getStartingPrice() + " - " + hotel.getEndingPrice() + "\n" + hotel.getLocation());
         info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
         item.add(info, 1, 0);
 
         HBox ratingBox = new HBox(5.0);
         ratingBox.setStyle("-fx-alignment: center;");
 
+        int maxRate = 5;
         for (int i = 0; i < hotel.getRating(); i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
             star.setStyle("-fx-shape: " + Tools.filledStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
+            maxRate--;
+        }
+        for (int i = 0; i < maxRate; i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.emptyStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
         }
         item.add(ratingBox, 2, 0);
+
         return item;
     }
 
