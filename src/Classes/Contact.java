@@ -11,6 +11,11 @@ public class Contact {
 
     }
 
+    public Contact(String source, Type type){
+        this.source = source;
+        this.type = type;
+    }
+
     public Contact(String string) {
         setType(Type.valueOf(string.substring(0, string.indexOf("□"))));
         setSource(string.substring(string.indexOf("□") + 1, string.length()));

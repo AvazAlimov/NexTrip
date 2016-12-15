@@ -14,10 +14,16 @@ public class Guidance {
     private ArrayList<String> amenties;
 
     public Guidance() {
-
+        photos = new ArrayList<>();
+        contacts = new ArrayList<>();
+        comments = new ArrayList<>();
+        amenties = new ArrayList<>();
     }
 
     public String ammenityToString() {
+        if (amenties.size() == 0)
+            return "";
+
         String string = "";
         for (String amenity : amenties)
             string += amenity + "■";
@@ -25,13 +31,20 @@ public class Guidance {
     }
 
     public String commentsToString() {
+        if (comments.size() == 0)
+            return "";
+
         String string = "";
+
         for (Comment comment : comments)
             string += comment.toString() + "■";
         return string.substring(0, string.length() - 1);
     }
 
     public String contactsToString() {
+        if (contacts.size() == 0)
+            return "";
+
         String string = "";
         for (Contact contact : contacts)
             string += contact.toString() + "■";
@@ -39,6 +52,8 @@ public class Guidance {
     }
 
     public String getImageLinks() {
+        if (photos.size() == 0)
+            return "";
         String string = "";
         for (String image : photos)
             string += image + "■";
@@ -122,7 +137,6 @@ public class Guidance {
     }
 
 
-
     public ArrayList<Contact> getContacts() {
         return contacts;
     }
@@ -143,7 +157,7 @@ public class Guidance {
         return amenties;
     }
 
-    public void setAmenties(ArrayList<String> amenties) {
+    public void setAmenities(ArrayList<String> amenties) {
         this.amenties = amenties;
     }
 

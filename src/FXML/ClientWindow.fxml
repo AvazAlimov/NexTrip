@@ -3,9 +3,9 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.ClientActivity">
 
@@ -106,36 +106,78 @@
                     <TextField fx:id="startPrice" promptText="starting price" HBox.hgrow="SOMETIMES"/>
                     <TextField fx:id="endPrice" promptText="high price" HBox.hgrow="SOMETIMES"/>
                 </HBox>
+
+                <ScrollPane fitToWidth="true">
+                    <HBox fx:id="imageContainer" prefHeight="200" alignment="CENTER_LEFT" style="-fx-background-color: rgba(211,211,211,0.3)">
+                        <Button prefHeight="200" prefWidth="200" text="Add Image" style="-fx-content-display: top;" onAction="#addImage">
+                            <graphic>
+                                <ImageView fitHeight="128" fitWidth="128">
+                                    <Image url="/Resources/addPicture_icon(128px).png"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
+                </ScrollPane>
+
+                <HBox alignment="CENTER">
+                    <Button fx:id="freeWifi" prefHeight="148" prefWidth="148" text="Free WiFi"
+                            style="-fx-content-display: top;" onAction="#amenityPressed">
+                        <graphic>
+                            <ImageView fitHeight="128" fitWidth="128">
+                                <Image url="/Resources/parking_icon(128px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="freeParking" prefHeight="148" prefWidth="148" text="Free Parking"
+                            style="-fx-content-display: top;" onAction="#amenityPressed">
+                        <graphic>
+                            <ImageView fitHeight="128" fitWidth="128">
+                                <Image url="/Resources/parking_icon(128px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="freeYard" prefHeight="148" prefWidth="148" text="Children Yard"
+                            style="-fx-content-display: top;" onAction="#amenityPressed">
+                        <graphic>
+                            <ImageView fitHeight="128" fitWidth="128">
+                                <Image url="/Resources/parking_icon(128px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/facebook_icon(128px).png"/>
                     </ImageView>
-                    <TextField HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="facebookContact" HBox.hgrow="SOMETIMES"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/telegram_icon(128px).png"/>
                     </ImageView>
-                    <TextField HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="telegramContact" HBox.hgrow="SOMETIMES"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/mail_icon(128px).png"/>
                     </ImageView>
-                    <TextField HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="mailContact" HBox.hgrow="SOMETIMES"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/phone_icon(128px).png"/>
                     </ImageView>
-                    <TextField HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="phoneContact" HBox.hgrow="SOMETIMES"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/facebook_icon(128px).png"/>
                     </ImageView>
-                    <TextField HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="siteContact" HBox.hgrow="SOMETIMES"/>
                 </HBox>
+
+                <Button text="Add Hotel" onAction="#addHotel"/>
             </VBox>
         </ScrollPane>
 
@@ -146,7 +188,7 @@
     <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"/>
 
     <stylesheets>
-        <URL value="@../CSSFiles/Admin_Client.css"/>
+        <URL value="@../CSSFiles/Client.css"/>
     </stylesheets>
 
 </AnchorPane>

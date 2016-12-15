@@ -37,6 +37,11 @@ public class Main extends Application {
         SQLDataBase.loadClients();
         SQLDataBase.loadHotels();
 
+        Tools.hotels.get(0).setRating(4);
+        Tools.hotels.get(1).setRating(5);
+        System.out.println(Tools.hotels.get(0).getName());
+        System.out.println(Tools.hotels.get(0).getPhotos().get(0));
+
         launch(args);
     }
 }
