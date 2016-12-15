@@ -22,14 +22,16 @@
             <RowConstraints/>
         </rowConstraints>
 
-        <Button prefWidth="200" prefHeight="200" text="Add Object" onAction="#switchPane" style="-fx-content-display: top;">
+        <Button prefWidth="200" prefHeight="200" text="Add Object" onAction="#switchPane"
+                style="-fx-content-display: top;">
             <graphic>
                 <ImageView fitHeight="128" fitWidth="128">
                     <Image url="/Resources/navigation_icon(128px).png"/>
                 </ImageView>
             </graphic>
         </Button>
-        <Button prefWidth="200" prefHeight="200" text="Edit Object" GridPane.columnIndex="1" onAction="#switchPane" style="-fx-content-display: top;">
+        <Button prefWidth="200" prefHeight="200" text="Edit Object" GridPane.columnIndex="1" onAction="#switchPane"
+                style="-fx-content-display: top;">
             <graphic>
                 <ImageView fitHeight="128" fitWidth="128">
                     <Image url="/Resources/edit_icon(128px).png"/>

@@ -1,8 +1,7 @@
 .root {
-    -fx-background-image: url("/Resources/9.jpg");
-    -fx-background-size: cover ;
+    -fx-background-image: url("/Resources/main_background.jpg");
+    -fx-background-size: cover;
 }
-
 
 .button {
     -fx-cursor: hand;;
@@ -14,9 +13,10 @@
     -fx-font-size: 16;
     -fx-text-fill: #212121;
     -fx-font-weight: bolder;
+
 }
 
-.button:disabled{
+.button:disabled {
     -fx-opacity: 1.0;
 }
 
@@ -24,16 +24,17 @@
     -fx-background-color: #FFA107;
 }
 
-.button:pressed{
+.button:pressed {
     -fx-background-color: #ef6c00;
 }
 
-.label{
-    -fx-text-fill:ivory ;
+.label {
+    -fx-text-fill: ivory;
     -fx-font-size: 24;
     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
     -fx-font-weight: bolder;
 }
+
 /*.separator:vertical .line {
     -fx-border-color: transparent transparent transparent -fx-shadow-highlight-color,
     transparent transparent transparent -fx-text-box-border;
@@ -141,11 +142,13 @@
 .scroll-bar:horizontal:focused {
     -fx-background-color: transparent, rgb(96, 96, 96), rgb(96, 96, 96);
 }
-#locationButton{
+
+#locationButton {
     -fx-shape: "M38.853,5.324L38.853,5.324c-7.098-7.098-18.607-7.098-25.706,0h0 C6.751,11.72,6.031,23.763,11.459,31L26,52l14.541-21C45.969,23.763,45.249,11.72,38.853,5.324z M26.177,24c-3.314,0-6-2.686-6-6 s2.686-6,6-6s6,2.686,6,6S29.491,24,26.177,24z";
     -fx-background-color: #1081E0;
 }
-#firstFeatureButton{
+
+#firstFeatureButton {
     -fx-background-color: mediumblue;
     -fx-pref-width: 30;
     -fx-pref-height: 30;
@@ -153,11 +156,12 @@
     -fx-font-size: 14;
     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
-#firstFeatureButton:hover{
+
+#firstFeatureButton:hover {
     -fx-background-color: blue;
 }
 
-#secondFeatureButton{
+#secondFeatureButton {
     -fx-background-color: mediumblue;
     -fx-pref-width: 30;
     -fx-pref-height: 30;
@@ -165,11 +169,12 @@
     -fx-font-size: 14;
     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
-#secondFeatureButton:hover{
+
+#secondFeatureButton:hover {
     -fx-background-color: blue;
 }
 
-#thirdFeatureButton{
+#thirdFeatureButton {
     -fx-background-color: mediumblue;
     -fx-pref-width: 30;
     -fx-pref-height: 30;
@@ -177,43 +182,60 @@
     -fx-font-size: 14;
     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
-#thirdFeatureButton:hover{
+
+#thirdFeatureButton:hover {
     -fx-background-color: blue;
 }
 
-#prevImage{
+#prevImage {
 
-    -fx-font-size: 60;
-    -fx-text-fill: navy;
-    -fx-pref-width: 60;
-    -fx-pref-height: 60;
+    -fx-font-size: 42;
+    -fx-text-fill: black;
+    -fx-pref-width: 28;
+    -fx-pref-height: 500;
+    -fx-background-color: #F3E5F5;
+    -fx-opacity: 0.3;
+    -fx-background-radius: 0.0;
+}
+
+#prevImage:pressed {
+    -fx-text-fill: #D50000;
+
+}
+
+#prevImage:hover {
+    -fx-background-color: #E1Bee7;
+}
+
+#nextImage {
+
+    -fx-font-size: 42;
+    -fx-text-fill: black;
+    -fx-pref-width: 28;
+    -fx-pref-height: 500;
+    -fx-background-color: #F3E5F5;
+    -fx-opacity: 0.3;
+    -fx-background-radius: 0.0;
+}
+
+#nextImage:pressed {
+    -fx-text-fill: #D50000;
+
+}
+
+#nextImage:hover {
+    -fx-background-color: #E1Bee7;
+}
+
+#firstFeatureButton {
+    -fx-background-color: transparent;
+
+}
+
+#secondFeatureButton {
     -fx-background-color: transparent;
 }
 
-#prevImage:pressed{
-    -fx-text-fill: #2196F3;
-}
-
-#nextImage{
-
-    -fx-font-size: 60;
-    -fx-text-fill: navy;
-    -fx-pref-width: 60;
-    -fx-pref-height: 60;
-    -fx-background-color: transparent;
-}
-
-#nextImage:pressed{
-    -fx-text-fill: #2196F3;
-}
-#firstFeatureButton{
-    -fx-background-color: transparent;
-
-}
-#secondFeatureButton{
-    -fx-background-color: transparent;
-}
-
-#thirdFeatureButton{
+#thirdFeatureButton {
     -fx-background-color: transparent;
 }
