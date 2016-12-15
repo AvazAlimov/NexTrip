@@ -37,7 +37,7 @@ public class AdminActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        addPane.setStyle("-fx-background-image: url('/Resources/adminWindow_background.jpg');");
+        addPane.setStyle("-fx-background-image: url('/Resources/main_background.jpg');");
     }
 
     public void switchPane(ActionEvent event) throws IOException {
@@ -71,7 +71,7 @@ public class AdminActivity implements Initializable {
                 mainPane.setVisible(true);
                 addPane.setVisible(false);
                 break;
-            case "Back":
+            case "Log out":
                 Parent parent = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
                 Scene scene = new Scene(parent);
                 Main.stage.hide();

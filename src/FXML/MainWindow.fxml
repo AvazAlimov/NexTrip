@@ -26,42 +26,42 @@
                     style="-fx-background-color: #FFA000;">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/hotel_icon(128px).png"/>
+                        <Image smooth="false" url="/Resources/hotel_icon(64px).png"/>
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Restaurants" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/restaurant_icon(128px).png"/>
+                        <Image smooth="false" url="/Resources/restaurant_icon(64px).png "/>
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Entertaining" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/entertaining_icon(128px).png"/>
+                        <Image smooth="false" url="/Resources/entertaining_icon(64px).png"/>
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Things To Do" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/thingToDo_icon(128px).png"/>
+                        <Image smooth="false" url="/Resources/thingsToDo_icon(64px).png"/>
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Log In" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/logIn_icon1(128px) (3).png"/>
+                        <Image smooth="false" url="/Resources/logIn_icon(64px).png"/>
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Settings" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/settings_icon(128px).png"/>
+                        <Image smooth="false" url="/Resources/settings_icon2(64px).png"/>
                     </ImageView>
                 </graphic>
             </Button>

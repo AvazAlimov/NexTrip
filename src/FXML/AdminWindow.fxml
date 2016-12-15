@@ -68,10 +68,10 @@
 
     </GridPane>
 
-    <Button onAction="#switchPane" text="Back" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+    <Button onAction="#switchPane" text="Log out" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
         <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                <Image smooth="false" url="/Resources/back_icon(128px).png"/>
+                <Image smooth="false" url="/Resources/logout_icon(32px).png"/>
             </ImageView>
         </graphic>
     </Button>
@@ -146,7 +146,7 @@
     </GridPane>
 
     <stylesheets>
-        <URL value="@../CSSFiles/Admin.css"/>
+        <URL value="@../CSSFiles/Admin_Client.css"/>
     </stylesheets>
 
 </AnchorPane>
