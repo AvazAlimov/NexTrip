@@ -55,7 +55,6 @@ public class ClientActivity implements Initializable {
         usernameText.setText(client.getUsername());
     }
 
-
     public void switchPane(ActionEvent event) throws IOException {
         String text = ((Button) event.getSource()).getText();
 
@@ -173,7 +172,6 @@ public class ClientActivity implements Initializable {
             };
             run.run();
         } catch (Exception ignored) {
-
         }
     }
 }

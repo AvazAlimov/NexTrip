@@ -62,12 +62,24 @@ class SQLDataBase {
         }
     }
 
+    private static String normalizeString(String string) {
+        String returnString = "";
+
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == '\'')
+                returnString += "\'" + string.charAt(i);
+            else
+                returnString += string.charAt(i);
+        }
+
+        return returnString;
+    }
 
     //region Client
     public static void addClient(Client client) {
         try {
             Statement statement = connection.createStatement();
-            String query = String.format("INSERT INTO Client(Username,Password,Credits,ObjectsId,StartDate,EndDate) VALUES('%s','%s','%d','%s','%s','%s');", client.getUsername(), client.getPassword(), client.getNumberOfCredits(), client.getIds(), client.getStartDate().toString(), client.getEndDate().toString());
+            String query = String.format("INSERT INTO Client(Username,Password,Credits,ObjectsId,StartDate,EndDate) VALUES('%s','%s','%d','%s','%s','%s');", normalizeString(client.getUsername()), normalizeString(client.getPassword()), client.getNumberOfCredits(), normalizeString(client.getIds()), normalizeString(client.getStartDate().toString()), normalizeString(client.getEndDate().toString()));
             statement.executeUpdate(query);
             statement.close();
         } catch (SQLException e) {
@@ -78,7 +90,7 @@ class SQLDataBase {
     public static void editClient(Client client, String username) {
         try {
             Statement statement = connection.createStatement();
-            String query = String.format("UPDATE Client SET Username='%s', Password='%s', Credits='%d', ObjectsId='%s', StartDate='%s', EndDate='%s' WHERE Username='%s';", client.getUsername(), client.getPassword(), client.getNumberOfCredits(), client.getIds(), client.getStartDate().toString(), client.getEndDate().toString(), username);
+            String query = String.format("UPDATE Client SET Username='%s', Password='%s', Credits='%d', ObjectsId='%s', StartDate='%s', EndDate='%s' WHERE Username='%s';", normalizeString(client.getUsername()), normalizeString(client.getPassword()), client.getNumberOfCredits(), normalizeString(client.getIds()), normalizeString(client.getStartDate().toString()), normalizeString(client.getEndDate().toString()), normalizeString(username));
             statement.executeUpdate(query);
             statement.close();
         } catch (SQLException e) {
@@ -89,7 +101,7 @@ class SQLDataBase {
     public static void removeClient(String username) {
         try {
             Statement statement = connection.createStatement();
-            String query = String.format("DELETE FROM Client WHERE Username='%s'", username);
+            String query = String.format("DELETE FROM Client WHERE Username='%s'", normalizeString(username));
             statement.executeUpdate(query);
             statement.close();
         } catch (SQLException e) {
@@ -132,7 +144,7 @@ class SQLDataBase {
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM Hotel;";
             ResultSet result = statement.executeQuery(query);
-            while (result.next()){
+            while (result.next()) {
                 Hotel hotel = new Hotel();
                 hotel.setId(result.getInt("Id"));
                 hotel.setRating(result.getInt("Rating"));
@@ -155,13 +167,13 @@ class SQLDataBase {
         }
     }
 
-    private static int lastHotelId(){
+    private static int lastHotelId() {
         int id = 0;
         try {
             Statement statement = connection.createStatement();
             String query = "SELECT Id FROM Hotel ORDER BY Id DESC;";
             ResultSet result = statement.executeQuery(query);
-            if(result.next())
+            if (result.next())
                 id = result.getInt("Id") + 1;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -172,10 +184,8 @@ class SQLDataBase {
     public static void addHotel(Hotel hotel, Client client) {
         int id = lastHotelId();
 
-        if(!client.addObjectId("H" + client))
+        if (!client.addObjectId("H" + id))
             return;
-
-        System.out.println("hello");
 
         int rating = hotel.getRating();
         String name = hotel.getName();
@@ -191,7 +201,32 @@ class SQLDataBase {
 
         try {
             Statement statement = connection.createStatement();
-            String query = String.format("INSERT INTO Hotel(Id,Rating,Name,Info,Location,Images,Contacts,Comments,Amenities,StartPrice,EndPrice,Rooms) VALUES('%d','%d','%s','%s','%s','%s','%s','%s','%s','%f','%f','%d');", id, rating, name, info, location, images, contacts, comments, amenitites, startPrice, endPrice, rooms);
+            String query = String.format("INSERT INTO Hotel(Id,Rating,Name,Info,Location,Images,Contacts,Comments,Amenities,StartPrice,EndPrice,Rooms) VALUES('%d','%d','%s','%s','%s','%s','%s','%s','%s','%f','%f','%d');", id, rating, normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), startPrice, endPrice, rooms);
+            statement.executeUpdate(query);
+            statement.close();
+            editClient(client,client.getUsername());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void editHotel(Hotel hotel) {
+        int id = hotel.getId();
+        int rating = hotel.getRating();
+        String name = hotel.getName();
+        String info = hotel.getInfo();
+        String location = hotel.getLocation();
+        String images = hotel.getImageLinks();
+        String contacts = hotel.contactsToString();
+        String comments = hotel.commentsToString();
+        String amenitites = hotel.ammenityToString();
+        double startPrice = hotel.getStartingPrice();
+        double endPrice = hotel.getEndingPrice();
+        int rooms = hotel.getNumberOfRooms();
+
+        try {
+            Statement statement = connection.createStatement();
+            String query = String.format("UPDATE Hotel SET Rating='%d',Name='%s',Info='%s',Location='%s',Images='%s',Contacts='%s',Comments='%s',Amenities='%s',StartPrice='%f',EndPrice='%f',Rooms='%d' WHERE id='%d';", rating, normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), startPrice, endPrice, rooms, id);
             statement.executeUpdate(query);
             statement.close();
         } catch (SQLException e) {
@@ -199,14 +234,10 @@ class SQLDataBase {
         }
     }
 
-    public static void editHotel(Hotel hotel, String id){
-
-    }
-
-    public static void deleteHotel(String id){
+    public static void deleteHotel(String id) {
         try {
             Statement statement = connection.createStatement();
-            String query = "DELETE FROM Hotel WHERE Id='" + id + "';";
+            String query = "DELETE FROM Hotel WHERE Id='" + normalizeString(id) + "';";
             statement.executeUpdate(query);
             statement.close();
         } catch (SQLException e) {

@@ -104,7 +104,8 @@ public class Guidance {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '■' || i == string.length() - 1) {
-                photos.add(string.substring(index, i));
+                int last = i == string.length() - 1 ? i + 1 : i;
+                photos.add(string.substring(index, last));
                 index = i + 1;
             }
     }
@@ -113,7 +114,8 @@ public class Guidance {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '■' || i == string.length() - 1) {
-                contacts.add(new Contact(string.substring(index, i)));
+                int last = i == string.length() - 1 ? i + 1 : i;
+                contacts.add(new Contact(string.substring(index, last)));
                 index = i + 1;
             }
     }
@@ -122,7 +124,8 @@ public class Guidance {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '■' || i == string.length() - 1) {
-                comments.add(new Comment(string.substring(index, i)));
+                int last = i == string.length() - 1 ? i + 1 : i;
+                comments.add(new Comment(string.substring(index, last)));
                 index = i + 1;
             }
     }
@@ -131,7 +134,8 @@ public class Guidance {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '■' || i == string.length() - 1) {
-                amenties.add(string.substring(index, i));
+                int last = i == string.length() - 1 ? i + 1 : i;
+                amenties.add(string.substring(index, last));
                 index = i + 1;
             }
     }

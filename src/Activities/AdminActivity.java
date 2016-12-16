@@ -19,7 +19,6 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AdminActivity implements Initializable {
-
     public GridPane mainPane;
     public GridPane addPane;
     public TextField username;
@@ -233,4 +232,6 @@ public class AdminActivity implements Initializable {
                 break;
         }
     }
+
+    //TODO: remove object
 }
