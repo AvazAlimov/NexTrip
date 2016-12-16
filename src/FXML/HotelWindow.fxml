@@ -27,8 +27,8 @@
 
             <HBox spacing="40" alignment="CENTER">
                 <GridPane HBox.hgrow="ALWAYS" alignment="CENTER">
-                    <ImageView fx:id="imageView" fitHeight="500" fitWidth="1200">
-                        <Image url="@../Resources/2.jpg"/>
+                    <ImageView fx:id="imageView" fitHeight="500" fitWidth="1300">
+                        <Image url="@../Resources/7.jpg"/>
                     </ImageView>
                     <HBox alignment="CENTER">
                         <Button fx:id="prevImage" id="prevImage" onAction="#switchPrevImage"/>
