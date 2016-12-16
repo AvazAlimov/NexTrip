@@ -15,6 +15,7 @@
     -fx-opacity: 1.0;
 }
 
+
 .button {
     -fx-font-family: FuturaExtended;
     -fx-cursor: hand;
@@ -35,7 +36,14 @@
 .button:disabled{
     -fx-opacity: 0.8;
 }
-
+#startPrice{
+    -fx-pref-width: 100;
+    -fx-pref-height: 20;
+}
+#endPrice{
+    -fx-pref-width: 100;
+    -fx-pref-height: 20;
+}
 .scroll-pane {
     -fx-background-color: transparent;
 }

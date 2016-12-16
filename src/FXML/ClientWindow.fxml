@@ -175,7 +175,7 @@
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
-                        <Image url="/Resources/facebook_icon(128px).png"/>
+                        <Image url="/Resources/web_icon(128px).png"/>
                     </ImageView>
                     <TextField fx:id="siteContact" HBox.hgrow="SOMETIMES"/>
                 </HBox>

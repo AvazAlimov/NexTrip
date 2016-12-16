@@ -162,7 +162,6 @@
 }
 
 #secondFeatureButton {
-    -fx-background-color: mediumblue;
     -fx-pref-width: 30;
     -fx-pref-height: 30;
     -fx-background-radius: 15;
@@ -175,7 +174,6 @@
 }
 
 #thirdFeatureButton {
-    -fx-background-color: mediumblue;
     -fx-pref-width: 30;
     -fx-pref-height: 30;
     -fx-background-radius: 15;
@@ -237,5 +235,8 @@
 }
 
 #thirdFeatureButton {
+    -fx-background-color: transparent;
+}
+#web_icon{
     -fx-background-color: transparent;
 }
