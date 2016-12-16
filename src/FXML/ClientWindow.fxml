@@ -48,6 +48,7 @@
         <rowConstraints>
             <RowConstraints/>
             <RowConstraints/>
+            <RowConstraints/>
         </rowConstraints>
 
         <columnConstraints>
@@ -87,6 +88,8 @@
                 </ImageView>
             </graphic>
         </Button>
+
+        <Label fx:id="creditErrorMessage" visible="false" GridPane.rowIndex="2" GridPane.columnSpan="2" text="You do not not have enough credits to add an object" style="-fx-text-fill: #ff3438; -fx-font-size: 20;"/>
 
     </GridPane>
 

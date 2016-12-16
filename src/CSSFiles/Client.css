@@ -11,6 +11,10 @@
     -fx-font-size: 32;
 }
 
+.label:disabled{
+    -fx-opacity: 1.0;
+}
+
 .button {
     -fx-font-family: FuturaExtended;
     -fx-cursor: hand;
@@ -26,6 +30,10 @@
 
 .button:pressed{
     -fx-background-color: #ef6c00;
+}
+
+.button:disabled{
+    -fx-opacity: 0.8;
 }
 
 .scroll-pane {

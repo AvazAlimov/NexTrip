@@ -65,4 +65,12 @@ public class Client extends User {
             }
         return false;
     }
+
+    public boolean canAddObject() {
+        for (String anObjectId : objectId)
+            if (anObjectId.equals("null")) {
+                return true;
+            }
+        return false;
+    }
 }

@@ -45,6 +45,7 @@ public class ClientActivity implements Initializable {
     public Button freeParking;
     public Button freeYard;
     public HBox imageContainer;
+    public Label creditErrorMessage;
     private Client client;
     private ArrayList<String> imagePaths;
 
@@ -67,6 +68,13 @@ public class ClientActivity implements Initializable {
                 Main.stage.show();
                 break;
             case "Add Object":
+                if (!client.canAddObject()) {
+                    addChoicePane.setDisable(true);
+                    creditErrorMessage.setVisible(true);
+                } else {
+                    addChoicePane.setDisable(false);
+                    creditErrorMessage.setVisible(false);
+                }
                 backButton.setText("Back");
                 mainPane.setVisible(false);
                 addChoicePane.setVisible(true);
@@ -104,6 +112,7 @@ public class ClientActivity implements Initializable {
         }
     }
 
+    //TODO:check for filled
     public void addHotel() {
         Hotel hotel = new Hotel();
         hotel.setName(nameText.getText());
@@ -116,6 +125,11 @@ public class ClientActivity implements Initializable {
         hotel.setNumberOfRooms(0);
         hotel.setPhotos(imagePaths);
         SQLDataBase.addHotel(hotel, client);
+        Tools.hotels.add(hotel);
+        imagePaths.clear();
+
+        objectPane.setVisible(false);
+        addChoicePane.setVisible(true);
     }
 
     public void amenityPressed(ActionEvent event) {
