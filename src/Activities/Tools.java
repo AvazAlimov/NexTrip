@@ -57,10 +57,10 @@ public class Tools {
         return false;
     }
 
-    public static ArrayList<Hotel> findHotel(String location){
+    public static ArrayList<Hotel> findHotel(String location) {
         ArrayList<Hotel> returnHotels = new ArrayList<>();
-        for(Hotel hotel : hotels)
-            if(hotel.getLocation().equals(location))
+        for (Hotel hotel : hotels)
+            if (contains(hotel.getLocation().toLowerCase(), location.toLowerCase()))
                 returnHotels.add(hotel);
         return returnHotels;
     }
@@ -229,7 +229,7 @@ class SQLDataBase {
             String query = String.format("INSERT INTO Hotel(Id,Rating,Name,Info,Location,Images,Contacts,Comments,Amenities,StartPrice,EndPrice,Rooms) VALUES('%d','%d','%s','%s','%s','%s','%s','%s','%s','%f','%f','%d');", id, rating, normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), startPrice, endPrice, rooms);
             statement.executeUpdate(query);
             statement.close();
-            editClient(client,client.getUsername());
+            editClient(client, client.getUsername());
         } catch (SQLException e) {
             e.printStackTrace();
         }
