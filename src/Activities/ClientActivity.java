@@ -59,6 +59,7 @@ public class ClientActivity implements Initializable {
 
     public void switchPane(ActionEvent event) throws IOException {
         String text = ((Button) event.getSource()).getText();
+        isFilledError.setVisible(false);
 
         switch (text) {
             case "Log Out":
@@ -116,7 +117,7 @@ public class ClientActivity implements Initializable {
     //TODO:check for filled
     public void addHotel() {
 
-        if(!isFilled()){
+        if (!isFilled()) {
             isFilledError.setVisible(true);
             return;
         }
