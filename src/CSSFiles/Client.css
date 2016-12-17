@@ -26,23 +26,34 @@
 }
 
 .button:hover{
-    -fx-background-color: #FFA107;
+    -fx-background-color: #FFCA28;
 }
 
 .button:pressed{
-    -fx-background-color: #ef6c00;
+    -fx-background-color: #FFA107;
 }
 
 .button:disabled{
     -fx-opacity: 0.8;
 }
+#addInfoButton{
+    -fx-font-family: FuturaExtended;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+#addInfoButton:hover{
+    -fx-effect: dropshadow(gaussian, #3695ff, 10, 0, 0, 0);
+}
+
 #startPrice{
-    -fx-pref-width: 100;
-    -fx-pref-height: 20;
+    -fx-pref-width: 300;
+    -fx-pref-height: 40;
 }
 #endPrice{
-    -fx-pref-width: 100;
-    -fx-pref-height: 20;
+    -fx-pref-width: 300;
+    -fx-pref-height: 40;
 }
 .scroll-pane {
     -fx-background-color: transparent;
