@@ -71,7 +71,8 @@
             <Separator prefHeight="10" visible="false"/>
             <HBox alignment="CENTER" spacing="10">
 
-                <ComboBox fx:id="searchText" editable="true" prefWidth="1000.0" promptText="Location" onKeyReleased="#searchObject"/>
+                <ComboBox fx:id="searchText" editable="true" prefWidth="1000.0" promptText="Location"
+                          onKeyReleased="#searchObject" onAction="#addHotels"/>
 
                 <Button style="-fx-font-size: 18;
                     -fx-label-padding: -5;
@@ -99,7 +100,6 @@
         </ScrollPane>
 
     </GridPane>
-
 
 
     <stylesheets>
