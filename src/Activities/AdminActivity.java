@@ -104,7 +104,8 @@ public class AdminActivity implements Initializable {
         client.setStartDate(new Date(String.format("%02d/%02d/%04d", startDate.getValue().getDayOfMonth(), startDate.getValue().getMonthValue(), startDate.getValue().getYear())));
         client.setEndDate(new Date(String.format("%02d/%02d/%04d", endDate.getValue().getDayOfMonth(), endDate.getValue().getMonthValue(), endDate.getValue().getYear())));
         SQLDataBase.addClient(client);
-        Tools.clients.add(client);
+        Tools.clients.clear();
+        SQLDataBase.loadClients();
 
         searchPane.setVisible(false);
         mainPane.setVisible(true);
@@ -220,7 +221,6 @@ public class AdminActivity implements Initializable {
     public void doAction() {
         switch (doButton.getId()) {
             case "add":
-                System.out.println("Hello");
                 addClient();
                 break;
             case "edit":
