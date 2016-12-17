@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -18,16 +19,19 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainActivity implements Initializable {
     public VBox container;
     public HBox datePane;
+    public ComboBox<String> searchText;
+    private String choosenType = "Hotels";
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (Hotel hotel : Tools.hotels)
-            container.getChildren().add(fillItem(hotel));
+//        for (Hotel hotel : Tools.hotels)
+//            container.getChildren().add(fillItem(hotel));
     }
 
     private GridPane fillItem(Hotel hotel) {
@@ -92,7 +96,7 @@ public class MainActivity implements Initializable {
         HBox box = (HBox) btn.getParent();
         for (Node item : box.getChildren())
             item.setStyle("-fx-background-color: #FFC107;");
-
+        choosenType = btn.getText();
 
         switch (btn.getText()) {
             case "Hotels":
@@ -124,4 +128,33 @@ public class MainActivity implements Initializable {
         }
         btn.setStyle("-fx-background-color: #FFA000;");
     }
+
+    public void searchObject() {
+        String text = searchText.getEditor().getText();
+        if(text.isEmpty())
+            return;
+
+        searchText.getItems().clear();
+
+        switch (choosenType) {
+            case "Hotels":
+                for (Hotel hotel : Tools.hotels) {
+                    if (Tools.contains(hotel.getLocation().toLowerCase(), text.toLowerCase())) {
+                        searchText.getItems().add(hotel.getLocation());
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+        searchText.show();
+    }
+
+    public void addHotels() {
+        ArrayList<Hotel> hotels = Tools.findHotel(searchText.getEditor().getText());
+        container.getChildren().clear();
+        for (Hotel hotel : hotels)
+            container.getChildren().add(fillItem(hotel));
+    }
 }
+

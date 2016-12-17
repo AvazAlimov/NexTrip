@@ -39,6 +39,30 @@ public class Tools {
                 return client;
         return null;
     }
+
+    public static boolean contains(String word, String part) {
+        if (part.length() > word.length())
+            return false;
+        for (int i = 0; i < word.length(); i++) {
+            if ((i + part.length() - 1) < word.length()) {
+                boolean isPart = true;
+                for (int j = 0; j < part.length(); j++)
+                    if (word.charAt(i + j) != part.charAt(j))
+                        isPart = false;
+                if (isPart)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public static ArrayList<Hotel> findHotel(String location){
+        ArrayList<Hotel> returnHotels = new ArrayList<>();
+        for(Hotel hotel : hotels)
+            if(hotel.getLocation().equals(location))
+                returnHotels.add(hotel);
+        return returnHotels;
+    }
 }
 
 class SQLDataBase {
