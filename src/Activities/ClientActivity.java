@@ -133,7 +133,8 @@ public class ClientActivity implements Initializable {
         hotel.setNumberOfRooms(0);
         hotel.setPhotos(imagePaths);
         SQLDataBase.addHotel(hotel, client);
-        Tools.hotels.add(hotel);
+        Tools.hotels.clear();
+        SQLDataBase.loadHotels();
         imagePaths.clear();
 
         objectPane.setVisible(false);
