@@ -26,7 +26,6 @@ public class MainActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for(int i = 0; i<10; i++)
         for (Hotel hotel : Tools.hotels)
             container.getChildren().add(fillItem(hotel));
     }
