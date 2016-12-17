@@ -46,6 +46,7 @@ public class ClientActivity implements Initializable {
     public Button freeYard;
     public HBox imageContainer;
     public Label creditErrorMessage;
+    public Label isFilledError;
     private Client client;
     private ArrayList<String> imagePaths;
 
@@ -114,6 +115,13 @@ public class ClientActivity implements Initializable {
 
     //TODO:check for filled
     public void addHotel() {
+
+        if(!isFilled()){
+            isFilledError.setVisible(true);
+            return;
+        }
+        isFilledError.setVisible(false);
+
         Hotel hotel = new Hotel();
         hotel.setName(nameText.getText());
         hotel.setLocation(locationText.getText());
@@ -130,6 +138,10 @@ public class ClientActivity implements Initializable {
 
         objectPane.setVisible(false);
         addChoicePane.setVisible(true);
+    }
+
+    private boolean isFilled() {
+        return !(nameText.getText().isEmpty() || locationText.getText().isEmpty() || infoText.getText().isEmpty());
     }
 
     public void amenityPressed(ActionEvent event) {

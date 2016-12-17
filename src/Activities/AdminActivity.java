@@ -221,7 +221,6 @@ public class AdminActivity implements Initializable {
     public void doAction() {
         switch (doButton.getId()) {
             case "add":
-                System.out.println("Hello");
                 addClient();
                 break;
             case "edit":

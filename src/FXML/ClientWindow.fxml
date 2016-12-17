@@ -93,6 +93,8 @@
 
     </GridPane>
 
+    <Label fx:id="isFilledError" visible="false" text="Please fill the empty fields" AnchorPane.topAnchor="0.0" alignment="CENTER"/>
+
     <GridPane visible="false" fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"
               AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="0.0"
               AnchorPane.rightAnchor="100.0">
