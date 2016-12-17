@@ -32,12 +32,15 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        initialize();
+
+        launch(args);
+    }
+
+    private static void initialize(){
         Tools.init();
         SQLDataBase.connect();
         SQLDataBase.loadClients();
         SQLDataBase.loadHotels();
-
-        Tools.hotels.get(0).setRating(4);
-        launch(args);
     }
 }
