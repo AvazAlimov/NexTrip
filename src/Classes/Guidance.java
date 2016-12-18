@@ -12,12 +12,41 @@ public class Guidance {
     private ArrayList<Contact> contacts;
     private ArrayList<Comment> comments;
     private ArrayList<String> amenties;
+    private ArrayList<Integer> ratings;
 
     public Guidance() {
         photos = new ArrayList<>();
         contacts = new ArrayList<>();
         comments = new ArrayList<>();
         amenties = new ArrayList<>();
+        ratings = new ArrayList<>();
+    }
+
+    public String ratingsToString(){
+        String string = "";
+        for (Integer rating1 : ratings) string += rating1 + "/";
+        return string.substring(0, string.length() - 1);
+    }
+
+    public void setRatings(String string) {
+        int index = 0;
+        for (int i = 0; i < string.length(); i++)
+            if (string.charAt(i) == '/' || i == string.length() - 1) {
+                int last = i == string.length() - 1 ? i + 1 : i;
+                ratings.add(Integer.parseInt(string.substring(index, last)));
+                index = i + 1;
+            }
+        calculateRating();
+    }
+
+    public void addRating(int rating) {
+        ratings.add(rating);
+    }
+
+    public void calculateRating() {
+        int counter = 0;
+        for (Integer rating1 : ratings) counter += rating1;
+        rating = counter / ratings.size();
     }
 
     public void addComment(Comment comment){
@@ -144,6 +173,9 @@ public class Guidance {
             }
     }
 
+    public ArrayList<Integer> getRatings() {
+        return ratings;
+    }
 
     public ArrayList<Contact> getContacts() {
         return contacts;

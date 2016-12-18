@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -45,6 +46,9 @@ public class HotelActivity implements Initializable {
     public ScrollPane mainLayout;
     public TextField commentText;
     public VBox commentContainer;
+    public Label numberRating;
+    public HBox ratingLayout;
+    public HBox stars;
 
     private ArrayList<Image> images;
     private int imageIndex;
@@ -56,6 +60,7 @@ public class HotelActivity implements Initializable {
         imageIndex = 0;
 
         this.hotel = Tools.hotel;
+
         for (String path : hotel.getPhotos()) {
             try {
                 URL url = new File(path).toURI().toURL();
@@ -69,6 +74,7 @@ public class HotelActivity implements Initializable {
 
         nameLabel.setText(hotel.getName());
         locationLabel.setText(hotel.getLocation());
+        loadRating();
         infoText.setText(hotel.getInfo());
         for (String amenity : hotel.getAmenties()) {
             switch (amenity) {
@@ -187,5 +193,30 @@ public class HotelActivity implements Initializable {
         Main.stage.hide();
         Main.stage.setScene(scene);
         Main.stage.show();
+    }
+
+    public void fillStars(MouseEvent mouseEvent) {
+        int limit = Integer.parseInt(((Button) mouseEvent.getSource()).getId());
+
+        for (int i = 0; i < limit; i++)
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Tools.filledStar + "; -fx-background-color: #FFC107;");
+
+        for (int i = 4; i >= limit; i--)
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Tools.emptyStar + "; -fx-background-color: #FFC107;");
+    }
+
+    private void loadRating(){
+        int lastRate = 5;
+
+        for (int i = 0; i < hotel.getRating(); i++) {
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Tools.filledStar + "; -fx-background-color: #FFC107;");
+            lastRate--;
+        }
+        for(int i = lastRate - 1; i>=0; i--)
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Tools.emptyStar + "; -fx-background-color: #FFC107;");
+    }
+
+    public void restoreStars() {
+        loadRating();
     }
 }

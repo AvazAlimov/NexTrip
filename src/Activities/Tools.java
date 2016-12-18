@@ -172,7 +172,7 @@ class SQLDataBase {
             while (result.next()) {
                 Hotel hotel = new Hotel();
                 hotel.setId(result.getInt("Id"));
-                hotel.setRating(result.getInt("Rating"));
+                hotel.setRatings(result.getString("Ratings"));
                 hotel.setName(result.getString("Name"));
                 hotel.setInfo(result.getString("Info"));
                 hotel.setLocation(result.getString("Location"));
@@ -212,7 +212,6 @@ class SQLDataBase {
         if (!client.addObjectId("H" + id))
             return;
 
-        int rating = hotel.getRating();
         String name = hotel.getName();
         String info = hotel.getInfo();
         String location = hotel.getLocation();
@@ -220,13 +219,14 @@ class SQLDataBase {
         String contacts = hotel.contactsToString();
         String comments = hotel.commentsToString();
         String amenitites = hotel.ammenityToString();
+        String ratings = hotel.ratingsToString();
         double startPrice = hotel.getStartingPrice();
         double endPrice = hotel.getEndingPrice();
         int rooms = hotel.getNumberOfRooms();
 
         try {
             Statement statement = connection.createStatement();
-            String query = String.format("INSERT INTO Hotel(Id,Rating,Name,Info,Location,Images,Contacts,Comments,Amenities,StartPrice,EndPrice,Rooms) VALUES('%d','%d','%s','%s','%s','%s','%s','%s','%s','%f','%f','%d');", id, rating, normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), startPrice, endPrice, rooms);
+            String query = String.format("INSERT INTO Hotel(Id,Ratings,Name,Info,Location,Images,Contacts,Comments,Amenities,StartPrice,EndPrice) VALUES('%d','%s','%s','%s','%s','%s','%s','%s','%s','%f','%f');", id, ratings, normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), startPrice, endPrice);
             statement.executeUpdate(query);
             statement.close();
             editClient(client, client.getUsername());
@@ -237,7 +237,7 @@ class SQLDataBase {
 
     public static void editHotel(Hotel hotel) {
         int id = hotel.getId();
-        int rating = hotel.getRating();
+        String ratings = hotel.ratingsToString();
         String name = hotel.getName();
         String info = hotel.getInfo();
         String location = hotel.getLocation();
@@ -251,7 +251,7 @@ class SQLDataBase {
 
         try {
             Statement statement = connection.createStatement();
-            String query = String.format("UPDATE Hotel SET Rating='%d',Name='%s',Info='%s',Location='%s',Images='%s',Contacts='%s',Comments='%s',Amenities='%s',StartPrice='%f',EndPrice='%f',Rooms='%d' WHERE id='%d';", rating, normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), startPrice, endPrice, rooms, id);
+            String query = String.format("UPDATE Hotel SET Ratings='%s',Name='%s',Info='%s',Location='%s',Images='%s',Contacts='%s',Comments='%s',Amenities='%s',StartPrice='%f',EndPrice='%f' WHERE id='%d';", ratings, normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), startPrice, endPrice, id);
             statement.executeUpdate(query);
             statement.close();
         } catch (SQLException e) {
