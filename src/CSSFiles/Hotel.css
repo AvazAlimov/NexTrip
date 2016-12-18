@@ -17,6 +17,9 @@
 .button:disabled {
     -fx-opacity: 1.0;
 }
+#locationButton:hover{
+    -fx-cursor: default;
+}
 
 .label {
     -fx-text-fill: ivory;

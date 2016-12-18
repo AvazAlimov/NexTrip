@@ -87,18 +87,28 @@
             <RowConstraints/>
         </rowConstraints>
 
-        <TextField fx:id="username" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="300" promptText="username"/>
-        <TextField fx:id="password" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="300" promptText="password"
+        <TextField fx:id="username" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="300" promptText="username" style="-fx-background-radius: 15"/>
+        <TextField fx:id="password" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="300" promptText="password" style="-fx-background-radius: 15"
                    GridPane.rowIndex="1"/>
         <HBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="2">
             <Label text="Set number of credits" HBox.hgrow="ALWAYS"/>
             <HBox alignment="CENTER">
                 <TextField fx:id="credits" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="60" text="1"/>
                 <VBox alignment="CENTER">
-                    <Rectangle id="up" height="25" onMouseClicked="#updateCredits"
-                               style="-fx-fill: #1976D2; -fx-stroke: #000000; -fx-stroke-width: 1;" width="25"/>
-                    <Rectangle id="down" height="25" onMouseClicked="#updateCredits"
-                               style="-fx-fill: #1976D2; -fx-stroke: #000000; -fx-stroke-width: 1;" width="25"/>
+                    <Button id="up" prefHeight="10" onMouseClicked="#updateCredits" fx:id="upButton" prefWidth="10">
+                        <graphic>
+                            <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                <Image smooth="false" url="/Resources/upArrow(32px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button id="down" prefHeight="10" onMouseClicked="#updateCredits" fx:id="downButton" prefWidth="10">
+                        <graphic>
+                            <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                <Image smooth="false" url="/Resources/downArrow_icon(32px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
                 </VBox>
             </HBox>
         </HBox>

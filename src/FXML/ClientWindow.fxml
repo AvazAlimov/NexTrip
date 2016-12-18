@@ -156,7 +156,7 @@
                             style="-fx-content-display: top;" onAction="#amenityPressed">
                         <graphic>
                             <ImageView fitHeight="128" fitWidth="128">
-                                <Image url="/Resources/childrenYard_icon(256px).png"/>
+                                <Image url="/Resources/childrenYard_Icon(256px).png"/>
                             </ImageView>
                         </graphic>
                     </Button>

@@ -187,7 +187,7 @@ public class AdminActivity implements Initializable {
             counter = 1;
         }
 
-        switch (((Rectangle) mouseEvent.getSource()).getId()) {
+        switch (((Button) mouseEvent.getSource()).getId()) {
             case "up":
                 credits.setText((counter + 1) + "");
                 break;

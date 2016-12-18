@@ -22,7 +22,21 @@
 .button:pressed {
     -fx-background-color: #AA00FF;
 }
-
+.text-field{
+    -fx-background-radius: 6;
+}
+#upButton{
+    -fx-fill: #1976D2;
+    -fx-stroke: #000000;
+    -fx-stroke-width: 1;
+    -fx-background-color: transparent;
+}
+#downButton{
+    -fx-fill: #1976D2;
+    -fx-stroke: #000000;
+    -fx-stroke-width: 1;
+    -fx-background-color: transparent;
+}
 
 #cancelButton{
     -fx-background-color: #1976D2;
