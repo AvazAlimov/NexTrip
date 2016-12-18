@@ -54,6 +54,8 @@ public class ClientActivity implements Initializable {
         imagePaths = new ArrayList<>();
         client = Tools.client;
         usernameText.setText(client.getUsername());
+
+
     }
 
     public void switchPane(ActionEvent event) throws IOException {

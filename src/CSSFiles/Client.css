@@ -2,19 +2,21 @@
     src: url('/Resources/FuturaExtended.ttf');
 }
 
-.root{
+.root {
     -fx-background-image: url("/Resources/blur.jpg");
 }
 
-.label{
+.label {
     -fx-font-family: FuturaExtended;
     -fx-font-size: 32;
 }
 
-.label:disabled{
+.label:disabled {
     -fx-opacity: 1.0;
 }
-
+.text-field{
+    -fx-effect: dropshadow(gaussian, #000, 10, 0, 0, 0);
+}
 
 .button {
     -fx-font-family: FuturaExtended;
@@ -25,36 +27,63 @@
     -fx-font-size: 20;
 }
 
-.button:hover{
+.button:hover {
     -fx-background-color: #FFCA28;
+    -fx-opacity: 0.83;
 }
 
-.button:pressed{
+.button:pressed {
     -fx-background-color: #FFA107;
 }
 
-.button:disabled{
+.button:disabled {
     -fx-opacity: 0.8;
 }
-#addInfoButton{
+#imageContainer{
+    -fx-effect: dropshadow(gaussian, #01579B, 10, 0, 0, 0);
+}
+
+.combo-box {
+    -fx-background-color: #FFC107;
+}
+
+.combo-box > .list-cell {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+}
+
+.combo-box-base > .arrow-button {
+    -fx-background-radius: 0 3 3 0, 0 2 2 0, 0 1 1 0;
+    -fx-padding: 0.5em 0.667em 0.5em 0.833333em; /* 6 8 6 10 */
+    -fx-background-color: transparent;
+}
+
+#addInfoButton {
     -fx-font-family: FuturaExtended;
     -fx-cursor: hand;
     -fx-background-color: transparent;
     -fx-font-weight: bold;
     -fx-font-size: 20;
 }
-#addInfoButton:hover{
+
+#addInfoButton:hover {
     -fx-effect: dropshadow(gaussian, #3695ff, 10, 0, 0, 0);
 }
 
-#startPrice{
+#startPrice {
     -fx-pref-width: 300;
     -fx-pref-height: 40;
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
 }
-#endPrice{
+
+#endPrice {
     -fx-pref-width: 300;
     -fx-pref-height: 40;
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
 }
+
 .scroll-pane {
     -fx-background-color: transparent;
 }
@@ -150,11 +179,11 @@
 }
 
 .date-picker .text-field {
-    -fx-control-inner-background: white ;
+    -fx-control-inner-background: white;
     -fx-effect: dropshadow(gaussian, red, 0, 0, 0, 0);
 }
 
-.date-picker{
+.date-picker {
     -fx-base: #FFC107;
     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
