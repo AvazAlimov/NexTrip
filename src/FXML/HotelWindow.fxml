@@ -34,13 +34,13 @@
                 </GridPane>
             </HBox>
 
-            <Label fx:id="nameLabel" alignment="CENTER" text=" Name of the Hotel"/>
+            <HBox alignment="CENTER">
+                <Label fx:id="nameLabel"/>
+            </HBox>
 
-            <HBox spacing="5" alignment="CENTER">
-
-                <Label maxWidth="Infinity" text="Location of the Hotel"/>
-                <!-- HBox.hgrow="ALWAYS"-->
-                <Button fx:id="locationButton"/>
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="locationButton" prefHeight="60" prefWidth="30"/>
+                <Label fx:id="locationLabel"/>
             </HBox>
 
             <GridPane>

@@ -22,6 +22,7 @@ public class HotelActivity implements Initializable {
     public Button nextImage;
     public ImageView imageView;
     public Label nameLabel;
+    public Label locationLabel;
 
     private ArrayList<Image> images;
     private int imageIndex;
@@ -33,7 +34,7 @@ public class HotelActivity implements Initializable {
         images = new ArrayList<>();
         imageIndex = 0;
 
-        this.hotel = Tools.hotels.get(0);
+        this.hotel = Tools.hotels.get(1);
         for (String path : hotel.getPhotos()) {
             try {
                 URL url = new File(path).toURI().toURL();
@@ -46,6 +47,7 @@ public class HotelActivity implements Initializable {
             imageView.setImage(images.get(0));
 
         nameLabel.setText(hotel.getName());
+        locationLabel.setText(hotel.getLocation());
     }
 
     public void switchPrevImage() {
