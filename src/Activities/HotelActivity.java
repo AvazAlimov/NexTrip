@@ -212,6 +212,8 @@ public class HotelActivity implements Initializable {
 
         for (int i = 4; i >= hotel.getRating(); i--)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Tools.emptyStar + "; -fx-background-color: #FFC107;");
+
+        numberRating.setText(hotel.getRatings().size() + "");
     }
 
     public void restoreStars() {
@@ -221,7 +223,7 @@ public class HotelActivity implements Initializable {
     public void rateHotel(ActionEvent event) {
         int rating = Integer.parseInt(((Button)event.getSource()).getId());
         hotel.addRating(rating);
-        ratingLayout.setDisable(true);
+        stars.setDisable(true);
         SQLDataBase.editHotel(hotel);
         Tools.hotels.clear();
         SQLDataBase.loadHotels();
