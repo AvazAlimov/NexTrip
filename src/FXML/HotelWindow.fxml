@@ -20,9 +20,7 @@
 
     <ScrollPane fitToWidth="true" fitToHeight="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <padding>
-            <Insets left="10" right="10" top="10" bottom="10"/>
-        </padding>
+
         <VBox spacing="5">
 
             <HBox spacing="40" alignment="CENTER">
