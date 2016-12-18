@@ -110,9 +110,9 @@
                 <TextField fx:id="nameText" prefWidth="400" prefHeight="50" promptText="name"/>
                 <TextField fx:id="locationText" prefWidth="400" prefHeight="50" promptText="location"/>
                 <TextArea fx:id="infoText" promptText="information"/>
-                <HBox spacing="20.0" alignment="CENTER_LEFT">
-                    <TextField fx:id="startPrice" promptText="starting price" HBox.hgrow="SOMETIMES"/>
-                    <TextField fx:id="endPrice" promptText="high price" HBox.hgrow="SOMETIMES"/>
+                <HBox spacing="90.0" alignment="CENTER" prefHeight="60">
+                    <TextField fx:id="startPrice" promptText="starting price" />
+                    <TextField fx:id="endPrice" promptText="high price" />
                 </HBox>
 
                 <ScrollPane fitToWidth="true">
@@ -134,23 +134,25 @@
                             style="-fx-content-display: top;" onAction="#amenityPressed">
                         <graphic>
                             <ImageView fitHeight="128" fitWidth="128">
-                                <Image url="/Resources/parking_icon(128px).png"/>
+                                <Image url="/Resources/wifi_icon(256px).png"/>
                             </ImageView>
                         </graphic>
                     </Button>
+                    <Separator prefWidth="200" visible="false"/>
                     <Button fx:id="freeParking" prefHeight="148" prefWidth="148" text="Free Parking"
                             style="-fx-content-display: top;" onAction="#amenityPressed">
                         <graphic>
                             <ImageView fitHeight="128" fitWidth="128">
-                                <Image url="/Resources/parking_icon(128px).png"/>
+                                <Image url="/Resources/parking_icon(256px).png"/>
                             </ImageView>
                         </graphic>
                     </Button>
+                    <Separator prefWidth="200" visible="false"/>
                     <Button fx:id="freeYard" prefHeight="148" prefWidth="148" text="Children Yard"
                             style="-fx-content-display: top;" onAction="#amenityPressed">
                         <graphic>
                             <ImageView fitHeight="128" fitWidth="128">
-                                <Image url="/Resources/parking_icon(128px).png"/>
+                                <Image url="/Resources/childrenYard_icon(256px).png"/>
                             </ImageView>
                         </graphic>
                     </Button>
@@ -160,34 +162,34 @@
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/facebook_icon(128px).png"/>
                     </ImageView>
-                    <TextField fx:id="facebookContact" HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="facebookContact" HBox.hgrow="SOMETIMES"  prefHeight="35" promptText="Facebook link"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/telegram_icon(128px).png"/>
                     </ImageView>
-                    <TextField fx:id="telegramContact" HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="telegramContact" HBox.hgrow="SOMETIMES" prefHeight="35" promptText="Telegram link"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/mail_icon(128px).png"/>
                     </ImageView>
-                    <TextField fx:id="mailContact" HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="mailContact" HBox.hgrow="SOMETIMES" prefHeight="35" promptText="mail address"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/phone_icon(128px).png"/>
                     </ImageView>
-                    <TextField fx:id="phoneContact" HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="phoneContact" HBox.hgrow="SOMETIMES" prefHeight="35" promptText="Phone number"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
-                    <ImageView fitWidth="60" fitHeight="60">
-                        <Image url="/Resources/facebook_icon(128px).png"/>
+                    <ImageView fitWidth="55" fitHeight="55">
+                        <Image url="/Resources/web_icon(128px).png"/>
                     </ImageView>
-                    <TextField fx:id="siteContact" HBox.hgrow="SOMETIMES"/>
+                    <TextField fx:id="siteContact" HBox.hgrow="SOMETIMES" prefHeight="35" promptText="Site contact"/>
                 </HBox>
 
-                <Button text="Add Hotel" onAction="#addHotel"/>
+                <Button fx:id="addInfoButton" text="Add Hotel" onAction="#addHotel"/>
             </VBox>
         </ScrollPane>
 
@@ -195,7 +197,7 @@
 
     <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Log Out"
             onAction="#switchPane"/>
-    <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"/>
+    <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username" style="-fx-font-size: 22"/>
 
     <stylesheets>
         <URL value="@../CSSFiles/Client.css"/>

@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("/Resources/o.jpg");
+    -fx-background-image: url("/Resources/blur.jpg");
     -fx-background-size: stretch;
 }
 
@@ -14,6 +14,7 @@
 .label:hover{
     -fx-text-fill: #efac00;
     -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, black, 20, 0, 0, 0);
 }
 
 .image-view{

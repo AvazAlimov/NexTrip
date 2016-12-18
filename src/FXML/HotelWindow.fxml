@@ -127,6 +127,15 @@
                         </ImageView>
                     </graphic>
                 </Button>
+                <Separator visible="false"/>
+                <Button fx:id="web_icon" alignment="BASELINE_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/web_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
             </HBox>
             <HBox alignment="BOTTOM_LEFT">
                 <Label text="Comments" stylesheets="@../CSSFiles/hotelButton.css"/>
