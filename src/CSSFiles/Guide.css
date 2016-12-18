@@ -55,10 +55,10 @@
 
 #prevImage{
     -fx-background-color: transparent;
-    -fx-font-size: 100;
+    -fx-font-size: 80;
     -fx-text-fill: white;
-    -fx-pref-width: 300;
-    -fx-pref-height: 300;
+    -fx-pref-width: 250;
+    -fx-pref-height: 250;
 }
 
 #prevImage:pressed{
@@ -67,10 +67,10 @@
 
 #nextImage{
     -fx-background-color: transparent;
-    -fx-font-size: 100;
+    -fx-font-size: 80;
     -fx-text-fill: white;
-    -fx-pref-width: 300;
-    -fx-pref-height: 300;
+    -fx-pref-width: 250;
+    -fx-pref-height: 250;
 }
 
 #nextImage:pressed{
