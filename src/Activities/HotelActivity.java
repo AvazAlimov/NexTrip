@@ -3,23 +3,23 @@ package Activities;
 
 import Classes.*;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import sun.util.resources.LocaleData;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class HotelActivity implements Initializable {
@@ -48,7 +48,6 @@ public class HotelActivity implements Initializable {
 
     private ArrayList<Image> images;
     private int imageIndex;
-
     private Hotel hotel;
 
     @Override
@@ -56,7 +55,7 @@ public class HotelActivity implements Initializable {
         images = new ArrayList<>();
         imageIndex = 0;
 
-        this.hotel = Tools.hotels.get(1);
+        this.hotel = Tools.hotel;
         for (String path : hotel.getPhotos()) {
             try {
                 URL url = new File(path).toURI().toURL();
@@ -107,10 +106,10 @@ public class HotelActivity implements Initializable {
                 web_icon.setVisible(true);
                 web_icon.setId(contact.getSource());
             }
-            deleteNullContacts();
-
-
         }
+        deleteNullContacts();
+
+        hotel.getComments().forEach(this::addCommentItem);
     }
 
     private void deleteNullContacts() {
@@ -151,28 +150,42 @@ public class HotelActivity implements Initializable {
         messageLayout.setVisible(false);
     }
 
-    public void addComment(ActionEvent event) {
+    public void addComment() {
+        if (commentText.getText().isEmpty())
+            return;
+
         Comment comment = new Comment();
         comment.setGuest(new Guest("", "", "Guest"));
         comment.setWrittenDate(new Date(LocalDateTime.now().getDayOfWeek().getValue(), LocalDateTime.now().getMonth().getValue(), LocalDateTime.now().getYear()));
         comment.setComment(commentText.getText());
-
-        VBox item = new VBox();
-        Label username = new Label(comment.getGuest().getUsername());
-        username.setStyle("-fx-font-size: 20; -fx-font-weight: bolder;");
-        Label source = new Label(comment.getComment());
-        source.setStyle("-fx-font-size: 18;");
-        Label date = new Label(comment.getWrittenDate().toString());
-        date.setStyle("-fx-font-size: 14; -fx-alignment: bottom-right");
-        item.getChildren().add(username);
-        item.getChildren().add(source);
-        item.getChildren().add(date);
-        commentContainer.getChildren().add(item);
-        commentText.setText("");
+        addCommentItem(comment);
         hotel.addComment(comment);
-
         SQLDataBase.editHotel(hotel);
         Tools.hotels.clear();
         SQLDataBase.loadHotels();
+    }
+
+    private void addCommentItem(Comment comment) {
+        VBox item = new VBox();
+        Label username = new Label(comment.getGuest().getUsername());
+        username.setStyle("-fx-font-size: 20; -fx-font-weight: bolder; -fx-text-fill: #FFC107;");
+        Label source = new Label(comment.getComment());
+        source.setStyle("-fx-font-size: 20;");
+        Label date = new Label(comment.getWrittenDate().toString());
+        date.setStyle("-fx-font-size: 18; -fx-alignment: bottom-right");
+        item.getChildren().add(username);
+        item.getChildren().add(source);
+        item.getChildren().add(date);
+        item.setStyle("-fx-background-color: rgba(0, 100, 100, 0.5); -fx-padding: 10");
+        commentContainer.getChildren().add(item);
+        commentText.setText("");
+    }
+
+    public void backToMain() throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
+        Scene scene = new Scene(parent);
+        Main.stage.hide();
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 }
