@@ -147,20 +147,20 @@
                 <Label text="Comments" stylesheets="@../CSSFiles/hotelButton.css"/>
             </HBox>
 
+            <VBox fx:id="commentContainer">
+            </VBox>
 
-            <TextField prefWidth="800.0" promptText="Comments"/>
+            <TextField fx:id="commentText" prefWidth="800.0" promptText="your comments"/>
 
             <HBox alignment="BOTTOM_RIGHT">
-                <Button text="Add" style="-fx-font-size: 12" prefHeight="40" prefWidth="70">
+                <Button text="Write Comment" style="-fx-font-size: 20" onAction="#addComment">
                     <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="/Resources/plus_icon(128px).png" smooth="false"/>
+                            <Image url="/Resources/plus_icon(128px).png"/>
                         </ImageView>
                     </graphic>
                 </Button>
             </HBox>
-
-
         </VBox>
     </ScrollPane>
 

@@ -20,6 +20,10 @@ public class Guidance {
         amenties = new ArrayList<>();
     }
 
+    public void addComment(Comment comment){
+        comments.add(comment);
+    }
+
     public String ammenityToString() {
         if (amenties.size() == 0)
             return "";

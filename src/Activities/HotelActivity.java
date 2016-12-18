@@ -1,24 +1,25 @@
 package Activities;
 
 
-import Classes.Contact;
-import Classes.Hotel;
+import Classes.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import sun.util.resources.LocaleData;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class HotelActivity implements Initializable {
@@ -42,6 +43,8 @@ public class HotelActivity implements Initializable {
     public GridPane messageLayout;
     public Label message;
     public ScrollPane mainLayout;
+    public TextField commentText;
+    public VBox commentContainer;
 
     private ArrayList<Image> images;
     private int imageIndex;
@@ -105,44 +108,71 @@ public class HotelActivity implements Initializable {
                 web_icon.setId(contact.getSource());
             }
             deleteNullContacts();
+
+
         }
     }
 
-    private void deleteNullContacts(){
-        if(!facebook_icon.isVisible())
+    private void deleteNullContacts() {
+        if (!facebook_icon.isVisible())
             contactContainer.getChildren().remove(facebook_icon);
-        if(!telegram_icon.isVisible())
+        if (!telegram_icon.isVisible())
             contactContainer.getChildren().remove(telegram_icon);
-        if(!mail_icon.isVisible())
+        if (!mail_icon.isVisible())
             contactContainer.getChildren().remove(mail_icon);
-        if(!phone_icon.isVisible())
+        if (!phone_icon.isVisible())
             contactContainer.getChildren().remove(phone_icon);
-        if(!web_icon.isVisible())
+        if (!web_icon.isVisible())
             contactContainer.getChildren().remove(web_icon);
     }
 
     public void switchPrevImage() {
-        if(imageIndex == 0)
+        if (imageIndex == 0)
             imageIndex = images.size();
         imageIndex--;
         imageView.setImage(images.get(imageIndex));
     }
 
     public void switchNextImage() {
-        if(imageIndex == images.size() - 1)
+        if (imageIndex == images.size() - 1)
             imageIndex = -1;
         imageIndex++;
         imageView.setImage(images.get(imageIndex));
     }
 
     public void showSource(ActionEvent event) {
-        Button btn = (Button)event.getSource();
+        Button btn = (Button) event.getSource();
         message.setText(btn.getId());
         messageLayout.setVisible(true);
     }
 
-    public void closeMessageLayout(MouseEvent mouseEvent) {
+    public void closeMessageLayout() {
         message.setText("");
         messageLayout.setVisible(false);
+    }
+
+    public void addComment(ActionEvent event) {
+        Comment comment = new Comment();
+        comment.setGuest(new Guest("", "", "Guest"));
+        comment.setWrittenDate(new Date(LocalDateTime.now().getDayOfWeek().getValue(), LocalDateTime.now().getMonth().getValue(), LocalDateTime.now().getYear()));
+        comment.setComment(commentText.getText());
+
+        VBox item = new VBox();
+        Label username = new Label(comment.getGuest().getUsername());
+        username.setStyle("-fx-font-size: 20; -fx-font-weight: bolder;");
+        Label source = new Label(comment.getComment());
+        source.setStyle("-fx-font-size: 18;");
+        Label date = new Label(comment.getWrittenDate().toString());
+        date.setStyle("-fx-font-size: 14; -fx-alignment: bottom-right");
+        item.getChildren().add(username);
+        item.getChildren().add(source);
+        item.getChildren().add(date);
+        commentContainer.getChildren().add(item);
+        commentText.setText("");
+        hotel.addComment(comment);
+
+        SQLDataBase.editHotel(hotel);
+        Tools.hotels.clear();
+        SQLDataBase.loadHotels();
     }
 }
