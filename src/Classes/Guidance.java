@@ -15,6 +15,7 @@ public class Guidance {
     private ArrayList<Integer> ratings;
 
     public Guidance() {
+        rating = 0;
         photos = new ArrayList<>();
         contacts = new ArrayList<>();
         comments = new ArrayList<>();
@@ -41,9 +42,13 @@ public class Guidance {
 
     public void addRating(int rating) {
         ratings.add(rating);
+        calculateRating();
     }
 
     public void calculateRating() {
+        if(ratings.isEmpty())
+            return;
+
         int counter = 0;
         for (Integer rating1 : ratings) counter += rating1;
         rating = counter / ratings.size();

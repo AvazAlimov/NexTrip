@@ -205,18 +205,25 @@ public class HotelActivity implements Initializable {
             stars.getChildren().get(i).setStyle("-fx-shape: " + Tools.emptyStar + "; -fx-background-color: #FFC107;");
     }
 
-    private void loadRating(){
-        int lastRate = 5;
-
+    private void loadRating() {
         for (int i = 0; i < hotel.getRating(); i++) {
             stars.getChildren().get(i).setStyle("-fx-shape: " + Tools.filledStar + "; -fx-background-color: #FFC107;");
-            lastRate--;
         }
-        for(int i = lastRate - 1; i>=0; i--)
+
+        for (int i = 4; i >= hotel.getRating(); i--)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Tools.emptyStar + "; -fx-background-color: #FFC107;");
     }
 
     public void restoreStars() {
         loadRating();
+    }
+
+    public void rateHotel(ActionEvent event) {
+        int rating = Integer.parseInt(((Button)event.getSource()).getId());
+        hotel.addRating(rating);
+        ratingLayout.setDisable(true);
+        SQLDataBase.editHotel(hotel);
+        Tools.hotels.clear();
+        SQLDataBase.loadHotels();
     }
 }
