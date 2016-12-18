@@ -76,7 +76,7 @@ public class MainActivity implements Initializable {
 
     public void searchObject() {
         String text = searchText.getEditor().getText();
-        if(text.isEmpty())
+        if (text.isEmpty())
             return;
 
         searchText.getItems().clear();
@@ -120,9 +120,8 @@ public class MainActivity implements Initializable {
         }
 
         Image value = null;
-        if (url != null) {
+        if (url != null)
             value = new Image(url.toString(), 100.0, 100.0, false, true);
-        }
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
@@ -131,7 +130,7 @@ public class MainActivity implements Initializable {
         image.setClip(circle);
         item.add(image, 0, 0);
 
-        Label info = new Label("Price: " + hotel.getStartingPrice() + " - " + hotel.getEndingPrice() + "\n" + hotel.getLocation());
+        Label info = new Label("Name: " + hotel.getName() + "\nPrice: " + hotel.getStartingPrice() + "$ - " + hotel.getEndingPrice() + "$\nLocation: " + hotel.getLocation());
         info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
         item.add(info, 1, 0);
 
