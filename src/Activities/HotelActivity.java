@@ -27,6 +27,7 @@ public class HotelActivity implements Initializable {
     public Button freeWiFi;
     public Button freeParking;
     public Button freeYard;
+    public Label priceLabel;
 
     private ArrayList<Image> images;
     private int imageIndex;
@@ -53,6 +54,20 @@ public class HotelActivity implements Initializable {
         nameLabel.setText(hotel.getName());
         locationLabel.setText(hotel.getLocation());
         infoText.setText(hotel.getInfo());
+        for (String amenity : hotel.getAmenties()) {
+            switch (amenity) {
+                case "Free WiFi":
+                    freeWiFi.setVisible(true);
+                    break;
+                case "Free Parking":
+                    freeParking.setVisible(true);
+                    break;
+                case "Children Yard":
+                    freeYard.setVisible(true);
+                    break;
+            }
+        }
+        priceLabel.setText(hotel.getStartingPrice() + " - " + hotel.getEndingPrice());
     }
 
     public void switchPrevImage() {
