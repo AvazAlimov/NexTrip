@@ -1,5 +1,9 @@
+@font-face {
+    src: url('/Resources/FuturaExtended.ttf');
+}
+
 .root {
-    -fx-background-image: url("/Resources/avaz_main_background.jpg");
+    -fx-background-image: url("/Resources/china.jpg");
     -fx-background-size: cover;
 }
 
@@ -244,4 +248,17 @@
 
 #nameLabel {
     -fx-font-size: 36;
+}
+
+#infoText{
+    -fx-font-family: FuturaExtended;
+    -fx-font-size: 28;
+    -fx-text-fill: white;
+    -fx-base: transparent;
+    -fx-background-color: transparent;
+}
+
+.text-area:disabled{
+
+    -fx-opacity: 1.0;
 }

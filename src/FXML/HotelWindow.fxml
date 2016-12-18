@@ -15,6 +15,8 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.TextArea?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.HotelActivity">
 
@@ -41,6 +43,18 @@
             <HBox spacing="20" alignment="CENTER">
                 <Button fx:id="locationButton" prefHeight="60" prefWidth="30"/>
                 <Label fx:id="locationLabel"/>
+            </HBox>
+
+            <Separator prefHeight="40" visible="false"/>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="Information" alignment="CENTER"/>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <TextFlow>
+                    <TextArea fx:id="infoText" wrapText="true" editable="false" disable="true"/>
+                </TextFlow>
             </HBox>
 
             <GridPane>
@@ -86,11 +100,7 @@
                 </Button>
                 <Label text="    Another feature" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-
             </GridPane>
-            <HBox alignment="CENTER">
-                <Label fx:id="infoText" textAlignment="CENTER" HBox.hgrow="ALWAYS"/>
-            </HBox>
 
             <HBox spacing="1" alignment="BOTTOM_RIGHT" stylesheets="@../CSSFiles/hotelButton.css">
                 <Button fx:id="mail_icon" alignment="BASELINE_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity"

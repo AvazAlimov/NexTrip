@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -17,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class HotelActivity implements Initializable {
     public Button locationButton;
-    public Label infoText;
+    public TextArea infoText;
     public Button prevImage;
     public Button nextImage;
     public ImageView imageView;
@@ -48,6 +49,7 @@ public class HotelActivity implements Initializable {
 
         nameLabel.setText(hotel.getName());
         locationLabel.setText(hotel.getLocation());
+        infoText.setText(hotel.getInfo());
     }
 
     public void switchPrevImage() {
