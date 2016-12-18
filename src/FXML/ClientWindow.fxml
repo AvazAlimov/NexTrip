@@ -96,7 +96,7 @@
     </GridPane>
 
     <Label fx:id="isFilledError" visible="false" text="Please fill the empty fields" AnchorPane.topAnchor="10.0"
-           AnchorPane.leftAnchor="100.0" style="-fx-text-fill: red; -fx-font-size: 30;"/>
+           AnchorPane.leftAnchor="550.0" style="-fx-text-fill: red; -fx-font-size: 30;  "/>
 
     <GridPane visible="false" fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"
               AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="20.0"
@@ -111,8 +111,8 @@
                 <TextField fx:id="locationText" prefWidth="400" prefHeight="40" promptText="location"/>
                 <TextArea fx:id="infoText" promptText="information"/>
                 <HBox spacing="10.0" alignment="CENTER" prefHeight="60">
-                    <TextField fx:id="startPrice" promptText="low price" />
-                    <TextField fx:id="endPrice" promptText="high price" />
+                    <TextField fx:id="startPrice" promptText="low price"/>
+                    <TextField fx:id="endPrice" promptText="high price"/>
                     <ImageView fitHeight="40" fitWidth="40">
                         <Image url="/Resources/price_icon(128px).png"/>
                     </ImageView>
@@ -178,7 +178,7 @@
                     <ImageView fitWidth="60" fitHeight="60">
                         <Image url="/Resources/facebook_icon(128px).png"/>
                     </ImageView>
-                    <TextField fx:id="facebookContact" prefWidth="500"  prefHeight="35" promptText="Facebook link"/>
+                    <TextField fx:id="facebookContact" prefWidth="500" prefHeight="35" promptText="Facebook link"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER">
                     <ImageView fitWidth="60" fitHeight="60">
@@ -201,7 +201,8 @@
 
     <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Log Out"
             onAction="#switchPane"/>
-    <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username" style="-fx-font-size: 22"/>
+    <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"
+           style="-fx-font-size: 22"/>
 
     <stylesheets>
         <URL value="@../CSSFiles/Client.css"/>

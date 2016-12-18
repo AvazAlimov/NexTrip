@@ -10,33 +10,34 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
 <GridPane alignment="CENTER" vgap="20" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="Activities.SettingsActivity">
 
-    <rowConstraints>
-        <RowConstraints/>
-        <RowConstraints/>
-    </rowConstraints>
 
-    <columnConstraints>
-        <ColumnConstraints/>
-        <ColumnConstraints/>
-    </columnConstraints>
+    <VBox alignment="CENTER" spacing="10.0">
 
-    <HBox alignment="CENTER">
-        <Button fx:id="imageButton" prefHeight="200" prefWidth="600"/>
-        <Separator prefWidth="20" visible="false"/>
-        <Button fx:id="imageButton2" prefHeight="200" prefWidth="600" GridPane.columnIndex="1"/>
-    </HBox>
-    <Separator prefWidth="20" visible="false"/>
-    <HBox alignment="CENTER" GridPane.rowIndex="1">
-        <Button fx:id="imageButton3" prefHeight="200" prefWidth="600"/>
-        <Separator prefWidth="20" visible="false"/>
-        <Button fx:id="imageButton4" prefHeight="200" prefWidth="600" GridPane.columnIndex="1"/>
-    </HBox>
 
+        <HBox alignment="CENTER">
+            <Button fx:id="imageButton" text="Picture 1" style="-fx-content-display: top;">
+                <!--<graphic>
+                    <ImageView fitHeight="200" fitWidth="200">
+                        <Image />
+                    </ImageView>
+                </graphic>-->
+            </Button>
+            <Separator prefWidth="40" visible="false"/>
+            <Button fx:id="imageButton2" text="Picture 2" style="-fx-content-display: top;"/>
+            <Separator prefWidth="40" visible="false"/>
+            <Button fx:id="imageButton3" text="Picture 3" style="-fx-content-display: top;"/>
+            <Separator prefWidth="40" visible="false"/>
+            <Button fx:id="imageButton4" text="Picture 4" style="-fx-content-display: top;"/>
+        </HBox>
+
+        <Button fx:id="applyButton" text="Apply" alignment="BOTTOM_CENTER"/>
+    </VBox>
     <stylesheets>
-        <URL value="@../CSSFiles/SignIn.css"/>
+        <URL value="@../CSSFiles/Settings.css"/>
     </stylesheets>
 
 </GridPane>

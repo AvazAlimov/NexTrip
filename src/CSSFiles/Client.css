@@ -3,7 +3,7 @@
 }
 
 .root {
-    -fx-background-image: url("/Resources/blur.jpg");
+    -fx-background-image: url("/Resources/SignIn_window(128px).jpg");
 }
 
 .label {
@@ -14,7 +14,8 @@
 .label:disabled {
     -fx-opacity: 1.0;
 }
-.text-field{
+
+.text-field {
     -fx-effect: dropshadow(gaussian, #000, 10, 0, 0, 0);
 }
 
@@ -39,7 +40,20 @@
 .button:disabled {
     -fx-opacity: 0.8;
 }
-#imageContainer{
+
+#addInfoButton {
+    -fx-font-family: FuturaExtended;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+
+#addInfoButton:hover {
+    -fx-effect: dropshadow(gaussian, #FFC107, 10, 0, 0, 0);
+}
+
+#imageContainer {
     -fx-effect: dropshadow(gaussian, #01579B, 10, 0, 0, 0);
 }
 
@@ -51,26 +65,16 @@
     -fx-background: transparent;
     -fx-background-color: transparent;
     -fx-text-fill: -fx-text-base-color;
-    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
-}
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em;
 
+}
 .combo-box-base > .arrow-button {
     -fx-background-radius: 0 3 3 0, 0 2 2 0, 0 1 1 0;
     -fx-padding: 0.5em 0.667em 0.5em 0.833333em; /* 6 8 6 10 */
     -fx-background-color: transparent;
 }
 
-#addInfoButton {
-    -fx-font-family: FuturaExtended;
-    -fx-cursor: hand;
-    -fx-background-color: transparent;
-    -fx-font-weight: bold;
-    -fx-font-size: 20;
-}
 
-#addInfoButton:hover {
-    -fx-effect: dropshadow(gaussian, #3695ff, 10, 0, 0, 0);
-}
 
 #startPrice {
     -fx-pref-width: 300;
