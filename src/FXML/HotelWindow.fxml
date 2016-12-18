@@ -28,7 +28,7 @@
             <HBox spacing="40" alignment="CENTER">
                 <GridPane HBox.hgrow="ALWAYS" alignment="CENTER">
                     <ImageView fx:id="imageView" fitHeight="500" fitWidth="1300">
-                        <Image url="@../Resources/7.jpg"/>
+                        <Image url="@../Resources/hotelExample.jpg"/>
                     </ImageView>
                     <HBox alignment="CENTER">
                         <Button fx:id="prevImage" id="prevImage" onAction="#switchPrevImage"/>
@@ -91,7 +91,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Label text="    Another feature" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="    Children Yard" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
 
             </GridPane>
@@ -104,7 +104,7 @@
                         maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="/Resources/mail_icon1(128px).png" smooth="false"/>
+                            <Image url="/Resources/mail_icon(128px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
@@ -138,8 +138,8 @@
                 <Button fx:id="web_icon" alignment="BASELINE_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity"
                         maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="/Resources/web_icon(128px).png" smooth="false"/>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/web_icon1(128px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
