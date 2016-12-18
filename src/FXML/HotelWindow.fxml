@@ -90,7 +90,7 @@
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
                                    disable="true">
-                            <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
+                            <Image url="/Resources/wifi_icon(64px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
@@ -98,14 +98,14 @@
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
                                    disable="true">
-                            <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
+                            <Image url="/Resources/parking_icon(64px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
                 <Button visible="false" fx:id="freeYard" text="Free Children Yard" prefHeight="50.0" disable="true">
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
+                            <Image url="/Resources/childrenYard_icon1(64px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
@@ -168,16 +168,16 @@
 
             </HBox>
 
+
+            <VBox fx:id="commentContainer" spacing="10"/>
             <HBox alignment="CENTER_LEFT">
                 <Label text="Comments" stylesheets="@../CSSFiles/hotelButton.css"/>
             </HBox>
 
-            <VBox fx:id="commentContainer" spacing="10"/>
-
             <TextField fx:id="commentText" prefWidth="800.0" promptText="your comments"/>
 
             <HBox alignment="BOTTOM_RIGHT">
-                <Button text="Write Comment" style="-fx-font-size: 20" onAction="#addComment">
+                <Button text="Add Comment" style="-fx-font-size: 20" onAction="#addComment">
                     <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="/Resources/plus_icon(128px).png"/>
