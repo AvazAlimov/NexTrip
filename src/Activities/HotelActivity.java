@@ -1,14 +1,19 @@
 package Activities;
 
 
+import Classes.Contact;
 import Classes.Hotel;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -28,6 +33,15 @@ public class HotelActivity implements Initializable {
     public Button freeParking;
     public Button freeYard;
     public Label priceLabel;
+    public Button mail_icon;
+    public Button phone_icon;
+    public Button facebook_icon;
+    public Button telegram_icon;
+    public Button web_icon;
+    public HBox contactContainer;
+    public GridPane messageLayout;
+    public Label message;
+    public ScrollPane mainLayout;
 
     private ArrayList<Image> images;
     private int imageIndex;
@@ -68,6 +82,43 @@ public class HotelActivity implements Initializable {
             }
         }
         priceLabel.setText(hotel.getStartingPrice() + " - " + hotel.getEndingPrice());
+
+        for (Contact contact : hotel.getContacts()) {
+            if (contact.getType() == Contact.Type.Facebook) {
+                facebook_icon.setVisible(true);
+                facebook_icon.setId(contact.getSource());
+            }
+            if (contact.getType() == Contact.Type.Telegram) {
+                telegram_icon.setVisible(true);
+                telegram_icon.setId(contact.getSource());
+            }
+            if (contact.getType() == Contact.Type.Mail) {
+                mail_icon.setVisible(true);
+                mail_icon.setId(contact.getSource());
+            }
+            if (contact.getType() == Contact.Type.PhoneNumber) {
+                phone_icon.setVisible(true);
+                phone_icon.setId(contact.getSource());
+            }
+            if (contact.getType() == Contact.Type.Site) {
+                web_icon.setVisible(true);
+                web_icon.setId(contact.getSource());
+            }
+            deleteNullContacts();
+        }
+    }
+
+    private void deleteNullContacts(){
+        if(!facebook_icon.isVisible())
+            contactContainer.getChildren().remove(facebook_icon);
+        if(!telegram_icon.isVisible())
+            contactContainer.getChildren().remove(telegram_icon);
+        if(!mail_icon.isVisible())
+            contactContainer.getChildren().remove(mail_icon);
+        if(!phone_icon.isVisible())
+            contactContainer.getChildren().remove(phone_icon);
+        if(!web_icon.isVisible())
+            contactContainer.getChildren().remove(web_icon);
     }
 
     public void switchPrevImage() {
@@ -82,5 +133,16 @@ public class HotelActivity implements Initializable {
             imageIndex = -1;
         imageIndex++;
         imageView.setImage(images.get(imageIndex));
+    }
+
+    public void showSource(ActionEvent event) {
+        Button btn = (Button)event.getSource();
+        message.setText(btn.getId());
+        messageLayout.setVisible(true);
+    }
+
+    public void closeMessageLayout(MouseEvent mouseEvent) {
+        message.setText("");
+        messageLayout.setVisible(false);
     }
 }

@@ -18,7 +18,8 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.HotelActivity">
 
-    <ScrollPane fitToWidth="true" fitToHeight="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+    <ScrollPane fx:id="mainLayout" fitToWidth="true" fitToHeight="true" AnchorPane.bottomAnchor="0.0"
+                AnchorPane.leftAnchor="0.0"
                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
         <VBox spacing="20">
@@ -62,14 +63,16 @@
             <HBox spacing="20" alignment="CENTER">
                 <Button visible="false" fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0">
                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" disable="true">
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   disable="true">
                             <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
                 <Button visible="false" fx:id="freeParking" text="Free Parking" prefHeight="50.0">
                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" disable="true">
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   disable="true">
                             <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
@@ -96,9 +99,9 @@
                 <Label text="Contacts" alignment="CENTER" style="-fx-font-size: 36;"/>
             </HBox>
 
-            <HBox spacing="10" alignment="CENTER">
+            <HBox fx:id="contactContainer" spacing="10" alignment="CENTER">
 
-                <Button fx:id="mail_icon" prefHeight="60" prefWidth="60">
+                <Button fx:id="mail_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0">
                             <Image url="/Resources/email_96px.png"/>
@@ -106,7 +109,7 @@
                     </graphic>
                 </Button>
 
-                <Button fx:id="phone_icon" prefHeight="60" prefWidth="60">
+                <Button fx:id="phone_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0">
                             <Image url="/Resources/phone_96px.png"/>
@@ -114,7 +117,7 @@
                     </graphic>
                 </Button>
 
-                <Button fx:id="facebook_icon" prefHeight="60" prefWidth="60">
+                <Button fx:id="facebook_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0">
                             <Image url="/Resources/facebook_96px.png"/>
@@ -122,7 +125,7 @@
                     </graphic>
                 </Button>
 
-                <Button fx:id="telegram_icon" prefHeight="60" prefWidth="60">
+                <Button fx:id="telegram_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0">
                             <Image url="/Resources/telegram_96px.png"/>
@@ -130,7 +133,7 @@
                     </graphic>
                 </Button>
 
-                <Button fx:id="web_icon" prefHeight="60" prefWidth="60">
+                <Button fx:id="web_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="40.0">
                             <Image url="/Resources/site_96px.png"/>
@@ -140,27 +143,13 @@
 
             </HBox>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <HBox alignment="BOTTOM_LEFT">
+            <HBox alignment="CENTER_LEFT">
                 <Label text="Comments" stylesheets="@../CSSFiles/hotelButton.css"/>
             </HBox>
 
 
-
             <TextField prefWidth="800.0" promptText="Comments"/>
+
             <HBox alignment="BOTTOM_RIGHT">
                 <Button text="Add" style="-fx-font-size: 12" prefHeight="40" prefWidth="70">
                     <graphic>
@@ -174,6 +163,13 @@
 
         </VBox>
     </ScrollPane>
+
+
+    <GridPane fx:id="messageLayout" visible="false" alignment="CENTER" AnchorPane.leftAnchor="0.0"
+              AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+              style="-fx-background-color: rgba(44,44,44,0.9)" onMouseClicked="#closeMessageLayout">
+        <Label fx:id="message"/>
+    </GridPane>
 
     <stylesheets>
         <URL value="@../CSSFiles/Hotel.css"/>
