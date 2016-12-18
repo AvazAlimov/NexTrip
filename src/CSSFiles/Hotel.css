@@ -252,13 +252,16 @@
 
 #infoText{
     -fx-font-family: FuturaExtended;
-    -fx-font-size: 28;
+    -fx-font-size: 36;
     -fx-text-fill: white;
     -fx-base: transparent;
     -fx-background-color: transparent;
 }
 
-.text-area:disabled{
+.text-area > .scroll-pane:disabled{
+    -fx-opacity: 1.0;
+}
 
+.text-area:disabled{
     -fx-opacity: 1.0;
 }
