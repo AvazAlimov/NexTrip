@@ -14,7 +14,7 @@ public class Guidance {
     private ArrayList<String> amenties;
     private ArrayList<Integer> ratings;
 
-    public Guidance() {
+    Guidance() {
         rating = 0;
         photos = new ArrayList<>();
         contacts = new ArrayList<>();
@@ -24,6 +24,9 @@ public class Guidance {
     }
 
     public String ratingsToString(){
+        if(ratings.isEmpty())
+            return "";
+
         String string = "";
         for (Integer rating1 : ratings) string += rating1 + "/";
         return string.substring(0, string.length() - 1);
@@ -45,7 +48,7 @@ public class Guidance {
         calculateRating();
     }
 
-    public void calculateRating() {
+    private void calculateRating() {
         if(ratings.isEmpty())
             return;
 
@@ -108,10 +111,6 @@ public class Guidance {
 
     public int getRating() {
         return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
     }
 
     public String getInfo() {
@@ -192,10 +191,6 @@ public class Guidance {
 
     public ArrayList<Comment> getComments() {
         return comments;
-    }
-
-    public void setComments(ArrayList<Comment> comments) {
-        this.comments = comments;
     }
 
     public ArrayList<String> getAmenties() {

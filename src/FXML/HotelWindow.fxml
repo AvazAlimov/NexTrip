@@ -29,7 +29,7 @@
 
             <HBox spacing="40" alignment="CENTER">
                 <GridPane HBox.hgrow="ALWAYS" alignment="CENTER">
-                    <ImageView fx:id="imageView" fitWidth="1280" fitHeight="720"/>
+                    <ImageView fx:id="imageView" fitWidth="1280" fitHeight="720" style="-fx-effect: dropshadow(gaussian, black, 15, 0, 0, 0);"/>
                     <HBox alignment="CENTER">
                         <Button fx:id="prevImage" id="prevImage" onAction="#switchPrevImage"/>
                         <Separator HBox.hgrow="ALWAYS" visible="false"/>
