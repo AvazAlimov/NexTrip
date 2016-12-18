@@ -160,31 +160,31 @@
 
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
-                        <Image url="/Resources/facebook_icon(128px).png"/>
+                        <Image url="/Resources/facebook_96px.png"/>
                     </ImageView>
                     <TextField fx:id="facebookContact" HBox.hgrow="SOMETIMES"  prefHeight="35" promptText="Facebook link"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
-                        <Image url="/Resources/telegram_icon(128px).png"/>
+                        <Image url="/Resources/telegram_96px.png"/>
                     </ImageView>
                     <TextField fx:id="telegramContact" HBox.hgrow="SOMETIMES" prefHeight="35" promptText="Telegram link"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
-                        <Image url="/Resources/mail_icon(128px).png"/>
+                        <Image url="/Resources/email_96px.png"/>
                     </ImageView>
                     <TextField fx:id="mailContact" HBox.hgrow="SOMETIMES" prefHeight="35" promptText="mail address"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="60" fitHeight="60">
-                        <Image url="/Resources/phone_icon(128px).png"/>
+                        <Image url="/Resources/phone_96px.png"/>
                     </ImageView>
                     <TextField fx:id="phoneContact" HBox.hgrow="SOMETIMES" prefHeight="35" promptText="Phone number"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER_LEFT">
                     <ImageView fitWidth="55" fitHeight="55">
-                        <Image url="/Resources/web_icon(128px).png"/>
+                        <Image url="/Resources/site_96px.png"/>
                     </ImageView>
                     <TextField fx:id="siteContact" HBox.hgrow="SOMETIMES" prefHeight="35" promptText="Site contact"/>
                 </HBox>

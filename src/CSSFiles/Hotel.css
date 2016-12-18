@@ -3,15 +3,15 @@
 }
 
 .root {
-    -fx-background-image: url("/Resources/china.jpg");
+    -fx-background-image: url("/Resources/blur.jpg");
     -fx-background-size: cover;
 }
 
 .button {
     -fx-cursor: hand;
-    -fx-background-color: transparent;
-    -fx-text-fill: #212121;
-    -fx-font-weight: bolder;
+    -fx-background-color: lightgray;
+    -fx-background-radius: 60;
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
 
 .button:disabled {
@@ -25,17 +25,11 @@
     -fx-font-weight: bolder;
 }
 
-/*.separator:vertical .line {
-    -fx-border-color: transparent transparent transparent -fx-shadow-highlight-color,
-    transparent transparent transparent -fx-text-box-border;
-    -fx-border-width: 3, 1;
-    -fx-border-insets: 0, 0 0 0 1;
-}*/
 .text-field {
-    -fx-effect: dropshadow(two-pass-box, #000, 10, 0.2, 0, 0);
+    -fx-effect: dropshadow(two-pass-box, black, 10, 0.2, 0, 0);
     -fx-font-size: 18;
     -fx-text-fill: #212121;
-    -fx-font-family: "Cocon";
+    -fx-font-family: FutureExtended;
     -fx-prompt-text-fill: #666;
 }
 
@@ -177,9 +171,8 @@
     -fx-background-color: #E1Bee7;
 }
 
-#web_icon {
-    -fx-background-color: transparent;
-}
+
+
 
 #nameLabel {
     -fx-font-size: 36;
