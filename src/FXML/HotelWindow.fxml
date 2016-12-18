@@ -9,9 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import java.net.URL?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 
@@ -47,8 +45,8 @@
 
             <Separator prefHeight="40" visible="false"/>
 
-            <HBox spacing="20" alignment="CENTER">
-                <Label text="Information" alignment="CENTER"/>
+            <HBox alignment="CENTER">
+                <Label text="Information" alignment="CENTER" style="-fx-font-size: 36;"/>
             </HBox>
 
             <HBox alignment="CENTER">
@@ -57,51 +55,33 @@
                 </TextFlow>
             </HBox>
 
+            <HBox alignment="CENTER">
+                <Label text="Amenities" alignment="CENTER" style="-fx-font-size: 36;"/>
+            </HBox>
 
-            <GridPane>
-                <rowConstraints>
-                    <RowConstraints/>
-                    <RowConstraints/>
-                    <RowConstraints/>
-                </rowConstraints>
-
-                <columnConstraints>
-                    <ColumnConstraints/>
-                    <ColumnConstraints/>
-                </columnConstraints>
-
-                <Button fx:id="firstFeatureButton" alignment="BASELINE_LEFT" contentDisplay="RIGHT"
-                        maxHeight="-Infinity"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0">
                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" disable="true">
                             <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Label text="    Free Wifi" GridPane.columnIndex="1"/>
-                <Button GridPane.rowIndex="1" fx:id="secondFeatureButton" alignment="BASELINE_LEFT"
-                        contentDisplay="RIGHT" maxHeight="-Infinity"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                <Button fx:id="freeParking" text="Free Parking" prefHeight="50.0">
                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" disable="true">
                             <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Label text="    Free parking" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-                <Button GridPane.rowIndex="2" fx:id="thirdFeatureButton" alignment="BASELINE_LEFT"
-                        contentDisplay="RIGHT" maxHeight="-Infinity"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0">
+                <Button fx:id="freeYard" text="Free Children Yard" prefHeight="50.0" disable="true">
                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="/Resources/feature_icon(128px).png" smooth="false"/>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Label text="    Another feature" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-
-            </GridPane>
+            </HBox>
 
             <HBox spacing="1" alignment="BOTTOM_RIGHT" stylesheets="@../CSSFiles/hotelButton.css">
                 <Button fx:id="mail_icon" alignment="BASELINE_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity"

@@ -24,6 +24,9 @@ public class HotelActivity implements Initializable {
     public ImageView imageView;
     public Label nameLabel;
     public Label locationLabel;
+    public Button freeWiFi;
+    public Button freeParking;
+    public Button freeYard;
 
     private ArrayList<Image> images;
     private int imageIndex;
