@@ -100,6 +100,7 @@ class SQLDataBase {
         return returnString;
     }
 
+
     //region Client
     static void addClient(Client client) {
         try {
@@ -262,12 +263,92 @@ class SQLDataBase {
     public static void deleteHotel(String id) {
         try {
             Statement statement = connection.createStatement();
-            String query = "DELETE FROM Hotel WHERE Id='" + normalizeString(id) + "';";
+            String query = "DELETE FROM Hotel WHERE Id='" + id + "';";
             statement.executeUpdate(query);
             statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    //endregion
+
+
+    //region Restaurant
+    static void addRestaurant(Restaurant restaurant, Client client) {
+        int id = lastRestaurantId();
+
+        if (!client.addObjectId("R" + id))
+            return;
+
+        String name = restaurant.getName();
+        String info = restaurant.getInfo();
+        String location = restaurant.getLocation();
+        String images = restaurant.getImageLinks();
+        String contacts = restaurant.contactsToString();
+        String comments = restaurant.commentsToString();
+        String amenitites = restaurant.ammenityToString();
+        String ratings = restaurant.ratingsToString();
+        String menu = restaurant.menuToString();
+        String types = restaurant.typeToString();
+        int seats = restaurant.getNumberOfSeats();
+
+        try {
+            Statement statement = connection.createStatement();
+            String query = String.format("INSERT INTO Restaurant(Id, Ratings, Name, Info, Location, Images, Contacts, Comments, Amenities, Menu, Type, Seats) VALUES ('%d','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%d');", id, normalizeString(ratings), normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), normalizeString(menu), normalizeString(types), seats);
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void editRestaurant(Restaurant restaurant) {
+        int id = restaurant.getId();
+        String name = restaurant.getName();
+        String info = restaurant.getInfo();
+        String location = restaurant.getLocation();
+        String images = restaurant.getImageLinks();
+        String contacts = restaurant.contactsToString();
+        String comments = restaurant.commentsToString();
+        String amenitites = restaurant.ammenityToString();
+        String ratings = restaurant.ratingsToString();
+        String menu = restaurant.menuToString();
+        String types = restaurant.typeToString();
+        int seats = restaurant.getNumberOfSeats();
+
+        try {
+            Statement statement = connection.createStatement();
+            String query = String.format("UPDATE Restaurant SET Ratings='%s', Name='%s', Info='%s', Location='%s', Images='%s', Contacts='%s', Comments='%s', Amenities='%s', Menu='%s', Type='%s', Seats='%d' WHERE Id='%d';", normalizeString(ratings), normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), normalizeString(menu), normalizeString(types), seats, id);
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void deleteRestaurant(String id) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "DELETE FROM Restaurant WHERE Id='" + id + "';";
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static int lastRestaurantId() {
+        int id = 0;
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT Id FROM Restaurant ORDER BY Id DESC;";
+            ResultSet result = statement.executeQuery(query);
+            if (result.next())
+                id = result.getInt("Id") + 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
     }
     //endregion
 }
