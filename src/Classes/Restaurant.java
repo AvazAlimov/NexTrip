@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Restaurant extends Guidance {
     public enum Type {
-        cafe, fastfood, cuisine, sitDown
+        Cafe, Fastfood, Cuisine, SitDown
     }
 
     private ArrayList<Type> type;
