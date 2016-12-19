@@ -31,18 +31,17 @@
                     <TextArea fx:id="rulesText" prefWidth="300" prefHeight="100" promptText="Rules"/>
 
                     <Label text="Price:" style="-fx-text-fill: white; -fx-font-size: 18;"/>
-                    <TextField fx:id="priceText" prefWidth="100" prefHeight="40" promptText="price"/>
-
                     <ImageView fitHeight="40" fitWidth="40">
                         <Image url="/Resources/price_icon(128px).png"/>
                     </ImageView>
+                    <TextField fx:id="priceText" prefWidth="100" prefHeight="40" promptText="price"/>
+
                     <Label text="Age limit:" style="-fx-text-fill: white; -fx-font-size: 18;"/>
                     <ComboBox prefHeight="30" prefWidth="90" promptText="age"/>
                 </HBox>
 
+                <Separator prefHeight="4" style="-fx-background-color: #0D47A1" prefWidth="50"/>
 
-                <Button fx:id="addFoodButton" text="Add Food" textAlignment="CENTER"/>
-                <Separator prefHeight="10" style="-fx-background-color: #0D47A1" prefWidth="50"/>
                 <Label text="Types" textAlignment="CENTER" style="-fx-font-size: 28" textFill="white"/>
 
 
