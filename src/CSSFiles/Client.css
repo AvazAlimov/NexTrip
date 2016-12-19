@@ -16,6 +16,11 @@
 }
 
 .text-field {
+    -fx-font-size: 18;
+    -fx-effect: dropshadow(gaussian, #000, 10, 0, 0, 0);
+}
+.text-area{
+    -fx-font-size: 18;
     -fx-effect: dropshadow(gaussian, #000, 10, 0, 0, 0);
 }
 
@@ -56,11 +61,6 @@
 #imageContainer {
     -fx-effect: dropshadow(gaussian, #01579B, 10, 0, 0, 0);
 }
-
-.combo-box {
-    -fx-background-color: #FFC107;
-}
-
 
 
 #startPrice {

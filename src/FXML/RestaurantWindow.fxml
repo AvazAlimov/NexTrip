@@ -21,15 +21,7 @@
             <VBox alignment="CENTER" spacing="10.0">
                 <TextField fx:id="nameText" prefWidth="400" prefHeight="40" promptText="name"/>
                 <TextField fx:id="locationText" prefWidth="400" prefHeight="40" promptText="location"/>
-                <TextArea fx:id="infoText" promptText="information"/>
-                <HBox spacing="10.0" alignment="CENTER" prefHeight="60">
-                    <TextField fx:id="startPrice" promptText="low price"/>
-                    <TextField fx:id="endPrice" promptText="high price"/>
-                    <ImageView fitHeight="40" fitWidth="40">
-                        <Image url="/Resources/price_icon(128px).png"/>
-                    </ImageView>
-                    <ComboBox fx:id="currencySelectionButton" editable="true" prefWidth="100.0" promptText="Currency"/>
-                </HBox>
+                <TextArea fx:id="infoText" promptText="information" prefHeight="200"/>
 
                 <ScrollPane fitToWidth="true">
                     <HBox fx:id="imageContainer" prefHeight="200" alignment="CENTER_LEFT"
@@ -100,7 +92,7 @@
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER">
                     <ImageView fitWidth="60" fitHeight="60">
-                        <Image url="/Resources/web_icon1(128px).png"/>
+                        <Image url="/Resources/site_96px.png"/>
                     </ImageView>
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
                 </HBox>
