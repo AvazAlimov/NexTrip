@@ -29,6 +29,43 @@
                     <TextField fx:id="PriceOfFoodText" prefWidth="100" prefHeight="40" promptText="price"/>
                 </HBox>
                 <Button fx:id="addFoodButton" text="Add Food" textAlignment="CENTER"/>
+                <HBox alignment="CENTER">
+                    <Button fx:id="cafeIcon" prefHeight="120" prefWidth="120" text="Cafe"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/wifi_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="fastFoodIcon" prefHeight="120" prefWidth="120" text="Fast Food"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/wifi_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="cuisineIcon" prefHeight="120" prefWidth="120" text="Cuisine"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/wifi_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="sitDownIcon" prefHeight="120" prefWidth="120" text="Sit Down"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/wifi_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
                 <ScrollPane fitToWidth="true">
                     <HBox fx:id="imageContainer" prefHeight="200" alignment="CENTER_LEFT"
                           style="-fx-background-color: rgba(211,211,211,0.3)">

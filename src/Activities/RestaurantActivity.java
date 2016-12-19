@@ -33,6 +33,10 @@ public class RestaurantActivity implements Initializable {
     public TextField nameOfFoodText;
     public TextField PriceOfFoodText;
     public Button addFoodButton;
+    public Button cafeIcon;
+    public Button fastFoodIcon;
+    public Button cuisineIcon;
+    public Button sitDownIcon;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -52,6 +56,10 @@ public class RestaurantActivity implements Initializable {
     }
 
     public void addRestaurant(ActionEvent event) {
+
+    }
+
+    public void typePressed(ActionEvent event) {
 
     }
 }
