@@ -86,7 +86,14 @@
     -fx-control-inner-background: white ;
     -fx-effect: dropshadow(gaussian, red, 0, 0, 0, 0);
 }
-
+.date-picker-popup > * > .spinner > .left-button {
+    -fx-background-color: #82B1FF;
+    -fx-padding: 0 0.333333em 0 0.25em; /* 0 4 0 3 */
+}
+.date-picker-popup > * > .spinner > .right-button {
+    -fx-background-color: #82B1FF;
+    -fx-padding: 0 0.25em 0 0.333333em; /* 0 3 0 4 */
+}
 
 
 .date-picker-popup > * > .week-number-cell {

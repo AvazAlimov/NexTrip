@@ -96,7 +96,7 @@
             <Label text="Set number of credits" HBox.hgrow="ALWAYS"/>
             <HBox alignment="CENTER">
                 <TextField fx:id="credits" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="60" text="1"/>
-                <VBox alignment="CENTER">
+                <VBox alignment="CENTER" spacing="-9">
                     <Button id="up" prefHeight="20" onMouseClicked="#updateCredits" fx:id="upButton" prefWidth="20"
                             style="-fx-background-color: transparent">
                         <graphic>

@@ -7,98 +7,10 @@
 <?import javafx.scene.image.Image?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Activities.ClientActivity">
+            fx:controller="Activities.RestaurantActivity">
 
-    <GridPane fx:id="mainPane" vgap="10.0" hgap="10.0" alignment="CENTER" AnchorPane.leftAnchor="0.0"
-              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
 
-        <columnConstraints>
-            <ColumnConstraints/>
-            <ColumnConstraints/>
-        </columnConstraints>
-
-        <rowConstraints>
-            <RowConstraints/>
-            <RowConstraints/>
-        </rowConstraints>
-
-        <Button prefWidth="200" prefHeight="200" text="Add Object" onAction="#switchPane"
-                style="-fx-content-display: top;">
-            <graphic>
-                <ImageView fitHeight="128" fitWidth="128">
-                    <Image url="/Resources/navigation_icon(128px).png"/>
-                </ImageView>
-            </graphic>
-        </Button>
-        <Button prefWidth="200" prefHeight="200" text="Edit Object" GridPane.columnIndex="1" onAction="#switchPane"
-                style="-fx-content-display: top;">
-            <graphic>
-                <ImageView fitHeight="128" fitWidth="128">
-                    <Image url="/Resources/edit_icon(128px).png"/>
-                </ImageView>
-            </graphic>
-        </Button>
-
-    </GridPane>
-
-    <GridPane visible="false" fx:id="addChoicePane" vgap="20.0" hgap="20.0" alignment="CENTER"
-              AnchorPane.rightAnchor="100.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0"
-              AnchorPane.topAnchor="100.0">
-
-        <rowConstraints>
-            <RowConstraints/>
-            <RowConstraints/>
-            <RowConstraints/>
-        </rowConstraints>
-
-        <columnConstraints>
-            <ColumnConstraints/>
-            <ColumnConstraints/>
-        </columnConstraints>
-
-        <Button prefWidth="200" prefHeight="200" text="Hotel" onAction="#switchObjectPane"
-                style="-fx-content-display: top;">
-            <graphic>
-                <ImageView fitHeight="128" fitWidth="128">
-                    <Image url="/Resources/hotel_icon(128px).png"/>
-                </ImageView>
-            </graphic>
-        </Button>
-        <Button prefWidth="200" prefHeight="200" text="Restaurant" GridPane.columnIndex="1" onAction="#switchObjectPane"
-                style="-fx-content-display: top;">
-            <graphic>
-                <ImageView fitHeight="128" fitWidth="128">
-                    <Image url="/Resources/restaurant_icon(128px).png"/>
-                </ImageView>
-            </graphic>
-        </Button>
-        <Button prefWidth="200" prefHeight="200" text="Entertaining" GridPane.rowIndex="1"
-                onAction="#switchObjectPane" style="-fx-content-display: top;">
-            <graphic>
-                <ImageView fitHeight="128" fitWidth="128">
-                    <Image url="/Resources/entertaining_icon(128px).png"/>
-                </ImageView>
-            </graphic>
-        </Button>
-        <Button prefWidth="200" prefHeight="200" text="Things To Do" GridPane.rowIndex="1" GridPane.columnIndex="1"
-                onAction="#switchObjectPane" style="-fx-content-display: top;">
-            <graphic>
-                <ImageView fitHeight="128" fitWidth="128">
-                    <Image url="/Resources/thingToDo_icon(128px).png"/>
-                </ImageView>
-            </graphic>
-        </Button>
-
-        <Label fx:id="creditErrorMessage" visible="false" GridPane.rowIndex="2" GridPane.columnSpan="2"
-               text="You do not not have enough credits to add an object"
-               style="-fx-text-fill: #ff3438; -fx-font-size: 20;"/>
-
-    </GridPane>
-
-    <Label fx:id="isFilledError" visible="false" text="Please fill the empty fields" AnchorPane.topAnchor="10.0"
-           AnchorPane.leftAnchor="550.0" style="-fx-text-fill: red; -fx-font-size: 30;  "/>
-
-    <GridPane visible="false" fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"
+    <GridPane fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"
               AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="20.0"
               AnchorPane.rightAnchor="100.0">
         <columnConstraints>
@@ -116,7 +28,7 @@
                     <ImageView fitHeight="40" fitWidth="40">
                         <Image url="/Resources/price_icon(128px).png"/>
                     </ImageView>
-
+                    <ComboBox fx:id="currencySelectionButton" editable="true" prefWidth="100.0" promptText="Currency"/>
                 </HBox>
 
                 <ScrollPane fitToWidth="true">
@@ -193,7 +105,7 @@
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
                 </HBox>
 
-                <Button fx:id="addInfoButton" text="Add Hotel" onAction="#addHotel"/>
+                <Button fx:id="addInfoButton" text="Add Restaurant" onAction="#addRestaurant"/>
             </VBox>
         </ScrollPane>
 

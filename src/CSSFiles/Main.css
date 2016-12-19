@@ -148,7 +148,7 @@
     -fx-effect: dropshadow(gaussian, red, 0, 0, 0, 0);
 }
 
-.date-picker{
+.date-picker {
     -fx-base: #FFC107;
     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
