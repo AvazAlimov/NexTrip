@@ -19,7 +19,7 @@
 
         <ScrollPane fitToWidth="true">
             <VBox alignment="CENTER" spacing="10.0">
-                <Label textAlignment="CENTER" text="Fill the Fields" style="-fx-font-size: 24; -fx-text-fill: white"/>
+                <Label textAlignment="CENTER" text="Fill the Fields" style="-fx-font-size: 24; -fx-text-fill: white;"/>
                 <TextField fx:id="nameText" prefWidth="400" prefHeight="40" promptText="name"/>
                 <TextField fx:id="locationText" prefWidth="400" prefHeight="40" promptText="location"/>
                 <TextArea fx:id="infoText" promptText="information" prefHeight="200"/>
@@ -27,11 +27,17 @@
                 <Separator prefHeight="15" visible="false"/>
 
                 <HBox alignment="CENTER" spacing="20">
-                    <TextField fx:id="nameOfFoodText" prefWidth="300" prefHeight="40" promptText="Food name"/>
-                    <TextField fx:id="PriceOfFoodText" prefWidth="100" prefHeight="40" promptText="price"/>
+                    <Label text="Rules:" style="-fx-text-fill: white;-fx-font-size: 18;"/>
+                    <TextField fx:id="rulesText" prefWidth="300" prefHeight="40" promptText="Rules"/>
+
+                    <Label text="Price:" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+                    <TextField fx:id="priceText" prefWidth="100" prefHeight="40" promptText="price"/>
+
                     <ImageView fitHeight="40" fitWidth="40">
                         <Image url="/Resources/price_icon(128px).png"/>
                     </ImageView>
+                    <Label text="Age limit:" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+                    <ComboBox prefHeight="30" prefWidth="90" promptText="age"/>
                 </HBox>
 
 
@@ -92,60 +98,60 @@
                 </ScrollPane>
 
                 <HBox alignment="CENTER">
-                    <Button fx:id="freeWifi" prefHeight="130" prefWidth="130" text="Free WiFi"
+                    <Button fx:id="freeWifi" prefHeight="110" prefWidth="110" text="Free WiFi"
                             style="-fx-content-display: top;" onAction="#amenityPressed">
                         <graphic>
-                            <ImageView fitHeight="128" fitWidth="128">
+                            <ImageView fitHeight="100" fitWidth="100">
                                 <Image url="/Resources/wifi_icon(256px).png"/>
                             </ImageView>
                         </graphic>
                     </Button>
                     <Separator prefWidth="200" visible="false"/>
-                    <Button fx:id="freeParking" prefHeight="130" prefWidth="130" text="Free Parking"
+                    <Button fx:id="freeParking" prefHeight="110" prefWidth="110" text="Free Parking"
                             style="-fx-content-display: top;" onAction="#amenityPressed">
                         <graphic>
-                            <ImageView fitHeight="128" fitWidth="128">
+                            <ImageView fitHeight="100" fitWidth="100">
                                 <Image url="/Resources/parking_icon(256px).png"/>
                             </ImageView>
                         </graphic>
                     </Button>
                     <Separator prefWidth="200" visible="false"/>
-                    <Button fx:id="freeYard" prefHeight="130" prefWidth="130" text="Children Yard"
+                    <Button fx:id="freeYard" prefHeight="110" prefWidth="110" text="Children Yard"
                             style="-fx-content-display: top;" onAction="#amenityPressed">
                         <graphic>
-                            <ImageView fitHeight="128" fitWidth="128">
+                            <ImageView fitHeight="100" fitWidth="100">
                                 <Image url="/Resources/childrenYard_Icon(256px).png"/>
                             </ImageView>
                         </graphic>
                     </Button>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER">
-                    <ImageView fitWidth="60" fitHeight="60">
+                    <ImageView fitWidth="55" fitHeight="55">
                         <Image url="/Resources/mail_icon(128px).png"/>
                     </ImageView>
                     <TextField fx:id="mailContact" prefWidth="500" prefHeight="35" promptText="mail address"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER">
-                    <ImageView fitWidth="60" fitHeight="60">
+                    <ImageView fitWidth="55" fitHeight="55">
                         <Image url="/Resources/phone_icon(128px).png"/>
                     </ImageView>
                     <TextField fx:id="phoneContact" prefWidth="500" prefHeight="35" promptText="Phone number"/>
                 </HBox>
 
                 <HBox spacing="20.0" alignment="CENTER">
-                    <ImageView fitWidth="60" fitHeight="60">
+                    <ImageView fitWidth="55" fitHeight="55">
                         <Image url="/Resources/facebook_icon(128px).png"/>
                     </ImageView>
                     <TextField fx:id="facebookContact" prefWidth="500" prefHeight="35" promptText="Facebook link"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER">
-                    <ImageView fitWidth="60" fitHeight="60">
+                    <ImageView fitWidth="55" fitHeight="55">
                         <Image url="/Resources/telegram_icon(128px).png"/>
                     </ImageView>
                     <TextField fx:id="telegramContact" prefWidth="500" prefHeight="35" promptText="Telegram link"/>
                 </HBox>
                 <HBox spacing="20.0" alignment="CENTER">
-                    <ImageView fitWidth="60" fitHeight="60">
+                    <ImageView fitWidth="55" fitHeight="55">
                         <Image url="/Resources/site_96px.png"/>
                     </ImageView>
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
