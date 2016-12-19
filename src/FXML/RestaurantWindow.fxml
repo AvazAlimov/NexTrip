@@ -22,7 +22,13 @@
                 <TextField fx:id="nameText" prefWidth="400" prefHeight="40" promptText="name"/>
                 <TextField fx:id="locationText" prefWidth="400" prefHeight="40" promptText="location"/>
                 <TextArea fx:id="infoText" promptText="information" prefHeight="200"/>
-
+                <Separator prefHeight="15" visible="false"/>
+                <HBox alignment="CENTER">
+                    <TextField fx:id="nameOfFoodText" prefWidth="300" prefHeight="40" promptText="Food name"/>
+                    <Separator prefWidth="30" visible="false"/>
+                    <TextField fx:id="PriceOfFoodText" prefWidth="100" prefHeight="40" promptText="price"/>
+                </HBox>
+                <Button fx:id="addFoodButton" text="Add Food" textAlignment="CENTER"/>
                 <ScrollPane fitToWidth="true">
                     <HBox fx:id="imageContainer" prefHeight="200" alignment="CENTER_LEFT"
                           style="-fx-background-color: rgba(211,211,211,0.3)">

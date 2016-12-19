@@ -30,6 +30,9 @@ public class RestaurantActivity implements Initializable {
     public Button backButton;
     public Label usernameText;
     public GridPane objectPane;
+    public TextField nameOfFoodText;
+    public TextField PriceOfFoodText;
+    public Button addFoodButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
