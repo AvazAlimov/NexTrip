@@ -1,6 +1,7 @@
 package Activities;
 
 import Classes.Hotel;
+import Classes.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+@SuppressWarnings("Duplicates")
 public class MainActivity implements Initializable {
     public VBox container;
     public HBox datePane;
@@ -89,17 +91,43 @@ public class MainActivity implements Initializable {
                     }
                 }
                 break;
+            case "Restaurants":
+                for (Restaurant restaurant : Tools.restaurants) {
+                    if (Tools.contains(restaurant.getLocation().toLowerCase(), text.toLowerCase())) {
+                        searchText.getItems().add(restaurant.getLocation());
+                    }
+                }
             default:
                 break;
         }
         searchText.show();
     }
 
-    public void addHotels() {
+    public void addObjects(){
+        switch(choosenType){
+            case "Hotels":
+                addHotels();
+                break;
+            case "Restaurants":
+                addRestaurants();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void addHotels() {
         ArrayList<Hotel> hotels = Tools.findHotel(searchText.getEditor().getText());
         container.getChildren().clear();
         for (Hotel hotel : hotels)
             container.getChildren().add(fillHotelItem(hotel));
+    }
+
+    private void addRestaurants(){
+        ArrayList<Restaurant> restaurants = Tools.findRestaurants(searchText.getEditor().getText());
+        container.getChildren().clear();
+        for (Restaurant restaurant : restaurants)
+            container.getChildren().add(fillRestaurantItem(restaurant));
     }
 
     private GridPane fillHotelItem(Hotel hotel) {
@@ -161,6 +189,78 @@ public class MainActivity implements Initializable {
                 try {
                     Tools.hotel = hotel;
                     Parent parent = FXMLLoader.load(getClass().getResource("../FXML/HotelWindow.fxml"));
+                    Scene scene = new Scene(parent);
+                    Main.stage.hide();
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        return item;
+    }
+
+    private GridPane fillRestaurantItem(Restaurant restaurant){
+        GridPane item = new GridPane();
+        ColumnConstraints col1 = new ColumnConstraints();
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setHgrow(Priority.SOMETIMES);
+        ColumnConstraints col3 = new ColumnConstraints();
+        item.getColumnConstraints().addAll(col1, col2, col3);
+        item.setHgap(10);
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+
+        URL url = null;
+        try {
+            url = new File(restaurant.getPhotos().get(0)).toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Image value = null;
+        if (url != null)
+            value = new Image(url.toString(), 100.0, 100.0, false, true);
+
+        ImageView image = new ImageView(value);
+        Circle circle = new Circle(50.0);
+        circle.setCenterX(50.0);
+        circle.setCenterY(50.0);
+        image.setClip(circle);
+        item.add(image, 0, 0);
+
+        Label info = new Label("Name: " + restaurant.getName() + "\nType: " + restaurant.getType().get(0) + "\t Number of seats: " + restaurant.getNumberOfSeats() + "\nLocation: " + restaurant.getLocation());
+        info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
+        item.add(info, 1, 0);
+
+        HBox ratingBox = new HBox(5.0);
+        ratingBox.setStyle("-fx-alignment: center;");
+
+        int maxRate = 5;
+        for (int i = 0; i < restaurant.getRating(); i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.filledStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+            maxRate--;
+        }
+        for (int i = 0; i < maxRate; i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.emptyStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+        }
+        item.add(ratingBox, 2, 0);
+
+        item.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    Tools.restaurant = restaurant;
+                    Parent parent = FXMLLoader.load(getClass().getResource("../FXML/RestaurantWindow.fxml"));
                     Scene scene = new Scene(parent);
                     Main.stage.hide();
                     Main.stage.setScene(scene);
