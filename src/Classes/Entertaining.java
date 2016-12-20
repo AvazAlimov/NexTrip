@@ -6,7 +6,9 @@ public class Entertaining extends Guidance {
     private int ageLimit;
 
     public Entertaining(){
-
+        price = 0.0;
+        rules = "";
+        ageLimit = 0;
     }
 
     public double getPrice() {

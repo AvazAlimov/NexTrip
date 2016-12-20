@@ -379,4 +379,112 @@ class SQLDataBase {
         return id;
     }
     //endregion
+
+
+    //region Entertainging
+    static void loadEntertaining(){
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Entertaining;";
+            ResultSet result = statement.executeQuery(query);
+            while (result.next()) {
+                Entertaining entertaining = new Entertaining();
+                entertaining.setId(result.getInt("Id"));
+                entertaining.setRatings(result.getString("Ratings"));
+                entertaining.setName(result.getString("Name"));
+                entertaining.setInfo(result.getString("Info"));
+                entertaining.setLocation(result.getString("Location"));
+                entertaining.setImages(result.getString("Images"));
+                entertaining.setContacts(result.getString("Contacts"));
+                entertaining.setComments(result.getString("Comments"));
+                entertaining.setAmenities(result.getString("Amenities"));
+                entertaining.setPrice(result.getDouble("Price"));
+                entertaining.setRules(result.getString("Rules"));
+                entertaining.setAgeLimit(result.getInt("AgeLimit"));
+
+                Tools.entertainings.add(entertaining);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void addEntertaining(Entertaining entertaining, Client client) {
+        int id = lastEntertainingId();
+
+        if (!client.addObjectId("E" + id))
+            return;
+
+        String name = entertaining.getName();
+        String info = entertaining.getInfo();
+        String location = entertaining.getLocation();
+        String images = entertaining.getImageLinks();
+        String contacts = entertaining.contactsToString();
+        String comments = entertaining.commentsToString();
+        String amenitites = entertaining.ammenityToString();
+        String ratings = entertaining.ratingsToString();
+        double price = entertaining.getPrice();
+        String rules = entertaining.getRules();
+        int age = entertaining.getAgeLimit();
+
+        try {
+            Statement statement = connection.createStatement();
+            String query = String.format("INSERT INTO Entertaining(Id, Ratings, Name, Info, Location, Images, Contacts, Comments, Amenities, Price, Rules, AgeLimit) VALUES ('%d','%s','%s','%s','%s','%s','%s','%s','%s','%f','%s','%d')", id, normalizeString(ratings), normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), price, normalizeString(rules), age);
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void editEntertaining(Entertaining entertaining) {
+        int id = entertaining.getId();
+        String name = entertaining.getName();
+        String info = entertaining.getInfo();
+        String location = entertaining.getLocation();
+        String images = entertaining.getImageLinks();
+        String contacts = entertaining.contactsToString();
+        String comments = entertaining.commentsToString();
+        String amenitites = entertaining.ammenityToString();
+        String ratings = entertaining.ratingsToString();
+        double price = entertaining.getPrice();
+        String rules = entertaining.getRules();
+        int age = entertaining.getAgeLimit();
+
+        try {
+            Statement statement = connection.createStatement();
+            String query = String.format("UPDATE Entertaining SET Ratings='%s', Name='%s', Info='%s', Location='%s', Images='%s', Contacts='%s', Comments='%s', Amenities='%s', Price='%f', Rules='%s', AgeLimit='%d' WHERE Id='%d';", normalizeString(ratings), normalizeString(name), normalizeString(info), normalizeString(location), normalizeString(images), normalizeString(contacts), normalizeString(comments), normalizeString(amenitites), price, normalizeString(rules), age, id);
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void deleteEntertaining(String id){
+        try {
+            Statement statement = connection.createStatement();
+            String query = "DELETE FROM Entertaining WHERE Id='" + id + "';";
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static int lastEntertainingId() {
+        int id = 0;
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT Id FROM Entertaining ORDER BY Id DESC;";
+            ResultSet result = statement.executeQuery(query);
+            if (result.next())
+                id = result.getInt("Id") + 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+    //endregion
 }

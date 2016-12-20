@@ -43,5 +43,6 @@ public class Main extends Application {
         SQLDataBase.loadClients();
         SQLDataBase.loadHotels();
         SQLDataBase.loadRestaurant();
+        SQLDataBase.loadEntertaining();
     }
 }
