@@ -37,12 +37,13 @@ public class Main extends Application {
         launch(args);
     }
 
-    private static void initialize(){
+    private static void initialize() {
         Tools.init();
         SQLDataBase.connect();
         SQLDataBase.loadClients();
         SQLDataBase.loadHotels();
         SQLDataBase.loadRestaurant();
         SQLDataBase.loadEntertaining();
+        SQLDataBase.loadThingsToDo();
     }
 }
