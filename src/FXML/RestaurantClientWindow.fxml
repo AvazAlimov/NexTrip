@@ -7,7 +7,7 @@
 <?import javafx.scene.image.Image?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Activities.RestaurantActivity">
+            fx:controller="Activities.AddRestaurantActivity">
 
 
     <GridPane fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"
@@ -17,6 +17,9 @@
             <ColumnConstraints hgrow="SOMETIMES"/>
         </columnConstraints>
 
+        <Label fx:id="isFilledError" visible="false" text="Please fill the empty fields" AnchorPane.topAnchor="10.0"
+               AnchorPane.leftAnchor="550.0" style="-fx-text-fill: red; -fx-font-size: 30;  "/>
+
         <ScrollPane fitToWidth="true">
             <VBox alignment="CENTER" spacing="10.0">
                 <Label textAlignment="CENTER" text="Fill the Fields" style="-fx-font-size: 24; -fx-text-fill: white"/>
@@ -25,21 +28,18 @@
                 <TextArea fx:id="infoText" promptText="information" prefHeight="200"/>
 
                 <Separator prefHeight="15" visible="false"/>
-                <GridPane fx:id="textFieldsPane" alignment="CENTER" maxHeight="100" maxWidth="600">
-                    <VBox alignment="CENTER" spacing="10.0">
-                        <HBox alignment="CENTER" spacing="20">
-                            <TextField fx:id="nameOfFoodText" prefWidth="300" prefHeight="30" promptText="Food name"/>
-                            <TextField fx:id="PriceOfFoodText" prefWidth="100" prefHeight="30" promptText="price"/>
-                            <ImageView fitHeight="40" fitWidth="40">
-                                <Image url="/Resources/price_icon(128px).png"/>
-                            </ImageView>
+
+                <GridPane alignment="CENTER" maxHeight="100" maxWidth="600">
+                    <VBox fx:id="menuContainer" alignment="CENTER" spacing="10.0">
+                        <HBox alignment="CENTER">
+                            <Button text="Add Food" textAlignment="CENTER" onAction="#addMenu"/>
+                            <Button fx:id="removeMenuButton" visible="false" text="Remove Food" textAlignment="CENTER" onAction="#removeMenu"/>
                         </HBox>
-                        <Button fx:id="addFoodButton" text="Add Food" textAlignment="CENTER"/>
                     </VBox>
                 </GridPane>
-                <HBox alignment="CENTER_RIGHT">
+
+                <HBox alignment="CENTER" spacing="10">
                     <Label text="Number of seats:" style="-fx-text-fill: #000; -fx-font-size: 20;"/>
-                    <Separator prefWidth="5" visible="false"/>
                     <TextField fx:id="numberOfSeatsText" prefWidth="100" prefHeight="30" promptText="quantity"
                                style="-fx-font-size: 14"/>
                 </HBox>
@@ -166,7 +166,7 @@
 
     </GridPane>
 
-    <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Log Out"
+    <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Back"
             onAction="#switchPane"/>
     <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"
            style="-fx-font-size: 22"/>

@@ -55,7 +55,6 @@ public class ClientActivity implements Initializable {
         client = Tools.client;
         usernameText.setText(client.getUsername());
 
-
     }
 
     public void switchPane(ActionEvent event) throws IOException {

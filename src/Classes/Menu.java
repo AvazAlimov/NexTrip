@@ -11,6 +11,11 @@ public class Menu {
         price = new ArrayList<>();
     }
 
+    public void addItem(String name, String price){
+        foods.add(name);
+        this.price.add(price);
+    }
+
     public void setPrice(ArrayList<String> price) {
         this.price = price;
     }
