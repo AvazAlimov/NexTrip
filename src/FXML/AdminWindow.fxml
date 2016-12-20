@@ -98,7 +98,7 @@
                 <TextField fx:id="credits" onKeyTyped="#keyPressed" prefHeight="50" prefWidth="60" text="1"/>
                 <VBox alignment="CENTER" spacing="-9">
                     <Button id="up" prefHeight="20" onMouseClicked="#updateCredits" fx:id="upButton" prefWidth="20"
-                            style="-fx-background-color: transparent">
+                            style="-fx-background-color: transparent;-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0); -fx-cursor: hand;">
                         <graphic>
                             <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                 <Image smooth="false" url="/Resources/upArrow(32px).png"/>
@@ -106,7 +106,7 @@
                         </graphic>
                     </Button>
                     <Button id="down" prefHeight="20" onMouseClicked="#updateCredits" fx:id="downButton" prefWidth="20"
-                            style="-fx-background-color: transparent">
+                            style="-fx-background-color: transparent;-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0); -fx-cursor: hand;">
                         <graphic>
                             <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                 <Image smooth="false" url="/Resources/downArrow_icon(32px).png"/>
