@@ -103,7 +103,7 @@ public class ClientActivity implements Initializable {
 
                 break;
             case "Restaurant":
-                Parent parent = FXMLLoader.load(getClass().getResource("../FXML/RestaurantClientWindow.fxml"));
+                Parent parent = FXMLLoader.load(getClass().getResource("../FXML/AddRestaurantWindow.fxml"));
                 Scene scene = new Scene(parent);
                 Main.stage.hide();
                 Main.stage.setScene(scene);
