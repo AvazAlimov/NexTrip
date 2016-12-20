@@ -3,8 +3,8 @@
 }
 .button{
     -fx-background-color: #FFA107;
-    -fx-pref-height: 200;
-    -fx-pref-width: 200;
+    -fx-pref-height: 180;
+    -fx-pref-width: 180;
     -fx-background-radius: 100;
     -fx-font-size: 15;
 }
