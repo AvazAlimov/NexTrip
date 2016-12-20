@@ -24,6 +24,13 @@
     -fx-font-size: 18;
     -fx-effect: dropshadow(gaussian, #000, 10, 0, 0, 0);
 }
+/*#textFieldsPane{
+    -fx-border-color: #1A237E;
+    -fx-border-radius: 0;
+    -fx-pref-height: 250;
+    -fx-pref-width: 300;
+    -fx-border-width: 2;
+}*/
 
 .button {
     -fx-font-family: FuturaExtended;

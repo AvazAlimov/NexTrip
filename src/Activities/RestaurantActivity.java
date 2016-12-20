@@ -37,6 +37,7 @@ public class RestaurantActivity implements Initializable {
     public Button fastFoodIcon;
     public Button cuisineIcon;
     public Button sitDownIcon;
+    public TextField numberOfSeatsText;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
