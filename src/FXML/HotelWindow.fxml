@@ -110,7 +110,49 @@
                     </graphic>
                 </Button>
             </HBox>
+            <!--<GridPane alignment="CENTER" visible="false">
+                <Label text="Types" textAlignment="CENTER" style="-fx-font-size: 28" textFill="white"/>
 
+
+                <HBox alignment="CENTER">
+                    <Button fx:id="cafeIcon" prefHeight="100" prefWidth="100" text="Cafe"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/wifi_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="fastFoodIcon" prefHeight="100" prefWidth="100" text="Fast Food"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/fastFood_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="cuisineIcon" prefHeight="100" prefWidth="100" text="Cuisine"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/cuisine_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="sitDownIcon" prefHeight="100" prefWidth="100" text="Sit Down"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/sitDown_icon256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </GridPane>
+-->
             <HBox alignment="CENTER">
                 <Label text="Price" alignment="CENTER" style="-fx-font-size: 36;"/>
             </HBox>

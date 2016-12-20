@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Separator?>
@@ -15,7 +10,7 @@
           fx:controller="Activities.SettingsActivity">
 
 
-    <VBox alignment="CENTER" spacing="10.0">
+    <VBox alignment="CENTER" spacing="5.0">
 
 
         <HBox alignment="CENTER">
@@ -26,15 +21,22 @@
                     </ImageView>
                 </graphic>-->
             </Button>
-            <Separator prefWidth="40" visible="false"/>
+            <Separator prefWidth="30" visible="false"/>
             <Button fx:id="imageButton2" text="Picture 2" style="-fx-content-display: top;"/>
-            <Separator prefWidth="40" visible="false"/>
+        </HBox>
+        <Separator prefWidth="40" visible="false"/>
+        <HBox>
             <Button fx:id="imageButton3" text="Picture 3" style="-fx-content-display: top;"/>
-            <Separator prefWidth="40" visible="false"/>
+            <Separator prefWidth="300" visible="false"/>
             <Button fx:id="imageButton4" text="Picture 4" style="-fx-content-display: top;"/>
         </HBox>
+        <HBox alignment="CENTER">
+            <Button fx:id="imageButton5" text="Picture 1" style="-fx-content-display: top;"/>
+            <Separator prefWidth="30" visible="false"/>
+            <Button fx:id="imageButton6" text="Picture 2" style="-fx-content-display: top;"/>
+        </HBox>
 
-        <Button fx:id="applyButton" text="Apply" alignment="BOTTOM_CENTER"/>
+        <Button fx:id="applyButton" text="Apply" alignment="CENTER"/>
     </VBox>
     <stylesheets>
         <URL value="@../CSSFiles/Settings.css"/>
