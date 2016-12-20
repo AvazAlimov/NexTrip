@@ -56,7 +56,7 @@
                         <Button prefHeight="200" prefWidth="200" text="Add Image" style="-fx-content-display: top;"
                                 onAction="#addImage">
                             <graphic>
-                                <ImageView fitHeight="128" fitWidth="128">
+                                <ImageView fitHeight="115" fitWidth="115">
                                     <Image url="/Resources/addPicture_icon(128px).png"/>
                                 </ImageView>
                             </graphic>
