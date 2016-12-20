@@ -135,8 +135,8 @@ public class AdminActivity implements Initializable {
         client.setStartDate(new Date(String.format("%02d/%02d/%04d", startDate.getValue().getDayOfMonth(), startDate.getValue().getMonthValue(), startDate.getValue().getYear())));
         client.setEndDate(new Date(String.format("%02d/%02d/%04d", endDate.getValue().getDayOfMonth(), endDate.getValue().getMonthValue(), endDate.getValue().getYear())));
         SQLDataBase.editClient(client, this.client.getUsername());
-        Tools.clients.remove(this.client);
-        Tools.clients.add(client);
+        Tools.clients.clear();
+        SQLDataBase.loadClients();
 
         searchPane.setVisible(false);
         mainPane.setVisible(true);
