@@ -70,7 +70,15 @@ public class MainActivity implements Initializable {
                 }
                 break;
             case "Settings":
-                //TODO: settings window
+                try {
+                    Parent parent = FXMLLoader.load(getClass().getResource("../FXML/SettingsWindow.fxml"));
+                    Scene scene = new Scene(parent);
+                    Main.stage.hide();
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+                } catch (IOException e) {
+                    System.out.println("FXML file was not founded");
+                }
                 break;
         }
         btn.setStyle("-fx-background-color: #FFA000;");

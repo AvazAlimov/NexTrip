@@ -3,7 +3,7 @@
 }
 
 .root {
-    -fx-background-image: url("/Resources/7.jpg");
+    -fx-background-image: url("/Resources/trip.jpg");
     -fx-background-size: cover ;
 }
 

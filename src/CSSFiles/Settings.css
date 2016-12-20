@@ -1,6 +1,7 @@
 .root{
-    -fx-background-image: url("/Resources/SignIn_window(128px).jpg");
+    -fx-background-image: url("/Resources/7.jpg");
 }
+
 .button{
     -fx-background-color: #FFA107;
     -fx-pref-height: 180;

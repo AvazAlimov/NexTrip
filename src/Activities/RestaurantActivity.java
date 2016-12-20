@@ -233,7 +233,6 @@ public class RestaurantActivity implements Initializable {
         SQLDataBase.loadHotels();
     }
 
-
     public void closeMessageLayout() {
         message.setText("");
         messageLayout.setVisible(false);
