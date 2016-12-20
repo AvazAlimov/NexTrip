@@ -56,7 +56,7 @@
                             style="-fx-content-display: top;" onAction="#typePressed">
                         <graphic>
                             <ImageView fitHeight="100" fitWidth="100">
-                                <Image url="/Resources/wifi_icon(256px).png"/>
+                                <Image url="/Resources/cafe_icon(256px).png"/>
                             </ImageView>
                         </graphic>
                     </Button>

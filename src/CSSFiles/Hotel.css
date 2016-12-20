@@ -20,6 +20,9 @@
 #locationButton:hover{
     -fx-cursor: default;
 }
+#menuButton{
+
+}
 
 .label {
     -fx-text-fill: ivory;
