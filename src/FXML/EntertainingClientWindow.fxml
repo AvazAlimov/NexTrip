@@ -124,7 +124,7 @@
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
                 </HBox>
 
-                <Button fx:id="addInfoButton" text="Add Restaurant" onAction="#addRestaurant"/>
+                <Button fx:id="addInfoButton" text="Add Entertaining" onAction="#addEntertaining"/>
             </VBox>
         </ScrollPane>
 

@@ -62,4 +62,8 @@ public class RestaurantActivity implements Initializable {
     public void typePressed(ActionEvent event) {
 
     }
+
+    public void addEntertaining(ActionEvent event) {
+
+    }
 }
