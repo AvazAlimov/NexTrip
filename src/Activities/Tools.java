@@ -274,6 +274,34 @@ class SQLDataBase {
 
 
     //region Restaurant
+    static void loadRestaurant(){
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Restaurant;";
+            ResultSet result = statement.executeQuery(query);
+            while (result.next()) {
+                Restaurant restaurant = new Restaurant();
+                restaurant.setId(result.getInt("Id"));
+                restaurant.setRatings(result.getString("Ratings"));
+                restaurant.setName(result.getString("Name"));
+                restaurant.setInfo(result.getString("Info"));
+                restaurant.setLocation(result.getString("Location"));
+                restaurant.setImages(result.getString("Images"));
+                restaurant.setContacts(result.getString("Contacts"));
+                restaurant.setComments(result.getString("Comments"));
+                restaurant.setAmenities(result.getString("Amenities"));
+                restaurant.setMenu(result.getString("Menu"));
+                restaurant.setType(result.getString("Type"));
+                restaurant.setNumberOfSeats(result.getInt("Seats"));
+
+                Tools.restaurants.add(restaurant);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     static void addRestaurant(Restaurant restaurant, Client client) {
         int id = lastRestaurantId();
 
