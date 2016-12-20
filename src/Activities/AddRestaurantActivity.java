@@ -57,8 +57,8 @@ public class AddRestaurantActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //this.client = Tools.client;
-        //usernameText.setText(client.getUsername());
+        this.client = Tools.client;
+        usernameText.setText(client.getUsername());
         imagePaths = new ArrayList<>();
         foodNames = new ArrayList<>();
         foodPrices = new ArrayList<>();
@@ -68,10 +68,10 @@ public class AddRestaurantActivity implements Initializable {
         Button btn = (Button) event.getSource();
         if (btn.getId().equals("y")) {
             btn.setId("");
-            btn.setStyle("-fx-background-color: transparent;");
+            btn.setStyle("-fx-background-color: transparent; -fx-content-display: top;");
         } else {
             btn.setId("y");
-            btn.setStyle("-fx-background-color: greenyellow;");
+            btn.setStyle("-fx-background-color: greenyellow; -fx-content-display: top;");
         }
     }
 
@@ -84,6 +84,19 @@ public class AddRestaurantActivity implements Initializable {
         if (freeYard.getId().equals("y"))
             string.add(freeYard.getText());
         return string;
+    }
+
+    private ArrayList<Restaurant.Type> getTyes(){
+        ArrayList<Restaurant.Type> types = new ArrayList<>();
+        if(cafeIcon.getId().equals("y"))
+            types.add(Restaurant.Type.valueOf(cafeIcon.getText()));
+        if(fastFoodIcon.getId().equals("y"))
+            types.add(Restaurant.Type.valueOf(fastFoodIcon.getText()));
+        if(cuisineIcon.getId().equals("y"))
+            types.add(Restaurant.Type.valueOf(cuisineIcon.getText()));
+        if(sitDownIcon.getId().equals("y"))
+            types.add(Restaurant.Type.valueOf(sitDownIcon.getText()));
+        return types;
     }
 
     private ArrayList<Contact> getContacts() {
@@ -122,13 +135,13 @@ public class AddRestaurantActivity implements Initializable {
     }
 
     public void typePressed(ActionEvent event) {
-        Button btn = (Button)event.getSource();
+        Button btn = (Button) event.getSource();
         if (btn.getId().equals("y")) {
             btn.setId("");
-            btn.setStyle("-fx-background-color: transparent;");
+            btn.setStyle("-fx-background-color: transparent; -fx-content-display: top;");
         } else {
             btn.setId("y");
-            btn.setStyle("-fx-background-color: greenyellow;");
+            btn.setStyle("-fx-background-color: greenyellow; -fx-content-display: top;");
         }
     }
 
@@ -144,7 +157,7 @@ public class AddRestaurantActivity implements Initializable {
         restaurant.setLocation(locationText.getText());
         restaurant.setInfo(infoText.getText());
         restaurant.setMenu(generateMenu());
-        //restaurant.setType();
+        restaurant.setType(getTyes());
         restaurant.setNumberOfSeats(Integer.parseInt(numberOfSeatsText.getText()));
         restaurant.setAmenities(getAmenitites());
         restaurant.setContacts(getContacts());
@@ -155,7 +168,6 @@ public class AddRestaurantActivity implements Initializable {
         SQLDataBase.loadHotels();
         imagePaths.clear();
     }
-
 
     private Menu generateMenu(){
         Menu menu = new Menu();
@@ -209,6 +221,4 @@ public class AddRestaurantActivity implements Initializable {
         if(menuContainer.getChildren().size() == 1)
             removeMenuButton.setVisible(false);
     }
-
-
 }

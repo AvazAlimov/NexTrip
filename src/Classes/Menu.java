@@ -51,7 +51,7 @@ public class Menu {
     }
 
     private void setItem(String string){
-        int index = string.indexOf('▣');
+        int index = string.indexOf('□');
         foods.add(string.substring(0,index));
         price.add(string.substring(index + 1, string.length()));
     }

@@ -54,7 +54,6 @@ public class ClientActivity implements Initializable {
         imagePaths = new ArrayList<>();
         client = Tools.client;
         usernameText.setText(client.getUsername());
-
     }
 
     public void switchPane(ActionEvent event) throws IOException {
@@ -95,15 +94,20 @@ public class ClientActivity implements Initializable {
         }
     }
 
-    public void switchObjectPane(ActionEvent event) {
+    public void switchObjectPane(ActionEvent event) throws IOException {
         String text = ((Button) event.getSource()).getText();
-        addChoicePane.setVisible(false);
-        objectPane.setVisible(true);
+
 
         switch (text) {
             case "Hotel":
+
                 break;
             case "Restaurant":
+                Parent parent = FXMLLoader.load(getClass().getResource("../FXML/RestaurantClientWindow.fxml"));
+                Scene scene = new Scene(parent);
+                Main.stage.hide();
+                Main.stage.setScene(scene);
+                Main.stage.show();
                 break;
             case "Entertaining":
                 break;
@@ -112,9 +116,10 @@ public class ClientActivity implements Initializable {
             default:
                 break;
         }
+        addChoicePane.setVisible(false);
+        objectPane.setVisible(true);
     }
 
-    //TODO:check for filled
     public void addHotel() {
 
         if (!isFilled()) {
@@ -150,10 +155,10 @@ public class ClientActivity implements Initializable {
         Button btn = (Button) event.getSource();
         if (btn.getId().equals("y")) {
             btn.setId("");
-            btn.setStyle("-fx-background-color: transparent;");
+            btn.setStyle("-fx-background-color: transparent; -fx-content-display: top;");
         } else {
             btn.setId("y");
-            btn.setStyle("-fx-background-color: greenyellow;");
+            btn.setStyle("-fx-background-color: greenyellow; -fx-content-display: top;");
         }
     }
 
