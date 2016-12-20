@@ -221,4 +221,6 @@ public class AddRestaurantActivity implements Initializable {
         if(menuContainer.getChildren().size() == 1)
             removeMenuButton.setVisible(false);
     }
+
+
 }

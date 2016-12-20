@@ -107,9 +107,11 @@
 
         <ScrollPane fitToWidth="true">
             <VBox alignment="CENTER" spacing="10.0">
+                <Label text="Fill the Fields" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
                 <TextField fx:id="nameText" prefWidth="400" prefHeight="30" promptText="name"/>
                 <TextField fx:id="locationText" prefWidth="400" prefHeight="30" promptText="location"/>
                 <TextArea fx:id="infoText" prefWidth="400" prefHeight="100" promptText="information"/>
+                <Label text="Price" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
                 <HBox spacing="10.0" alignment="CENTER" prefHeight="60">
                     <TextField fx:id="startPrice" promptText="low price"/>
                     <TextField fx:id="endPrice" promptText="high price"/>
@@ -118,7 +120,7 @@
                     </ImageView>
 
                 </HBox>
-
+                <Label text="Pictures" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
                 <ScrollPane fitToWidth="true">
                     <HBox fx:id="imageContainer" prefHeight="200" alignment="CENTER_LEFT"
                           style="-fx-background-color: rgba(211,211,211,0.3)">
@@ -132,6 +134,8 @@
                         </Button>
                     </HBox>
                 </ScrollPane>
+
+                <Label text="Amenities" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
 
                 <HBox alignment="CENTER">
                     <Button fx:id="freeWifi" prefHeight="110" prefWidth="110" text="Free WiFi"
@@ -161,6 +165,9 @@
                         </graphic>
                     </Button>
                 </HBox>
+
+                <Label text="Contacts" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
+
                 <HBox spacing="20.0" alignment="CENTER">
                     <ImageView fitWidth="55" fitHeight="55">
                         <Image url="/Resources/mail_icon(128px).png"/>
@@ -202,7 +209,7 @@
     <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Log Out"
             onAction="#switchPane"/>
     <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"
-           style="-fx-font-size: 22"/>
+           style="-fx-font-size: 30"/>
 
     <stylesheets>
         <URL value="@../CSSFiles/Client.css"/>
