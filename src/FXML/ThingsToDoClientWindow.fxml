@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
+
 <?import javafx.scene.image.Image?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
@@ -42,13 +43,16 @@
                     </ImageView>
 
                     <Separator prefWidth="30" visible="false"/>
-
-                    <Label text="Age limit:" style="-fx-text-fill: white; -fx-font-size: 18;"/>
-                    <ComboBox prefHeight="30" prefWidth="90" promptText="age"/>
+                    <HBox spacing="10.0"  stylesheets="@../CSSFiles/Admin_Client.css">
+                        <DatePicker fx:id="startDate" onMouseClicked="#datePressed" prefHeight="50.0" promptText="start date"
+                                    HBox.hgrow="ALWAYS"/>
+                        <DatePicker fx:id="endDate" onMouseClicked="#datePressed" prefHeight="50.0" promptText="expiry date"
+                                    HBox.hgrow="ALWAYS"/>
+                    </HBox>
                 </HBox>
 
                 <Separator prefHeight="4" style="-fx-background-color: #0D47A1" prefWidth="50"/>
-
+                <Label text="Pictures" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
                 <ScrollPane fitToWidth="true">
                     <HBox fx:id="imageContainer" prefHeight="200" alignment="CENTER_LEFT"
                           style="-fx-background-color: rgba(211,211,211,0.3)">
@@ -62,7 +66,7 @@
                         </Button>
                     </HBox>
                 </ScrollPane>
-
+                <Label text="Amenities" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
                 <HBox alignment="CENTER">
                     <Button fx:id="freeWifi" prefHeight="110" prefWidth="110" text="Free WiFi"
                             style="-fx-content-display: top;" onAction="#amenityPressed">
@@ -91,6 +95,7 @@
                         </graphic>
                     </Button>
                 </HBox>
+                <Label text="Contacts" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
                 <HBox spacing="20.0" alignment="CENTER">
                     <ImageView fitWidth="55" fitHeight="55">
                         <Image url="/Resources/mail_icon(128px).png"/>
@@ -123,7 +128,7 @@
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
                 </HBox>
 
-                <Button fx:id="addInfoButton" text="Add Entertaining" />
+                <Button fx:id="addInfoButton" text="Add Things To Do" />
             </VBox>
         </ScrollPane>
 
