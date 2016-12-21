@@ -202,6 +202,7 @@ public class AdminActivity implements Initializable {
         client = Tools.searchClient(search.getText());
         if (client == null) {
             searchError.setText("Client with this username was not found");
+            searchError.setStyle("-fx-text-fill: white; -fx-font-size: 18;");
             return;
         }
         username.setText(client.getUsername());

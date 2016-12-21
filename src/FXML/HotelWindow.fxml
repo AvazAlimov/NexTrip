@@ -30,7 +30,13 @@
 
         <VBox spacing="20">
 
-            <Button text="Back" onAction="#backToMain"/>
+            <Button fx:id="backButton" text="Back" onAction="#backToMain">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/back_icon(64px).png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
 
             <HBox spacing="40" alignment="CENTER">
                 <GridPane HBox.hgrow="ALWAYS" alignment="CENTER">
@@ -81,6 +87,9 @@
             </HBox>
 
             <HBox alignment="CENTER">
+                <VBox.margin>
+                    <Insets left="100" right="84"/>
+                </VBox.margin>
                 <TextFlow>
                     <TextArea fx:id="infoText" wrapText="true" editable="false" disable="true"/>
                 </TextFlow>

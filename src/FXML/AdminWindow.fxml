@@ -31,7 +31,7 @@
         <Button onAction="#switchPane" opacity="0.83" prefHeight="40" prefWidth="200" text="Add Client">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                    <Image smooth="false" url="/Resources/addClient_icon(32px).png"/>
+                    <Image smooth="false" url="/Resources/addClient_icon(32px).png" />
                 </ImageView>
             </graphic>
         </Button>

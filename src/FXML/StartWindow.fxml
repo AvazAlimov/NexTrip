@@ -10,8 +10,8 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.StartActivity">
 
-    <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="80"
-              AnchorPane.rightAnchor="80" AnchorPane.topAnchor="0" style="-fx-background-color: rgba(100,100,100,0.3)">
+    <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" style="-fx-background-color: rgba(100,100,100,0.3)">
 
 
 
