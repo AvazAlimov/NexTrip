@@ -83,7 +83,7 @@
             </HBox>
 
             <VBox alignment="CENTER" spacing="10">
-                <Label text="Holding Date" alignment="CENTER" style="-fx-font-size: 36;"/>
+                <Label text="Holding Date" alignment="CENTER" style="-fx-font-size: 36; -fx-text-fill: #90A4AE"/>
                 <Label fx:id="dateLabel" alignment="CENTER" style="-fx-font-size: 36;"/>
             </VBox>
 
