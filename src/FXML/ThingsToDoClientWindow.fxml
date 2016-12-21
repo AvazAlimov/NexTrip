@@ -9,6 +9,8 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.AddThingsToDoActivity">
 
+    <Label fx:id="isFilledError" visible="false" text="Please fill the empty fields" AnchorPane.topAnchor="10.0"
+           AnchorPane.leftAnchor="550.0" style="-fx-text-fill: red; -fx-font-size: 30;  "/>
 
     <GridPane fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"
               AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="20.0"
@@ -44,9 +46,9 @@
 
                     <Separator prefWidth="30" visible="false"/>
                     <HBox spacing="10.0"  stylesheets="@../CSSFiles/Admin_Client.css">
-                        <DatePicker fx:id="startDate" onMouseClicked="#datePressed" prefHeight="50.0" promptText="start date"
+                        <DatePicker fx:id="startDate" prefHeight="50.0" promptText="start date"
                                     HBox.hgrow="ALWAYS"/>
-                        <DatePicker fx:id="endDate" onMouseClicked="#datePressed" prefHeight="50.0" promptText="expiry date"
+                        <DatePicker fx:id="endDate" prefHeight="50.0" promptText="expiry date"
                                     HBox.hgrow="ALWAYS"/>
                     </HBox>
                 </HBox>
@@ -128,14 +130,14 @@
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
                 </HBox>
 
-                <Button fx:id="addInfoButton" text="Add Things To Do" />
+                <Button text="Add Things To Do" onAction="#addThingsToDo"/>
             </VBox>
         </ScrollPane>
 
     </GridPane>
 
     <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Log Out"
-            onAction="#switchPane"/>
+            onAction="#closeWindow"/>
     <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"
            style="-fx-font-size: 30"/>
 

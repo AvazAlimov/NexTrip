@@ -168,6 +168,12 @@ public class AddRestaurantActivity implements Initializable {
         Tools.restaurants.clear();
         SQLDataBase.loadRestaurant();
         imagePaths.clear();
+
+        try {
+            switchPane();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private Menu generateMenu(){

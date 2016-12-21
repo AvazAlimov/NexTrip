@@ -24,6 +24,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+@SuppressWarnings("Duplicates")
 public class ClientActivity implements Initializable {
     public Label usernameText;
     public Button backButton;
@@ -110,8 +111,18 @@ public class ClientActivity implements Initializable {
                 Main.stage.show();
                 break;
             case "Entertaining":
+                parent = FXMLLoader.load(getClass().getResource("../FXML/EntertainingClientWindow.fxml"));
+                scene = new Scene(parent);
+                Main.stage.hide();
+                Main.stage.setScene(scene);
+                Main.stage.show();
                 break;
             case "Things To Do":
+                parent = FXMLLoader.load(getClass().getResource("../FXML/ThingsToDoClientWindow.fxml"));
+                scene = new Scene(parent);
+                Main.stage.hide();
+                Main.stage.setScene(scene);
+                Main.stage.show();
                 break;
             default:
                 break;
