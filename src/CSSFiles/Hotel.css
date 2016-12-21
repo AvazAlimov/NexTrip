@@ -20,10 +20,22 @@
 #locationButton:hover{
     -fx-cursor: default;
 }
-#menuButton{
-
+#menuButton {
+    -fx-background-color: #FF9100;
+    -fx-pref-width: 150;
+    -fx-pref-height: 50;
+    -fx-background-radius: 15;
+    -fx-font-size: 10;
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
 
+#menuButton:hover{
+    -fx-background-color: #FF9100;
+}
+
+#menuButton:pressed{
+    -fx-background-color: #FF6D00;
+}
 .label {
     -fx-text-fill: ivory;
     -fx-font-size: 24;

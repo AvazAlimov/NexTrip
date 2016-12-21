@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Activities.AddRestaurantActivity">
+
+
+    <GridPane fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"
+              AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="20.0"
+              AnchorPane.rightAnchor="100.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES"/>
+        </columnConstraints>
+
+        <ScrollPane fitToWidth="true">
+            <VBox alignment="CENTER" spacing="10.0">
+                <Label textAlignment="CENTER" text="Fill the Fields" style="-fx-font-size: 24; -fx-text-fill: white;"/>
+                <TextField fx:id="nameText" prefWidth="400" prefHeight="40" promptText="name"/>
+                <TextField fx:id="locationText" prefWidth="400" prefHeight="40" promptText="location"/>
+                <TextArea fx:id="infoText" prefWidth="400" prefHeight="100" promptText="information"/>
+
+                <Separator prefHeight="15" visible="false"/>
+
+                <HBox alignment="CENTER" >
+                    <Label text="Rules:" style="-fx-text-fill: white;-fx-font-size: 18;"/>
+                    <Separator prefWidth="10" visible="false"/>
+                    <TextArea fx:id="rulesText" prefWidth="300" prefHeight="50" promptText="Rules" style="-fx-font-size: 14"/>
+
+                    <Separator prefWidth="30" visible="false"/>
+
+                    <Label text="Price:" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+                    <Separator prefWidth="5" visible="false"/>
+                    <TextField fx:id="priceText" prefWidth="100" prefHeight="30" promptText="price" style="-fx-font-size: 14"/>
+                    <Separator prefWidth="5" visible="false"/>
+                    <ImageView fitHeight="40" fitWidth="40">
+
+                        <Image url="/Resources/price_icon(128px).png"/>
+                    </ImageView>
+
+                    <Separator prefWidth="30" visible="false"/>
+
+                    <Label text="Age limit:" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+                    <ComboBox prefHeight="30" prefWidth="90" promptText="age"/>
+                </HBox>
+
+                <Separator prefHeight="4" style="-fx-background-color: #0D47A1" prefWidth="50"/>
+
+                <ScrollPane fitToWidth="true">
+                    <HBox fx:id="imageContainer" prefHeight="200" alignment="CENTER_LEFT"
+                          style="-fx-background-color: rgba(211,211,211,0.3)">
+                        <Button prefHeight="200" prefWidth="200" text="Add Image" style="-fx-content-display: top;"
+                                onAction="#addImage">
+                            <graphic>
+                                <ImageView fitHeight="115" fitWidth="115">
+                                    <Image url="/Resources/addPicture_icon(128px).png"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
+                </ScrollPane>
+
+                <HBox alignment="CENTER">
+                    <Button fx:id="freeWifi" prefHeight="110" prefWidth="110" text="Free WiFi"
+                            style="-fx-content-display: top;" onAction="#amenityPressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/wifi_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="200" visible="false"/>
+                    <Button fx:id="freeParking" prefHeight="110" prefWidth="110" text="Free Parking"
+                            style="-fx-content-display: top;" onAction="#amenityPressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/parking_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="200" visible="false"/>
+                    <Button fx:id="freeYard" prefHeight="110" prefWidth="110" text="Children Yard"
+                            style="-fx-content-display: top;" onAction="#amenityPressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/childrenYard_Icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER">
+                    <ImageView fitWidth="55" fitHeight="55">
+                        <Image url="/Resources/mail_icon(128px).png"/>
+                    </ImageView>
+                    <TextField fx:id="mailContact" prefWidth="500" prefHeight="35" promptText="mail address"/>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER">
+                    <ImageView fitWidth="55" fitHeight="55">
+                        <Image url="/Resources/phone_icon(128px).png"/>
+                    </ImageView>
+                    <TextField fx:id="phoneContact" prefWidth="500" prefHeight="35" promptText="Phone number"/>
+                </HBox>
+
+                <HBox spacing="20.0" alignment="CENTER">
+                    <ImageView fitWidth="55" fitHeight="55">
+                        <Image url="/Resources/facebook_icon(128px).png"/>
+                    </ImageView>
+                    <TextField fx:id="facebookContact" prefWidth="500" prefHeight="35" promptText="Facebook link"/>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER">
+                    <ImageView fitWidth="55" fitHeight="55">
+                        <Image url="/Resources/telegram_icon(128px).png"/>
+                    </ImageView>
+                    <TextField fx:id="telegramContact" prefWidth="500" prefHeight="35" promptText="Telegram link"/>
+                </HBox>
+                <HBox spacing="20.0" alignment="CENTER">
+                    <ImageView fitWidth="55" fitHeight="55">
+                        <Image url="/Resources/site_96px.png"/>
+                    </ImageView>
+                    <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
+                </HBox>
+
+                <Button fx:id="addInfoButton" text="Add Entertaining" />
+            </VBox>
+        </ScrollPane>
+
+    </GridPane>
+
+    <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Log Out"
+            onAction="#switchPane"/>
+    <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"
+           style="-fx-font-size: 30"/>
+
+    <stylesheets>
+        <URL value="@../CSSFiles/Client.css"/>
+    </stylesheets>
+
+</AnchorPane>
+
