@@ -23,6 +23,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+@SuppressWarnings("Duplicates")
 public class AddRestaurantActivity implements Initializable {
 
     public TextField nameText;
@@ -164,8 +165,8 @@ public class AddRestaurantActivity implements Initializable {
         restaurant.setPhotos(imagePaths);
 
         SQLDataBase.addRestaurant(restaurant, client);
-        Tools.hotels.clear();
-        SQLDataBase.loadHotels();
+        Tools.restaurants.clear();
+        SQLDataBase.loadRestaurant();
         imagePaths.clear();
     }
 
@@ -221,6 +222,4 @@ public class AddRestaurantActivity implements Initializable {
         if(menuContainer.getChildren().size() == 1)
             removeMenuButton.setVisible(false);
     }
-
-
 }
