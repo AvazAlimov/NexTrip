@@ -117,7 +117,7 @@ public class ClientActivity implements Initializable {
                 Main.stage.show();
                 break;
             case "Things To Do":
-                parent = FXMLLoader.load(getClass().getResource("../FXML/ThingsToDoClientWindow.fxml"));
+                parent = FXMLLoader.load(getClass().getResource("../FXML/AddThingsToDoWindow.fxml"));
                 scene = new Scene(parent);
                 Main.stage.hide();
                 Main.stage.setScene(scene);
