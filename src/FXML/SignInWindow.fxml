@@ -33,6 +33,7 @@
             <RowConstraints/>
             <RowConstraints/>
             <RowConstraints/>
+            <RowConstraints/>
         </rowConstraints>
 
         <TextField fx:id="usernameText" promptText="username" GridPane.halignment="CENTER"/>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.TextArea?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Activities.EntertainingActivity">
+
+    <ScrollPane fx:id="mainLayout" fitToWidth="true" fitToHeight="true" AnchorPane.bottomAnchor="0.0"
+                AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <VBox spacing="20">
+
+            <Button text="Back" onAction="#backToMain"/>
+
+            <HBox spacing="40" alignment="CENTER">
+                <GridPane HBox.hgrow="ALWAYS" alignment="CENTER">
+                    <ImageView fx:id="imageView" fitWidth="1280" fitHeight="720" style="-fx-effect: dropshadow(gaussian, black, 15, 0, 0, 0);"/>
+                    <HBox alignment="CENTER">
+                        <Button fx:id="prevImage" id="prevImage" onAction="#switchPrevImage"/>
+                        <Separator HBox.hgrow="ALWAYS" visible="false"/>
+                        <Button fx:id="nextImage" id="nextImage" onAction="#switchNextImage"/>
+                    </HBox>
+                </GridPane>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <Label fx:id="nameLabel"/>
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="locationButton" prefHeight="60" prefWidth="30"/>
+                <Label fx:id="locationLabel"/>
+            </HBox>
+
+            <HBox fx:id="ratingLayout" spacing="5" alignment="CENTER">
+
+                <ImageView fitWidth="30" fitHeight="30" style="-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);">
+                    <Image url="/Resources/users_48px.png"/>
+                </ImageView>
+
+                <Label fx:id="numberRating"/>
+
+                <Separator prefWidth="20" visible="false"/>
+
+                <HBox fx:id="stars" spacing="5" onMouseExited="#restoreStars" alignment="CENTER">
+                    <Button id="1" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
+                            onAction="#rateHotel"/>
+                    <Button id="2" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
+                            onAction="#rateHotel"/>
+                    <Button id="3" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
+                            onAction="#rateHotel"/>
+                    <Button id="4" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
+                            onAction="#rateHotel"/>
+                    <Button id="5" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
+                            onAction="#rateHotel"/>
+                </HBox>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <Label text="Information" alignment="CENTER" style="-fx-font-size: 36;"/>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <TextFlow>
+                    <TextArea fx:id="infoText" wrapText="true" editable="false" disable="true"/>
+                </TextFlow>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <Label text="Amenities" alignment="CENTER" style="-fx-font-size: 36;"/>
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button visible="false" fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   disable="true">
+                            <Image url="/Resources/wifi_icon(64px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button visible="false" fx:id="freeParking" text="Free Parking" prefHeight="50.0">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   disable="true">
+                            <Image url="/Resources/parking_icon(64px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button visible="false" fx:id="freeYard" text="Free Children Yard" prefHeight="50.0" disable="true">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/childrenYard_icon1(64px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+            <!--<GridPane alignment="CENTER" visible="false">
+                <Label text="Types" textAlignment="CENTER" style="-fx-font-size: 28" textFill="white"/>
+
+
+                <HBox alignment="CENTER">
+                    <Button fx:id="cafeIcon" prefHeight="100" prefWidth="100" text="Cafe"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/wifi_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="fastFoodIcon" prefHeight="100" prefWidth="100" text="Fast Food"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/fastFood_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="cuisineIcon" prefHeight="100" prefWidth="100" text="Cuisine"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/cuisine_icon(256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator prefWidth="50" visible="false"/>
+                    <Button fx:id="sitDownIcon" prefHeight="100" prefWidth="100" text="Sit Down"
+                            style="-fx-content-display: top;" onAction="#typePressed">
+                        <graphic>
+                            <ImageView fitHeight="100" fitWidth="100">
+                                <Image url="/Resources/sitDown_icon256px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </GridPane>
+-->
+            <HBox alignment="CENTER">
+                <Label text="Price" alignment="CENTER" style="-fx-font-size: 36;"/>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Label fx:id="priceLabel" alignment="CENTER"/>
+                <Button fx:id="dollarSign" prefHeight="60" prefWidth="25"/>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <Label text="Contacts" alignment="CENTER" style="-fx-font-size: 36;"/>
+            </HBox>
+
+            <HBox fx:id="contactContainer" spacing="10" alignment="CENTER">
+
+                <Button fx:id="mail_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                            <Image url="/Resources/email_96px.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="phone_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                            <Image url="/Resources/phone_96px.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="facebook_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                            <Image url="/Resources/facebook_96px.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="telegram_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                            <Image url="/Resources/telegram_96px.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="web_icon" prefHeight="60" prefWidth="60" visible="false" onAction="#showSource">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="40.0">
+                            <Image url="/Resources/site_96px.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+            </HBox>
+
+
+            <VBox fx:id="commentContainer" spacing="10"/>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Comments" stylesheets="@../CSSFiles/hotelButton.css"/>
+            </HBox>
+
+            <TextField fx:id="commentText" prefWidth="800.0" promptText="your comments"/>
+
+            <HBox alignment="BOTTOM_RIGHT">
+                <Button text="Add Comment" style="-fx-font-size: 20" onAction="#addComment">
+                    <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="/Resources/plus_icon(128px).png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
+    </ScrollPane>
+
+    <GridPane fx:id="messageLayout" visible="false" alignment="CENTER" AnchorPane.leftAnchor="0.0"
+              AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+              style="-fx-background-color: rgba(44,44,44,0.9)" onMouseClicked="#closeMessageLayout">
+        <Label fx:id="message"/>
+    </GridPane>
+
+    <stylesheets>
+        <URL value="@../CSSFiles/Hotel.css"/>
+    </stylesheets>
+
+</AnchorPane>
