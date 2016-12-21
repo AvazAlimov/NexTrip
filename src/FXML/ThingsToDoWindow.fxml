@@ -82,6 +82,12 @@
                 </HBox>
             </HBox>
 
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Holding Date" alignment="CENTER" style="-fx-font-size: 36;"/>
+                <Label text="textOfHoldingDate" alignment="CENTER" style="-fx-font-size: 36;"/>
+            </VBox>
+
+
             <HBox alignment="CENTER">
                 <Label text="Information" alignment="CENTER" style="-fx-font-size: 36;"/>
             </HBox>
@@ -93,6 +99,10 @@
                 <TextFlow>
                     <TextArea fx:id="infoText" wrapText="true" editable="false" disable="true"/>
                 </TextFlow>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <Label text="Rules" alignment="CENTER" style="-fx-font-size: 36;"/>
             </HBox>
 
             <HBox alignment="CENTER" spacing="300">
