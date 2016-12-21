@@ -84,7 +84,7 @@ class Tools {
             DatePicker start = new DatePicker();
             start.setValue(LocalDate.of(thingsToDo.getStartDate().getYear(), thingsToDo.getStartDate().getMonth(), thingsToDo.getStartDate().getDay()));
             DatePicker end = new DatePicker();
-            end.setValue(LocalDate.of(thingsToDo.getStartDate().getYear(), thingsToDo.getStartDate().getMonth(), thingsToDo.getStartDate().getDay()));
+            end.setValue(LocalDate.of(thingsToDo.getEndDate().getYear(), thingsToDo.getEndDate().getMonth(), thingsToDo.getEndDate().getDay()));
 
             if (contains(thingsToDo.getLocation().toLowerCase(), location.toLowerCase()) && start.getValue().isBefore(startDate.getValue()) || start.getValue().isEqual(startDate.getValue()) && (end.getValue().isAfter(endDate.getValue()) || end.getValue().isEqual(endDate.getValue())))
                 returnThingsToDo.add(thingsToDo);
