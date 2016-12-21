@@ -74,6 +74,7 @@ public class ThingsToDoActivity implements Initializable {
         }
 
         dateLabel.setText(dateToString(thingsToDo.getStartDate()) + " - " + dateToString(thingsToDo.getEndDate()));
+        priceLabel.setText(thingsToDo.getPrice() + "");
 
         if (!images.isEmpty())
             imageView.setImage(images.get(0));
