@@ -97,7 +97,6 @@ public class AddThingsToDoActivity implements Initializable {
     }
 
     private String dateToString(DatePicker datePicker) {
-        System.out.println(datePicker.getValue().getDayOfMonth() + "/" + datePicker.getValue().getMonth().getValue() + "/" + datePicker.getValue().getYear());
         return datePicker.getValue().getDayOfMonth() + "/" + datePicker.getValue().getMonth().getValue() + "/" + datePicker.getValue().getYear();
     }
 

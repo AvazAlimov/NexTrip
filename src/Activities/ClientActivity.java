@@ -101,7 +101,6 @@ public class ClientActivity implements Initializable {
 
         switch (text) {
             case "Hotel":
-
                 break;
             case "Restaurant":
                 Parent parent = FXMLLoader.load(getClass().getResource("../FXML/AddRestaurantWindow.fxml"));

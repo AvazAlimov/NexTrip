@@ -8,6 +8,8 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.AddEntertainingActivity">
 
+    <Label fx:id="isFilledError" visible="false" text="Please fill the empty fields" AnchorPane.topAnchor="10.0"
+           AnchorPane.leftAnchor="550.0" style="-fx-text-fill: red; -fx-font-size: 30;  "/>
 
     <GridPane fx:id="objectPane" alignment="CENTER" vgap="10.0" hgap="10.0"
               AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="20.0"
@@ -44,7 +46,7 @@
                     <Separator prefWidth="30" visible="false"/>
 
                     <Label text="Age limit:" style="-fx-text-fill: white; -fx-font-size: 18;"/>
-                    <ComboBox prefHeight="30" prefWidth="90" promptText="age"/>
+                    <ComboBox fx:id="ageLimit" prefHeight="30" prefWidth="90" promptText="age"/>
                 </HBox>
 
                 <Separator prefHeight="4" style="-fx-background-color: #0D47A1" prefWidth="50"/>
@@ -123,14 +125,14 @@
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
                 </HBox>
 
-                <Button fx:id="addInfoButton" text="Add Entertaining" />
+                <Button text="Add Entertaining" onAction="#addEntertaining"/>
             </VBox>
         </ScrollPane>
 
     </GridPane>
 
     <Button fx:id="backButton" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" text="Log Out"
-            onAction="#switchPane"/>
+            onAction="#closeWindow"/>
     <Label fx:id="usernameText" AnchorPane.topAnchor="10.0" AnchorPane.rightAnchor="10.0" text="Username"
            style="-fx-font-size: 30"/>
 
