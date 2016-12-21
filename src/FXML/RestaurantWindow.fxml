@@ -90,7 +90,7 @@
             </HBox>
 
             <HBox spacing="20" alignment="CENTER">
-                <Button visible="false" fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0">
+                <Button visible="false" fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0" >
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
                                    disable="true">
@@ -119,7 +119,7 @@
             </HBox>
             <HBox fx:id="typeContainer" alignment="CENTER">
                 <Button fx:id="cafeIcon" prefHeight="100" prefWidth="100" text="Cafe"
-                        style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: #FFD180">
+                        style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: transparent; -fx-text-fill: white;">
                     <graphic>
                         <ImageView fitHeight="100" fitWidth="100">
                             <Image url="/Resources/cafe_icon1(128px).png"/>
@@ -128,7 +128,7 @@
                 </Button>
                 <Separator prefWidth="50" visible="false"/>
                 <Button fx:id="fastFoodIcon" prefHeight="100" prefWidth="100" text="Fast Food"
-                        style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: #FFD180">
+                        style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: transparent;-fx-text-fill: white; ">
                     <graphic>
                         <ImageView fitHeight="100" fitWidth="100">
                             <Image url="/Resources/fastFood_icon5(128px).png"/>
@@ -137,7 +137,7 @@
                 </Button>
                 <Separator prefWidth="50" visible="false"/>
                 <Button fx:id="cuisineIcon" prefHeight="100" prefWidth="100" text="Cuisine"
-                        style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: #FFD180">
+                        style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: transparent;-fx-text-fill: white;">
                     <graphic>
                         <ImageView fitHeight="100" fitWidth="100">
                             <Image url="/Resources/cuisine_icon(128px).png"/>
@@ -146,7 +146,7 @@
                 </Button>
                 <Separator prefWidth="50" visible="false"/>
                 <Button fx:id="sitDownIcon" prefHeight="100" prefWidth="100" text="Sit Down"
-                        style="-fx-content-display: top; -fx-font-size: 18; -fx-background-color: #FFD180">
+                        style="-fx-content-display: top; -fx-font-size: 18; -fx-background-color: transparent;-fx-text-fill: white;">
                     <graphic>
                         <ImageView fitHeight="100" fitWidth="100">
                             <Image url="/Resources/sitDown_icon(128px).png"/>
