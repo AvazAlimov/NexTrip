@@ -212,12 +212,13 @@
 
             <VBox fx:id="commentContainer" spacing="10"/>
             <HBox alignment="CENTER_LEFT">
-                <Label text="Comments" stylesheets="@../CSSFiles/hotelButton.css"/>
+                <Separator prefWidth="150" visible="false"/>
+                <Label text="Comments:" stylesheets="@../CSSFiles/hotelButton.css"/>
             </HBox>
-
-            <TextField fx:id="commentText" promptText="your comments"/>
-
-            <HBox alignment="BOTTOM_RIGHT">
+            <HBox alignment="CENTER">
+                <TextField fx:id="commentText" prefWidth="900.0" prefHeight="40" promptText="your comments"/>
+            </HBox>
+            <HBox alignment="CENTER">
                 <Button text="Add Comment" style="-fx-font-size: 20" onAction="#addComment">
                     <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
