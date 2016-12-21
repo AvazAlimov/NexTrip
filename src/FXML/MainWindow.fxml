@@ -58,13 +58,6 @@
                     </ImageView>
                 </graphic>
             </Button>
-            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Settings" prefHeight="40" onAction="#switchTabs">
-                <graphic>
-                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/settings_icon2(64px).png"/>
-                    </ImageView>
-                </graphic>
-            </Button>
         </HBox>
 
         <VBox GridPane.rowIndex="1" spacing="10">

@@ -16,6 +16,7 @@
 <?import javafx.scene.text.TextFlow?>
 <?import javafx.scene.control.TextArea?>
 
+<?import javafx.geometry.Insets?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.RestaurantActivity">
     <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="100"
@@ -213,7 +214,11 @@
             </HBox>
 
 
-            <VBox fx:id="commentContainer" spacing="10"/>
+            <VBox fx:id="commentContainer" spacing="10">
+                <VBox.margin>
+                    <Insets left="100" right="84"/>
+                </VBox.margin>
+            </VBox>
             <HBox alignment="CENTER_LEFT">
                 <Separator prefWidth="150" visible="false"/>
                 <Label text="Comments:" stylesheets="@../CSSFiles/hotelButton.css"/>
