@@ -52,10 +52,10 @@ public class AddEntertainingActivity implements Initializable {
         client = Tools.client;
         usernameText.setText(client.getUsername());
 
-        ageLimit.getItems().add("0");
-        ageLimit.getItems().add("12");
-        ageLimit.getItems().add("18");
-        ageLimit.getItems().add("21");
+        ageLimit.getItems().add("0+");
+        ageLimit.getItems().add("12+");
+        ageLimit.getItems().add("18+");
+        ageLimit.getItems().add("21+");
     }
 
     public void addEntertaining() {
@@ -75,7 +75,7 @@ public class AddEntertainingActivity implements Initializable {
         entertaining.setContacts(getContacts());
         entertaining.setRules(rulesText.getText());
 
-        entertaining.setAgeLimit(Integer.parseInt(ageLimit.getSelectionModel().getSelectedItem()));
+        entertaining.setAgeLimit(ageInt(ageLimit.getSelectionModel().getSelectedItem()));
         entertaining.setPhotos(imagePaths);
 
         SQLDataBase.addEntertaining(entertaining, client);
@@ -88,6 +88,11 @@ public class AddEntertainingActivity implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private int ageInt(String string){
+        int index = string.indexOf('+');
+        return Integer.parseInt(string.substring(0,index));
     }
 
     private ArrayList<String> getAmenitites() {
