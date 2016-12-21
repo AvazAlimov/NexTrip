@@ -99,12 +99,15 @@ public class MainActivity implements Initializable {
                 }
                 break;
             case "Things To Do":
-                for (ThingsToDo thingsToDo : Tools.thingsToDos) {
-                    System.out.println(Tools.checkDate(startDate, endDate, thingsToDo));
-                    if (Tools.contains(thingsToDo.getLocation().toLowerCase(), text.toLowerCase()) && Tools.checkDate(startDate, endDate, thingsToDo)){
-                        searchText.getItems().add(thingsToDo.getLocation());
-                    }
+                try {
+                    for (ThingsToDo thingsToDo : Tools.thingsToDos)
+                        if (Tools.contains(thingsToDo.getLocation().toLowerCase(), text.toLowerCase()) && Tools.checkDate(startDate, endDate, thingsToDo))
+                            searchText.getItems().add(thingsToDo.getLocation());
+
+                } catch (Exception ignored) {
                 }
+
+                break;
             default:
                 break;
         }
@@ -120,7 +123,10 @@ public class MainActivity implements Initializable {
                 addRestaurants();
                 break;
             case "Things To Do":
-                addThingsToDo();
+                try {
+                    addThingsToDo();
+                } catch (Exception ignored){
+                }
                 break;
             default:
                 break;
