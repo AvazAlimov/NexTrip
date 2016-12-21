@@ -107,7 +107,7 @@
                 <Label text="Amenities" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
                 <HBox alignment="CENTER">
                     <Button fx:id="freeWifi" prefHeight="110" prefWidth="110" text="Free WiFi"
-                            style="-fx-content-display: top; -fx-font-size: 17" onAction="#amenityPressed">
+                            style="-fx-content-display: top; -fx-font-size: 17;" onAction="#amenityPressed">
                         <graphic>
                             <ImageView fitHeight="100" fitWidth="100">
                                 <Image url="/Resources/wifi_icon(256px).png"/>
@@ -116,7 +116,7 @@
                     </Button>
                     <Separator prefWidth="200" visible="false"/>
                     <Button fx:id="freeParking" prefHeight="110" prefWidth="110" text="Free Parking"
-                            style="-fx-content-display: top; -fx-font-size: 17" onAction="#amenityPressed">
+                            style="-fx-content-display: top; -fx-font-size: 17;" onAction="#amenityPressed">
                         <graphic>
                             <ImageView fitHeight="100" fitWidth="100">
                                 <Image url="/Resources/parking_icon(256px).png"/>
@@ -125,7 +125,7 @@
                     </Button>
                     <Separator prefWidth="200" visible="false"/>
                     <Button fx:id="freeYard" prefHeight="110" prefWidth="110" text="Children Yard"
-                            style="-fx-content-display: top; -fx-font-size: 16" onAction="#amenityPressed">
+                            style="-fx-content-display: top; -fx-font-size: 16;" onAction="#amenityPressed">
                         <graphic>
                             <ImageView fitHeight="100" fitWidth="100">
                                 <Image url="/Resources/childrenYard_Icon(256px).png"/>

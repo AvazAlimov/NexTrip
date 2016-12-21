@@ -116,7 +116,6 @@
                 </Button>
             </HBox>
             <HBox alignment="CENTER" spacing="300">
-
                 <Label text="Rules:" alignment="CENTER" style="-fx-font-size: 36;"/>
                 <Label text="Age Limit:" alignment="CENTER" style="-fx-font-size: 36;"/>
             </HBox>
@@ -184,7 +183,7 @@
                 <Label text="Comments:" stylesheets="@../CSSFiles/hotelButton.css"/>
             </HBox>
             <HBox alignment="CENTER">
-                <TextField fx:id="commentText" prefWidth="900.0" prefHeight="40" promptText="your comments"/>
+                <TextField fx:id="commentText" prefWidth="950.0" prefHeight="40" promptText="your comments"/>
             </HBox>
             <HBox alignment="CENTER">
                 <Button text="Add Comment" style="-fx-font-size: 20" onAction="#addComment">
