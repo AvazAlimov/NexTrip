@@ -221,8 +221,8 @@ public class RestaurantActivity implements Initializable {
         addCommentItem(comment);
         restaurant.addComment(comment);
         SQLDataBase.editRestaurant(restaurant);
-        Tools.hotels.clear();
-        SQLDataBase.loadHotels();
+        Tools.restaurants.clear();
+        SQLDataBase.loadRestaurant();
     }
 
     public void showSource(ActionEvent event) {
@@ -258,8 +258,8 @@ public class RestaurantActivity implements Initializable {
         restaurant.addRating(rating);
         stars.setDisable(true);
         SQLDataBase.editRestaurant(restaurant);
-        Tools.hotels.clear();
-        SQLDataBase.loadHotels();
+        Tools.restaurants.clear();
+        SQLDataBase.loadRestaurant();
     }
 
     public void closeMessageLayout() {

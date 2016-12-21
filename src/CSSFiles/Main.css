@@ -4,7 +4,7 @@
 
 .root {
     -fx-background-image: url("/Resources/trip.jpg");
-    -fx-background-size: cover ;
+    -fx-background-size: cover;
 }
 
 .button {
