@@ -17,8 +17,11 @@
 <?import javafx.scene.control.TextArea?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Activities.HotelActivity">
+            fx:controller="Activities.ThingsToDoActivity">
+    <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="100"
+              AnchorPane.rightAnchor="100" AnchorPane.topAnchor="0" style="-fx-background-color: rgba(100,100,100,0.5)">
 
+    </GridPane>
     <ScrollPane fx:id="mainLayout" fitToWidth="true" fitToHeight="true" AnchorPane.bottomAnchor="0.0"
                 AnchorPane.leftAnchor="0.0"
                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -111,49 +114,7 @@
                     </graphic>
                 </Button>
             </HBox>
-            <!--<GridPane alignment="CENTER" visible="false">
-                <Label text="Types" textAlignment="CENTER" style="-fx-font-size: 28" textFill="white"/>
 
-
-                <HBox alignment="CENTER">
-                    <Button fx:id="cafeIcon" prefHeight="100" prefWidth="100" text="Cafe"
-                            style="-fx-content-display: top;" onAction="#typePressed">
-                        <graphic>
-                            <ImageView fitHeight="100" fitWidth="100">
-                                <Image url="/Resources/wifi_icon(256px).png"/>
-                            </ImageView>
-                        </graphic>
-                    </Button>
-                    <Separator prefWidth="50" visible="false"/>
-                    <Button fx:id="fastFoodIcon" prefHeight="100" prefWidth="100" text="Fast Food"
-                            style="-fx-content-display: top;" onAction="#typePressed">
-                        <graphic>
-                            <ImageView fitHeight="100" fitWidth="100">
-                                <Image url="/Resources/fastFood_icon(256px).png"/>
-                            </ImageView>
-                        </graphic>
-                    </Button>
-                    <Separator prefWidth="50" visible="false"/>
-                    <Button fx:id="cuisineIcon" prefHeight="100" prefWidth="100" text="Cuisine"
-                            style="-fx-content-display: top;" onAction="#typePressed">
-                        <graphic>
-                            <ImageView fitHeight="100" fitWidth="100">
-                                <Image url="/Resources/cuisine_icon(256px).png"/>
-                            </ImageView>
-                        </graphic>
-                    </Button>
-                    <Separator prefWidth="50" visible="false"/>
-                    <Button fx:id="sitDownIcon" prefHeight="100" prefWidth="100" text="Sit Down"
-                            style="-fx-content-display: top;" onAction="#typePressed">
-                        <graphic>
-                            <ImageView fitHeight="100" fitWidth="100">
-                                <Image url="/Resources/sitDown_icon256px).png"/>
-                            </ImageView>
-                        </graphic>
-                    </Button>
-                </HBox>
-            </GridPane>
--->
             <HBox alignment="CENTER">
                 <Label text="Price" alignment="CENTER" style="-fx-font-size: 36;"/>
             </HBox>
@@ -237,6 +198,7 @@
               style="-fx-background-color: rgba(44,44,44,0.9)" onMouseClicked="#closeMessageLayout">
         <Label fx:id="message"/>
     </GridPane>
+
 
     <stylesheets>
         <URL value="@../CSSFiles/Hotel.css"/>

@@ -18,7 +18,10 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.RestaurantActivity">
+    <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="100"
+              AnchorPane.rightAnchor="100" AnchorPane.topAnchor="0" style="-fx-background-color: rgba(100,100,100,0.5)">
 
+    </GridPane>
     <ScrollPane fx:id="mainLayout" fitToWidth="true" fitToHeight="true" AnchorPane.bottomAnchor="0.0"
                 AnchorPane.leftAnchor="0.0"
                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -248,6 +251,7 @@
         </ScrollPane>
 
     </GridPane>
+
 
     <stylesheets>
         <URL value="@../CSSFiles/Hotel.css"/>
