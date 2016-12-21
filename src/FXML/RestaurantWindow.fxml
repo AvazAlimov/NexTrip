@@ -81,6 +81,18 @@
                             onAction="#rateRestaurant"/>
                 </HBox>
             </HBox>
+            <HBox alignment="CENTER" >
+                <Button id="menuButton" alignment="CENTER" onAction="#openMenu"  prefHeight="110" prefWidth="110" text="Menu"
+                        style="-fx-content-display: top; -fx-font-size: 16; -fx-background-color: transparent;-fx-font-size: 22;">
+                    <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"
+                                   disable="true">
+                            <Image url="/Resources/menu_icon(128px).png" smooth="false"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+            </HBox>
 
             <HBox alignment="CENTER">
                 <Label text="Information" alignment="CENTER" style="-fx-font-size: 36;"/>
