@@ -7,10 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -55,6 +52,13 @@ public class RestaurantActivity implements Initializable {
     public GridPane messageLayout;
     public Label message;
     public Label seatsLabel;
+    public ScrollPane mainLayout;
+    public GridPane menuLayout;
+    public VBox menuContainer;
+    public Button fastFoodIcon;
+    public Button cuisineIcon;
+    public Button sitDownIcon;
+    public HBox typeContainer;
 
     private ArrayList<Image> images;
     private int imageIndex;
@@ -122,7 +126,21 @@ public class RestaurantActivity implements Initializable {
             }
         }
 
+        for (Restaurant.Type type : restaurant.getType()) {
+            if (type == Restaurant.Type.Cafe)
+                cafeIcon.setVisible(true);
+            if (type == Restaurant.Type.Fastfood)
+                fastFoodIcon.setVisible(true);
+            if (type == Restaurant.Type.Cuisine)
+                cuisineIcon.setVisible(true);
+            if (type == Restaurant.Type.SitDown)
+                phone_icon.setVisible(true);
+        }
+
+        loadMenu();
+
         deleteNullContacts();
+        deleteNullTypes();
 
         restaurant.getComments().forEach(this::addCommentItem);
     }
@@ -149,6 +167,17 @@ public class RestaurantActivity implements Initializable {
             contactContainer.getChildren().remove(phone_icon);
         if (!web_icon.isVisible())
             contactContainer.getChildren().remove(web_icon);
+    }
+
+    private void deleteNullTypes() {
+        if (!cafeIcon.isVisible())
+            typeContainer.getChildren().remove(cafeIcon);
+        if (!fastFoodIcon.isVisible())
+            typeContainer.getChildren().remove(fastFoodIcon);
+        if (!cuisineIcon.isVisible())
+            typeContainer.getChildren().remove(cuisineIcon);
+        if (!sitDownIcon.isVisible())
+            typeContainer.getChildren().remove(sitDownIcon);
     }
 
     private void addCommentItem(Comment comment) {
@@ -236,5 +265,22 @@ public class RestaurantActivity implements Initializable {
     public void closeMessageLayout() {
         message.setText("");
         messageLayout.setVisible(false);
+    }
+
+    private void loadMenu(){
+        ArrayList<String> names = restaurant.getMenu().getFoods();
+        ArrayList<String> prices = restaurant.getMenu().getPrice();
+
+        for(int i = 0; i<names.size(); i++){
+            menuContainer.getChildren().add(new Label(names.get(i) + "\t" + prices.get(i) + " $"));
+        }
+    }
+
+    public void openMenu() {
+        menuLayout.setVisible(true);
+    }
+
+    public void closeMenuLayout() {
+        menuLayout.setVisible(false);
     }
 }

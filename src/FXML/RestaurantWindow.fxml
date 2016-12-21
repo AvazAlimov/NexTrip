@@ -112,9 +112,9 @@
                 </Button>
             </HBox>
             <HBox alignment="CENTER">
-                <Label text="Types"  style="-fx-font-size: 28" textFill="white"/>
+                <Label text="Types" style="-fx-font-size: 28" textFill="white"/>
             </HBox>
-            <HBox alignment="CENTER">
+            <HBox fx:id="typeContainer" alignment="CENTER">
                 <Button fx:id="cafeIcon" prefHeight="100" prefWidth="100" text="Cafe"
                         style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: #FFD180">
                     <graphic>
@@ -153,7 +153,7 @@
             </HBox>
 
             <HBox alignment="CENTER">
-                <Button fx:id="menuButton" text="Menu" alignment="CENTER"/>
+                <Button text="Menu" alignment="CENTER" onAction="#openMenu"/>
             </HBox>
 
             <HBox alignment="CENTER" spacing="10">
@@ -215,7 +215,7 @@
                 <Label text="Comments" stylesheets="@../CSSFiles/hotelButton.css"/>
             </HBox>
 
-            <TextField fx:id="commentText"  promptText="your comments"/>
+            <TextField fx:id="commentText" promptText="your comments"/>
 
             <HBox alignment="BOTTOM_RIGHT">
                 <Button text="Add Comment" style="-fx-font-size: 20" onAction="#addComment">
@@ -233,6 +233,19 @@
               AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"
               style="-fx-background-color: rgba(44,44,44,0.9)" onMouseClicked="#closeMessageLayout">
         <Label fx:id="message"/>
+    </GridPane>
+
+    <GridPane fx:id="menuLayout" visible="false" alignment="CENTER" AnchorPane.topAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+              style="-fx-background-color: rgba(44,44,44,0.9)" onMouseClicked="#closeMenuLayout">
+
+        <ScrollPane fitToWidth="true" fitToHeight="true" maxHeight="600" maxWidth="400"
+                    style="-fx-background-color: lightgray; -fx-background-radius: 10; -fx-padding: 20;">
+
+            <VBox fx:id="menuContainer" alignment="CENTER"/>
+
+        </ScrollPane>
+
     </GridPane>
 
     <stylesheets>
