@@ -2,6 +2,7 @@ package Activities;
 
 import Classes.Hotel;
 import Classes.Restaurant;
+import Classes.ThingsToDo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -30,6 +32,8 @@ public class MainActivity implements Initializable {
     public VBox container;
     public HBox datePane;
     public ComboBox<String> searchText;
+    public DatePicker startDate;
+    public DatePicker endDate;
     private String choosenType = "Hotels";
 
     @Override
@@ -94,19 +98,30 @@ public class MainActivity implements Initializable {
                         searchText.getItems().add(restaurant.getLocation());
                     }
                 }
+                break;
+            case "Things To Do":
+                for (ThingsToDo thingsToDo : Tools.thingsToDos) {
+                    System.out.println(Tools.checkDate(startDate, endDate, thingsToDo));
+                    if (Tools.contains(thingsToDo.getLocation().toLowerCase(), text.toLowerCase()) && Tools.checkDate(startDate, endDate, thingsToDo)){
+                        searchText.getItems().add(thingsToDo.getLocation());
+                    }
+                }
             default:
                 break;
         }
         searchText.show();
     }
 
-    public void addObjects(){
-        switch(choosenType){
+    public void addObjects() {
+        switch (choosenType) {
             case "Hotels":
                 addHotels();
                 break;
             case "Restaurants":
                 addRestaurants();
+                break;
+            case "Things To Do":
+                addThingsToDo();
                 break;
             default:
                 break;
@@ -120,11 +135,18 @@ public class MainActivity implements Initializable {
             container.getChildren().add(fillHotelItem(hotel));
     }
 
-    private void addRestaurants(){
+    private void addRestaurants() {
         ArrayList<Restaurant> restaurants = Tools.findRestaurants(searchText.getEditor().getText());
         container.getChildren().clear();
         for (Restaurant restaurant : restaurants)
             container.getChildren().add(fillRestaurantItem(restaurant));
+    }
+
+    private void addThingsToDo() {
+        ArrayList<ThingsToDo> thingsToDos = Tools.findThingsToDo(searchText.getEditor().getText(), startDate, endDate);
+        container.getChildren().clear();
+        for (ThingsToDo thingsToDo : thingsToDos)
+            container.getChildren().add(fillThingsToDoItem(thingsToDo));
     }
 
     private GridPane fillHotelItem(Hotel hotel) {
@@ -199,7 +221,7 @@ public class MainActivity implements Initializable {
         return item;
     }
 
-    private GridPane fillRestaurantItem(Restaurant restaurant){
+    private GridPane fillRestaurantItem(Restaurant restaurant) {
         GridPane item = new GridPane();
         ColumnConstraints col1 = new ColumnConstraints();
         ColumnConstraints col2 = new ColumnConstraints();
@@ -258,6 +280,78 @@ public class MainActivity implements Initializable {
                 try {
                     Tools.restaurant = restaurant;
                     Parent parent = FXMLLoader.load(getClass().getResource("../FXML/RestaurantWindow.fxml"));
+                    Scene scene = new Scene(parent);
+                    Main.stage.hide();
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        return item;
+    }
+
+    private GridPane fillThingsToDoItem(ThingsToDo thingsToDo) {
+        GridPane item = new GridPane();
+        ColumnConstraints col1 = new ColumnConstraints();
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setHgrow(Priority.SOMETIMES);
+        ColumnConstraints col3 = new ColumnConstraints();
+        item.getColumnConstraints().addAll(col1, col2, col3);
+        item.setHgap(10);
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+
+        URL url = null;
+        try {
+            url = new File(thingsToDo.getPhotos().get(0)).toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Image value = null;
+        if (url != null)
+            value = new Image(url.toString(), 100.0, 100.0, false, true);
+
+        ImageView image = new ImageView(value);
+        Circle circle = new Circle(50.0);
+        circle.setCenterX(50.0);
+        circle.setCenterY(50.0);
+        image.setClip(circle);
+        item.add(image, 0, 0);
+
+        Label info = new Label("Name: " + thingsToDo.getName() + "\nPrice: " + thingsToDo.getPrice() + " $\t" + "\nLocation: " + thingsToDo.getLocation());
+        info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
+        item.add(info, 1, 0);
+
+        HBox ratingBox = new HBox(5.0);
+        ratingBox.setStyle("-fx-alignment: center;");
+
+        int maxRate = 5;
+        for (int i = 0; i < thingsToDo.getRating(); i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.filledStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+            maxRate--;
+        }
+        for (int i = 0; i < maxRate; i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.emptyStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+        }
+        item.add(ratingBox, 2, 0);
+
+        item.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    Tools.thingsToDo = thingsToDo;
+                    Parent parent = FXMLLoader.load(getClass().getResource("../FXML/ThingsToDoWindow.fxml"));
                     Scene scene = new Scene(parent);
                     Main.stage.hide();
                     Main.stage.setScene(scene);

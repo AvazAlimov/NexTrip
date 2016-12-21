@@ -2,8 +2,10 @@ package Activities;
 
 import Classes.*;
 import Classes.Date;
+import javafx.scene.control.DatePicker;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 class Tools {
@@ -15,6 +17,7 @@ class Tools {
     static Client client;
     static Hotel hotel;
     static Restaurant restaurant;
+    static ThingsToDo thingsToDo;
 
     //region Stars
     static String filledStar = "\"M121.215,44.212l-34.899-3.3c-2.2-0.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101,0l-12.4,30.3 c-0.8,2.1-2.8,3.5-5,3.7l-34.9,3.3c-5.2,0.5-7.3,7-3.4,10.5l26.3,23.1c1.7,1.5,2.4,3.7,1.9,5.9l-7.9,32.399 c-1.2,5.101,4.3,9.3,8.9,6.601l29.1-17.101c1.9-1.1,4.2-1.1,6.1,0l29.101,17.101c4.6,2.699,10.1-1.4,8.899-6.601l-7.8-32.399 c-0.5-2.2,0.2-4.4,1.9-5.9l26.3-23.1C128.615,51.212,126.415,44.712,121.215,44.212z\"";
@@ -67,12 +70,35 @@ class Tools {
         return returnHotels;
     }
 
-    static ArrayList<Restaurant> findRestaurants(String location){
+    static ArrayList<Restaurant> findRestaurants(String location) {
         ArrayList<Restaurant> returnRestaurants = new ArrayList<>();
         for (Restaurant restaurant : restaurants)
             if (contains(restaurant.getLocation().toLowerCase(), location.toLowerCase()))
                 returnRestaurants.add(restaurant);
         return returnRestaurants;
+    }
+
+    static ArrayList<ThingsToDo> findThingsToDo(String location, DatePicker startDate, DatePicker endDate) {
+        ArrayList<ThingsToDo> returnThingsToDo = new ArrayList<>();
+        for (ThingsToDo thingsToDo : thingsToDos) {
+            DatePicker start = new DatePicker();
+            start.setValue(LocalDate.of(thingsToDo.getStartDate().getYear(), thingsToDo.getStartDate().getMonth(), thingsToDo.getStartDate().getDay()));
+            DatePicker end = new DatePicker();
+            end.setValue(LocalDate.of(thingsToDo.getStartDate().getYear(), thingsToDo.getStartDate().getMonth(), thingsToDo.getStartDate().getDay()));
+
+            if (contains(thingsToDo.getLocation().toLowerCase(), location.toLowerCase()) && start.getValue().isBefore(startDate.getValue()) || start.getValue().isEqual(startDate.getValue()) && (end.getValue().isAfter(endDate.getValue()) || end.getValue().isEqual(endDate.getValue())))
+                returnThingsToDo.add(thingsToDo);
+        }
+        return returnThingsToDo;
+    }
+
+    static boolean checkDate(DatePicker startDate, DatePicker endDate, ThingsToDo thingsToDo) {
+        DatePicker start = new DatePicker();
+        start.setValue(LocalDate.of(thingsToDo.getStartDate().getYear(), thingsToDo.getStartDate().getMonth(), thingsToDo.getStartDate().getDay()));
+        DatePicker end = new DatePicker();
+        end.setValue(LocalDate.of(thingsToDo.getEndDate().getYear(), thingsToDo.getEndDate().getMonth(), thingsToDo.getEndDate().getDay()));
+
+        return (start.getValue().isBefore(startDate.getValue()) || start.getValue().isEqual(startDate.getValue())) && (end.getValue().isAfter(endDate.getValue()) || end.getValue().isEqual(endDate.getValue()));
     }
 }
 

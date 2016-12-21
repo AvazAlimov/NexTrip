@@ -81,8 +81,8 @@
             </HBox>
 
             <HBox fx:id="datePane" visible="false" alignment="CENTER" spacing="10">
-                <DatePicker promptText="CheckIn"/>
-                <DatePicker promptText="CheckOut"/>
+                <DatePicker fx:id="startDate" promptText="CheckIn"/>
+                <DatePicker fx:id="endDate" promptText="CheckOut"/>
             </HBox>
 
             <Separator prefHeight="10" visible="false"/>
