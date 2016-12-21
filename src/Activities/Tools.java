@@ -79,6 +79,14 @@ class Tools {
         return returnRestaurants;
     }
 
+    static ArrayList<Entertaining> findEntertainings(String location){
+        ArrayList<Entertaining> returnEntertainings = new ArrayList<>();
+        for (Entertaining entertaining : entertainings)
+            if (contains(entertaining.getLocation().toLowerCase(), location.toLowerCase()))
+                returnEntertainings.add(entertaining);
+        return returnEntertainings;
+    }
+
     static ArrayList<ThingsToDo> findThingsToDo(String location, DatePicker startDate, DatePicker endDate) {
         ArrayList<ThingsToDo> returnThingsToDo = new ArrayList<>();
         for (ThingsToDo thingsToDo : thingsToDos) {

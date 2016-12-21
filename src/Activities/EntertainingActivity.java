@@ -23,9 +23,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 @SuppressWarnings("Duplicates")
-public class EntertainingActivity implements Initializable{
-
-
+public class EntertainingActivity implements Initializable {
     public ImageView imageView;
     public Button prevImage;
     public Button nextImage;
@@ -75,7 +73,7 @@ public class EntertainingActivity implements Initializable{
         }
 
         priceLabel.setText(entertaining.getPrice() + "");
-        ageText.setText(entertaining.getAgeLimit() + " + ");
+        ageText.setText(entertaining.getAgeLimit() + " +");
 
         if (!images.isEmpty())
             imageView.setImage(images.get(0));
