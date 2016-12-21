@@ -29,7 +29,7 @@
 
         <VBox spacing="20">
 
-            <Button fx:id="backButton" text="Back" onAction="#backToMain">
+            <Button id="backButton" text="Back" onAction="#backToMain">
                 <graphic>
                     <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                         <Image smooth="false" url="/Resources/back_icon(64px).png"/>

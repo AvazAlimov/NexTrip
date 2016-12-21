@@ -52,6 +52,7 @@ public class ThingsToDoActivity implements Initializable {
     public Label message;
     public ScrollPane mainLayout;
     public Label rulesText;
+    public Label dateLabel;
 
     private ArrayList<Image> images;
     private int imageIndex;
@@ -71,6 +72,8 @@ public class ThingsToDoActivity implements Initializable {
             } catch (MalformedURLException ignored) {
             }
         }
+
+        dateLabel.setText(dateToString(thingsToDo.getStartDate()) + " - " + dateToString(thingsToDo.getEndDate()));
 
         if (!images.isEmpty())
             imageView.setImage(images.get(0));
@@ -122,6 +125,10 @@ public class ThingsToDoActivity implements Initializable {
         deleteNullContacts();
 
         thingsToDo.getComments().forEach(this::addCommentItem);
+    }
+
+    private String dateToString(Date date){
+        return date.getDay() + " " + date.getMonthName() + " " + date.getYear();
     }
 
     private void loadRating() {

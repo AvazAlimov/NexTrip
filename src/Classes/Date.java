@@ -158,6 +158,10 @@ public class Date {
         return month;
     }
 
+    public String getMonthName(){
+        return months[month - 1];
+    }
+
     public int getYear() {
         return year;
     }
