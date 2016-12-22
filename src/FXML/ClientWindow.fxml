@@ -200,7 +200,7 @@
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
                 </HBox>
 
-                <Button fx:id="addInfoButton" text="Add Hotel" onAction="#addHotel"/>
+                <Button text="Add Hotel" onAction="#addHotel"/>
             </VBox>
         </ScrollPane>
 

@@ -567,7 +567,7 @@ class SQLDataBase {
     static void addThingsToDo(ThingsToDo thingsToDo, Client client) {
         int id = lastThingsToDoId();
 
-        if (!client.addObjectId("E" + id))
+        if (!client.addObjectId("T" + id))
             return;
 
         String name = thingsToDo.getName();

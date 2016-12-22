@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 @SuppressWarnings("Duplicates")
@@ -333,6 +334,7 @@ public class AdminActivity implements Initializable {
         item.add(ratingBox, 2, 0);
 
         item.setOnMouseClicked(event -> {
+            deleteFromClient("H" + hotel.getId());
             SQLDataBase.deleteHotel(hotel.getId() + "");
             Tools.hotels.clear();
             SQLDataBase.loadHotels();
@@ -396,6 +398,7 @@ public class AdminActivity implements Initializable {
         item.add(ratingBox, 2, 0);
 
         item.setOnMouseClicked(event -> {
+            deleteFromClient("R" + restaurant.getId());
             SQLDataBase.deleteRestaurant(restaurant.getId() + "");
             Tools.restaurants.clear();
             SQLDataBase.loadRestaurant();
@@ -459,6 +462,7 @@ public class AdminActivity implements Initializable {
         item.add(ratingBox, 2, 0);
 
         item.setOnMouseClicked(event -> {
+            deleteFromClient("T" + thingsToDo.getId());
             SQLDataBase.deleteThingsToDo(thingsToDo.getId() + "");
             Tools.thingsToDos.clear();
             SQLDataBase.loadThingsToDo();
@@ -522,6 +526,7 @@ public class AdminActivity implements Initializable {
         item.add(ratingBox, 2, 0);
 
         item.setOnMouseClicked(event -> {
+            deleteFromClient("E" + entertaining.getId());
             SQLDataBase.deleteEntertaining(entertaining.getId() + "");
             Tools.entertainings.clear();
             SQLDataBase.loadEntertaining();
@@ -529,5 +534,16 @@ public class AdminActivity implements Initializable {
         });
 
         return item;
+    }
+
+    private void deleteFromClient(String id) {
+        for (Client client : Tools.clients) {
+            for (int i = 0; i < client.getObjectId().length; i++)
+                if (Objects.equals(client.getObjectId()[i], id)){
+                    client.getObjectId()[i] = "null";
+                    Tools.clients.clear();
+                    SQLDataBase.loadClients();
+                }
+        }
     }
 }

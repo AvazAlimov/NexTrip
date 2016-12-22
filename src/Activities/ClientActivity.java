@@ -81,6 +81,9 @@ public class ClientActivity implements Initializable {
                 mainPane.setVisible(false);
                 addChoicePane.setVisible(true);
                 break;
+            case "Edit Object":
+
+                break;
             case "Back":
                 if (objectPane.isVisible()) {
                     objectPane.setVisible(false);
@@ -97,8 +100,6 @@ public class ClientActivity implements Initializable {
 
     public void switchObjectPane(ActionEvent event) throws IOException {
         String text = ((Button) event.getSource()).getText();
-
-
         switch (text) {
             case "Hotel":
                 break;
