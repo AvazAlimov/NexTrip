@@ -141,7 +141,7 @@
                 <Label text="Types" style="-fx-font-size: 28" textFill="white"/>
             </HBox>
             <HBox fx:id="typeContainer" alignment="CENTER">
-                <Button fx:id="cafeIcon" prefHeight="100" prefWidth="100" text="Cafe"
+                <Button fx:id="cafeIcon" prefHeight="100" prefWidth="100" text="Cafe" visible="false"
                         style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: transparent; -fx-text-fill: white;">
                     <graphic>
                         <ImageView fitHeight="100" fitWidth="100">
@@ -150,7 +150,7 @@
                     </graphic>
                 </Button>
                 <Separator prefWidth="50" visible="false"/>
-                <Button fx:id="fastFoodIcon" prefHeight="100" prefWidth="100" text="Fast Food"
+                <Button fx:id="fastFoodIcon" prefHeight="100" prefWidth="100" text="Fast Food" visible="false"
                         style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: transparent;-fx-text-fill: white; ">
                     <graphic>
                         <ImageView fitHeight="100" fitWidth="100">
@@ -159,7 +159,7 @@
                     </graphic>
                 </Button>
                 <Separator prefWidth="50" visible="false"/>
-                <Button fx:id="cuisineIcon" prefHeight="100" prefWidth="100" text="Cuisine"
+                <Button fx:id="cuisineIcon" prefHeight="100" prefWidth="100" text="Cuisine" visible="false"
                         style="-fx-content-display: top;-fx-font-size: 18; -fx-background-color: transparent;-fx-text-fill: white;">
                     <graphic>
                         <ImageView fitHeight="100" fitWidth="100">
@@ -168,7 +168,7 @@
                     </graphic>
                 </Button>
                 <Separator prefWidth="50" visible="false"/>
-                <Button fx:id="sitDownIcon" prefHeight="100" prefWidth="100" text="Sit Down"
+                <Button fx:id="sitDownIcon" prefHeight="100" prefWidth="100" text="Sit Down" visible="false"
                         style="-fx-content-display: top; -fx-font-size: 18; -fx-background-color: transparent;-fx-text-fill: white;">
                     <graphic>
                         <ImageView fitHeight="100" fitWidth="100">
