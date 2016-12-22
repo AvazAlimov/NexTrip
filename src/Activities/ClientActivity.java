@@ -48,8 +48,11 @@ public class ClientActivity implements Initializable {
     public Label isFilledError;
     public GridPane containerPane;
     public VBox container;
+    public Button actionButton;
     private Client client;
     private ArrayList<String> imagePaths;
+
+    private int id;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -110,6 +113,7 @@ public class ClientActivity implements Initializable {
         String text = ((Button) event.getSource()).getText();
         switch (text) {
             case "Hotel":
+                actionButton.setText("Add Hotel");
                 break;
             case "Restaurant":
                 Parent parent = FXMLLoader.load(getClass().getResource("../FXML/AddRestaurantWindow.fxml"));
@@ -157,9 +161,17 @@ public class ClientActivity implements Initializable {
         hotel.setContacts(getContacts());
         hotel.setNumberOfRooms(0);
         hotel.setPhotos(imagePaths);
-        SQLDataBase.addHotel(hotel, client);
+
+        if (actionButton.getText().equals("Add Hotel"))
+            SQLDataBase.addHotel(hotel, client);
+        else if (actionButton.getText().equals("Edit Hotel")){
+            hotel.setId(id);
+            SQLDataBase.editHotel(hotel);
+        }
+
         Tools.hotels.clear();
         SQLDataBase.loadHotels();
+
         imagePaths.clear();
 
         objectPane.setVisible(false);
@@ -255,7 +267,6 @@ public class ClientActivity implements Initializable {
         }
     }
 
-
     private GridPane fillHotelItem(Hotel hotel) {
         GridPane item = new GridPane();
         ColumnConstraints col1 = new ColumnConstraints();
@@ -310,7 +321,21 @@ public class ClientActivity implements Initializable {
         item.add(ratingBox, 2, 0);
 
         item.setOnMouseClicked(event -> {
+            isFilledError.setVisible(false);
 
+            id = hotel.getId();
+            nameText.setText(hotel.getName());
+            locationText.setText(hotel.getLocation());
+            infoText.setText(hotel.getInfo());
+            startPrice.setText(hotel.getStartingPrice() + "");
+            endPrice.setText(hotel.getEndingPrice() + "");
+            setContacts(hotel);
+            setAmenities(hotel);
+            setPhotos(hotel);
+            actionButton.setText("Edit Hotel");
+
+            containerPane.setVisible(false);
+            objectPane.setVisible(true);
         });
 
         return item;
@@ -494,5 +519,57 @@ public class ClientActivity implements Initializable {
         });
 
         return item;
+    }
+
+    private void setContacts(Hotel hotel) {
+        ArrayList<Contact> contacts = hotel.getContacts();
+        for (Contact contact : contacts) {
+            if (contact.getType() == Contact.Type.Facebook)
+                facebookContact.setText(contact.getSource());
+            else if (contact.getType() == Contact.Type.PhoneNumber)
+                phoneContact.setText(contact.getSource());
+            else if (contact.getType() == Contact.Type.Mail)
+                mailContact.setText(contact.getSource());
+            else if (contact.getType() == Contact.Type.Site)
+                siteContact.setText(contact.getSource());
+            else if (contact.getType() == Contact.Type.Telegram)
+                telegramContact.setText(contact.getSource());
+        }
+    }
+
+    private void setAmenities(Hotel hotel) {
+        ArrayList<String> amenities = hotel.getAmenties();
+        for (String amenity : amenities) {
+            if (amenity.equals(freeParking.getText())) {
+                freeParking.setId("y");
+                freeParking.setStyle("-fx-background-color: greenyellow; -fx-content-display: top;");
+            } else if (amenity.equals(freeWifi.getText())) {
+                freeWifi.setId("y");
+                freeWifi.setStyle("-fx-background-color: greenyellow; -fx-content-display: top;");
+            } else if (amenity.equals(freeYard.getText())) {
+                freeYard.setId("y");
+                freeYard.setStyle("-fx-background-color: greenyellow; -fx-content-display: top;");
+            }
+        }
+    }
+
+    private void setPhotos(Hotel hotel) {
+        imagePaths.clear();
+        imageContainer.getChildren().remove(1,imageContainer.getChildren().size());
+
+        ArrayList<String> photos = hotel.getPhotos();
+        for (String photo : photos) {
+            try {
+                URL url = new File(photo).toURI().toURL();
+                Runnable run = () -> {
+                    Image image = new Image(url.toString(), 200.0, 200.0, true, true);
+                    ImageView imageView = new ImageView(image);
+                    imageContainer.getChildren().add(imageView);
+                    imagePaths.add(photo);
+                };
+                run.run();
+            } catch (Exception ignored) {
+            }
+        }
     }
 }
