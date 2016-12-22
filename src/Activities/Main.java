@@ -19,7 +19,6 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image("Resources/icon.png"));
         primaryStage.setTitle("NexTrip");
         primaryStage.setScene(new Scene(root));
-        primaryStage.setFullScreen(true);
         primaryStage.setMinWidth(1280);
         primaryStage.setMinHeight(720);
         primaryStage.setMaximized(true);
