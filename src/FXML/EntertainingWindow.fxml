@@ -17,6 +17,8 @@
 <?import javafx.scene.control.TextArea?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.EntertainingActivity">
     <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="100"
@@ -103,7 +105,7 @@
             <HBox spacing="20" alignment="CENTER">
                 <Button visible="false" fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0">
                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true"
                                    disable="true">
                             <Image url="/Resources/wifi_icon(64px).png" smooth="false"/>
                         </ImageView>
@@ -111,7 +113,7 @@
                 </Button>
                 <Button visible="false" fx:id="freeParking" text="Free Parking" prefHeight="50.0">
                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true"
                                    disable="true">
                             <Image url="/Resources/parking_icon(64px).png" smooth="false"/>
                         </ImageView>
@@ -125,10 +127,22 @@
                     </graphic>
                 </Button>
             </HBox>
-            <HBox alignment="CENTER" spacing="300">
-                <Label fx:id="rulesText" alignment="CENTER" style="-fx-font-size: 36;"/>
-                <Label fx:id="ageText" alignment="CENTER" style="-fx-font-size: 36;"/>
-            </HBox>
+
+            <GridPane alignment="CENTER">
+                <VBox spacing="20">
+
+                    <HBox alignment="CENTER" spacing="300">
+                        <Label text="Rules:" alignment="CENTER" style="-fx-font-size: 36; -fx-text-fill: #90A4AE;"/>
+                        <Label text="Age Limit:"  alignment="CENTER" style="-fx-font-size: 36; -fx-text-fill: #90A4AE;"/>
+                    </HBox>
+                    <HBox alignment="CENTER" spacing="300">
+                        <Label fx:id="rulesText" alignment="CENTER"  style="-fx-font-size: 36;"/>
+                        <Label fx:id="ageText" alignment="CENTER" style="-fx-font-size: 36;"/>
+                    </HBox>
+                </VBox>
+
+            </GridPane>
+
             <HBox alignment="CENTER">
                 <Label text="Price" alignment="CENTER" style="-fx-font-size: 36;"/>
             </HBox>
@@ -139,7 +153,7 @@
             </HBox>
 
             <HBox alignment="CENTER">
-                <Label text="Contacts" alignment="CENTER" style="-fx-font-size: 36;"/>
+                <Label text="Contacts" alignment="CENTER" style="-fx-font-size: 36; -fx-text-fill: #90A4AE"/>
             </HBox>
 
             <HBox fx:id="contactContainer" spacing="10" alignment="CENTER">
