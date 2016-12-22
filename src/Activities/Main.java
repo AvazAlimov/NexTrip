@@ -15,10 +15,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/SignInWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/StartWindow.fxml"));
         primaryStage.getIcons().add(new Image("Resources/icon.png"));
         primaryStage.setTitle("NexTrip");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setFullScreen(true);
         primaryStage.setMinWidth(1280);
         primaryStage.setMinHeight(720);
         primaryStage.setMaximized(true);

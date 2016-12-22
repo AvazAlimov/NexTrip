@@ -23,7 +23,7 @@
 
         <Button fx:id="prevImage" id="prevImage" onAction="#switchPrevImage"/>
 
-        <ImageView fx:id="imageView" fitHeight="500" fitWidth="800">
+        <ImageView fx:id="imageView" fitHeight="480" fitWidth="800">
             <Image url="@../Resources/1.jpg"/>
         </ImageView>
 

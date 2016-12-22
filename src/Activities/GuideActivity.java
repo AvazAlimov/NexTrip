@@ -31,10 +31,10 @@ public class GuideActivity implements Initializable {
         prevImage.setText("<");
         nextImage.setText(">");
 
-        paths = new String[]{String.valueOf(getClass().getClassLoader().getResource("Resources/1.jpg")),
-                String.valueOf(getClass().getClassLoader().getResource("Resources/2.jpg")),
+        paths = new String[]{String.valueOf(getClass().getClassLoader().getResource("Resources/1.png")),
+                String.valueOf(getClass().getClassLoader().getResource("Resources/2.png")),
                 String.valueOf(getClass().getClassLoader().getResource("Resources/3.png"))};
-        texts = new String[]{"First Feature", "Second Feature", "Third Feature"};
+        texts = new String[]{"Easy to find", "Rate as you want", "Find contacts and leave comments"};
         index = 0;
         imageView.setImage(new Image(paths[index]));
         text.setText(texts[index]);
