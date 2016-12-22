@@ -305,7 +305,7 @@ class SQLDataBase {
         }
     }
 
-    public static void deleteHotel(String id) {
+    static void deleteHotel(String id) {
         try {
             Statement statement = connection.createStatement();
             String query = "DELETE FROM Hotel WHERE Id='" + id + "';";
@@ -567,7 +567,7 @@ class SQLDataBase {
     static void addThingsToDo(ThingsToDo thingsToDo, Client client) {
         int id = lastThingsToDoId();
 
-        if (!client.addObjectId("E" + id))
+        if (!client.addObjectId("T" + id))
             return;
 
         String name = thingsToDo.getName();

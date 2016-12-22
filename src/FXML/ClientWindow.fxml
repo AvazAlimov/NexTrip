@@ -108,7 +108,7 @@
         <ScrollPane fitToWidth="true">
             <VBox alignment="CENTER" spacing="10.0">
                 <Label text="Fill the Fields" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
-                <TextField fx:id="nameText" prefWidth="400" prefHeight="30" promptText="name" />
+                <TextField fx:id="nameText" prefWidth="400" prefHeight="30" promptText="name"/>
                 <TextField fx:id="locationText" prefWidth="400" prefHeight="30" promptText="location"/>
                 <TextArea fx:id="infoText" prefWidth="400" prefHeight="100" promptText="information"/>
                 <Label text="Price" alignment="CENTER" style="-fx-font-size: 26" textFill="white"/>
@@ -157,7 +157,7 @@
                     </Button>
                     <Separator prefWidth="200" visible="false"/>
                     <Button fx:id="freeYard" prefHeight="110" prefWidth="110" text="Children Yard"
-                            style="-fx-content-display: top; -fx-font-size: 16" onAction="#amenityPressed" >
+                            style="-fx-content-display: top; -fx-font-size: 16" onAction="#amenityPressed">
                         <graphic>
                             <ImageView fitHeight="100" fitWidth="100">
                                 <Image url="/Resources/childrenYard_Icon(256px).png"/>
@@ -200,8 +200,25 @@
                     <TextField fx:id="siteContact" prefWidth="500" prefHeight="35" promptText="Site contact"/>
                 </HBox>
 
-                <Button fx:id="addInfoButton" text="Add Hotel" onAction="#addHotel"/>
+                <Button fx:id="actionButton" text="Add Hotel" onAction="#addHotel"/>
             </VBox>
+        </ScrollPane>
+
+    </GridPane>
+
+    <GridPane visible="false" fx:id="containerPane" alignment="CENTER" vgap="10.0" hgap="10.0"
+              AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0" AnchorPane.bottomAnchor="20.0"
+              AnchorPane.rightAnchor="100.0">
+
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints vgrow="ALWAYS"/>
+        </rowConstraints>
+
+        <Label text="Your objects" style="-fx-font-size: 30;-fx-text-fill: white;"/>
+
+        <ScrollPane fitToWidth="true" GridPane.rowIndex="1">
+            <VBox fx:id="container" spacing="2.5"/>
         </ScrollPane>
 
     </GridPane>
