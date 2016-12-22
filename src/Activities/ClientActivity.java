@@ -51,7 +51,6 @@ public class ClientActivity implements Initializable {
     public Button actionButton;
     private Client client;
     private ArrayList<String> imagePaths;
-
     private int id;
 
     @Override
