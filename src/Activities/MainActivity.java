@@ -92,6 +92,12 @@ public class MainActivity implements Initializable {
                     }
                 }
                 break;
+            case "Entertaining":
+                for (Entertaining entertaining : Tools.entertainings)
+                    if (Tools.contains(entertaining.getLocation().toLowerCase(), text.toLowerCase())) {
+                        searchText.getItems().add(entertaining.getLocation());
+                    }
+                break;
             case "Restaurants":
                 for (Restaurant restaurant : Tools.restaurants) {
                     if (Tools.contains(restaurant.getLocation().toLowerCase(), text.toLowerCase())) {
@@ -129,7 +135,7 @@ public class MainActivity implements Initializable {
             case "Things To Do":
                 try {
                     addThingsToDo();
-                } catch (Exception ignored){
+                } catch (Exception ignored) {
                 }
                 break;
             default:
@@ -158,7 +164,7 @@ public class MainActivity implements Initializable {
             container.getChildren().add(fillThingsToDoItem(thingsToDo));
     }
 
-    private void addEntertaining(){
+    private void addEntertaining() {
         ArrayList<Entertaining> entertainings = Tools.findEntertainings(searchText.getEditor().getText());
         container.getChildren().clear();
         for (Entertaining entertaining : entertainings)
@@ -381,7 +387,7 @@ public class MainActivity implements Initializable {
         return item;
     }
 
-    private GridPane fillEntertainingItem(Entertaining entertaining){
+    private GridPane fillEntertainingItem(Entertaining entertaining) {
         GridPane item = new GridPane();
         ColumnConstraints col1 = new ColumnConstraints();
         ColumnConstraints col2 = new ColumnConstraints();

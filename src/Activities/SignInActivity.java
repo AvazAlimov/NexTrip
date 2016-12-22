@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 
@@ -18,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+@SuppressWarnings("Duplicates")
 public class SignInActivity implements Initializable {
     public Button continueButton;
     public Button signInButton;
@@ -54,9 +57,9 @@ public class SignInActivity implements Initializable {
                     case "Sign In":
                         if (usernameText.getText().equals("admin") && passwordText.getText().equals("admin")) {
                             parent = FXMLLoader.load(getClass().getResource("../FXML/AdminWindow.fxml"));
-                        }else{
+                        } else {
                             Client client = Tools.logInClient(usernameText.getText(), passwordText.getText());
-                            if(client == null)
+                            if (client == null)
                                 return;
                             Tools.client = client;
                             parent = FXMLLoader.load(getClass().getResource("../FXML/ClientWindow.fxml"));
@@ -124,6 +127,35 @@ public class SignInActivity implements Initializable {
                 secondGrid.setVisible(false);
                 firstAnimation.stop();
                 secondAnimation.play();
+            }
+        }
+    }
+
+    public void enterAction(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            Parent parent;
+            Scene scene;
+            switch (actionButton.getText()) {
+                case "Sign In":
+                    if (usernameText.getText().equals("admin") && passwordText.getText().equals("admin")) {
+                        parent = FXMLLoader.load(getClass().getResource("../FXML/AdminWindow.fxml"));
+                    } else {
+                        Client client = Tools.logInClient(usernameText.getText(), passwordText.getText());
+                        if (client == null)
+                            return;
+                        Tools.client = client;
+                        parent = FXMLLoader.load(getClass().getResource("../FXML/ClientWindow.fxml"));
+                    }
+
+                    if (parent == null)
+                        return;
+                    scene = new Scene(parent);
+                    Main.stage.hide();
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+                    break;
+                default:
+                    break;
             }
         }
     }

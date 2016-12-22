@@ -36,8 +36,8 @@
             <RowConstraints/>
         </rowConstraints>
 
-        <TextField fx:id="usernameText" promptText="username" GridPane.halignment="CENTER"/>
-        <PasswordField fx:id="passwordText" promptText="password" GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
+        <TextField fx:id="usernameText" promptText="username" GridPane.halignment="CENTER" onKeyPressed="#enterAction"/>
+        <PasswordField fx:id="passwordText" promptText="password" GridPane.halignment="CENTER" GridPane.rowIndex="1" onKeyPressed="#enterAction"/>
 
         <HBox GridPane.halignment="CENTER" GridPane.rowIndex="2" spacing="20.0">
             <Button id="action" fx:id="actionButton" onAction="#doAction" text="Sign Up"/>
