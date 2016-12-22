@@ -522,7 +522,7 @@ public class AdminActivity implements Initializable {
         item.add(ratingBox, 2, 0);
 
         item.setOnMouseClicked(event -> {
-            SQLDataBase.deleteHotel(entertaining.getId() + "");
+            SQLDataBase.deleteEntertaining(entertaining.getId() + "");
             Tools.entertainings.clear();
             SQLDataBase.loadEntertaining();
             refreshContainer();

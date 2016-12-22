@@ -305,7 +305,7 @@ class SQLDataBase {
         }
     }
 
-    public static void deleteHotel(String id) {
+    static void deleteHotel(String id) {
         try {
             Statement statement = connection.createStatement();
             String query = "DELETE FROM Hotel WHERE Id='" + id + "';";
