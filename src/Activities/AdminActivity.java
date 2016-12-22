@@ -1,23 +1,29 @@
 package Activities;
 
-import Classes.Client;
-import Classes.Date;
+import Classes.*;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+@SuppressWarnings("Duplicates")
 public class AdminActivity implements Initializable {
     public GridPane mainPane;
     public GridPane addPane;
@@ -32,11 +38,19 @@ public class AdminActivity implements Initializable {
     public Button searchButton;
     public Label searchError;
     public Button doButton;
+    public GridPane removePane;
+    public ComboBox<String> objectSwitcher;
+    public VBox container;
+    public Button backButton;
     private Client client;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         addPane.setStyle("-fx-background-image: url('/Resources/main_background.jpg');");
+        objectSwitcher.getItems().add("Hotels");
+        objectSwitcher.getItems().add("Restaurants");
+        objectSwitcher.getItems().add("Entertaining");
+        objectSwitcher.getItems().add("Things To Do");
     }
 
     public void switchPane(ActionEvent event) throws IOException {
@@ -65,6 +79,15 @@ public class AdminActivity implements Initializable {
                 doButton.setId("remove");
                 doButton.setText("Remove");
                 break;
+            case "Remove Object":
+                mainPane.setVisible(false);
+                removePane.setVisible(true);
+                backButton.setText("Back");
+                break;
+            case "Back":
+                removePane.setVisible(false);
+                mainPane.setVisible(true);
+                backButton.setText("Log out");
             case "Cancel":
                 searchPane.setVisible(false);
                 mainPane.setVisible(true);
@@ -234,5 +257,277 @@ public class AdminActivity implements Initializable {
         }
     }
 
-    //TODO: remove object
+    public void refreshContainer() {
+        container.getChildren().clear();
+        switch(objectSwitcher.getSelectionModel().getSelectedItem()){
+            case "Hotels":
+                for(Hotel hotel : Tools.hotels)
+                    container.getChildren().add(fillHotelItem(hotel));
+                break;
+            case "Restaurants":
+                for(Restaurant restaurant : Tools.restaurants)
+                    container.getChildren().add(fillRestaurantItem(restaurant));
+                break;
+            case "Entertaining":
+                for (Entertaining entertaining : Tools.entertainings)
+                    container.getChildren().add(fillEntertainingItem(entertaining));
+                break;
+            case "Things To Do":
+                for(ThingsToDo thingsToDo : Tools.thingsToDos)
+                    container.getChildren().add(fillThingsToDoItem(thingsToDo));
+                break;
+        }
+    }
+
+    private GridPane fillHotelItem(Hotel hotel) {
+        GridPane item = new GridPane();
+        ColumnConstraints col1 = new ColumnConstraints();
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setHgrow(Priority.SOMETIMES);
+        ColumnConstraints col3 = new ColumnConstraints();
+        item.getColumnConstraints().addAll(col1, col2, col3);
+        item.setHgap(10);
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+
+        URL url = null;
+        try {
+            url = new File(hotel.getPhotos().get(0)).toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Image value = null;
+        if (url != null)
+            value = new Image(url.toString(), 100.0, 100.0, false, true);
+
+        ImageView image = new ImageView(value);
+        Circle circle = new Circle(50.0);
+        circle.setCenterX(50.0);
+        circle.setCenterY(50.0);
+        image.setClip(circle);
+        item.add(image, 0, 0);
+
+        Label info = new Label("Name: " + hotel.getName() + "\nPrice: " + hotel.getStartingPrice() + "$ - " + hotel.getEndingPrice() + "$\nLocation: " + hotel.getLocation());
+        info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
+        item.add(info, 1, 0);
+
+        HBox ratingBox = new HBox(5.0);
+        ratingBox.setStyle("-fx-alignment: center;");
+
+        int maxRate = 5;
+        for (int i = 0; i < hotel.getRating(); i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.filledStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+            maxRate--;
+        }
+        for (int i = 0; i < maxRate; i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.emptyStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+        }
+        item.add(ratingBox, 2, 0);
+
+        item.setOnMouseClicked(event -> {
+            SQLDataBase.deleteHotel(hotel.getId() + "");
+            Tools.hotels.clear();
+            SQLDataBase.loadHotels();
+            refreshContainer();
+        });
+
+        return item;
+    }
+
+    private GridPane fillRestaurantItem(Restaurant restaurant) {
+        GridPane item = new GridPane();
+        ColumnConstraints col1 = new ColumnConstraints();
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setHgrow(Priority.SOMETIMES);
+        ColumnConstraints col3 = new ColumnConstraints();
+        item.getColumnConstraints().addAll(col1, col2, col3);
+        item.setHgap(10);
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+
+        URL url = null;
+        try {
+            url = new File(restaurant.getPhotos().get(0)).toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Image value = null;
+        if (url != null)
+            value = new Image(url.toString(), 100.0, 100.0, false, true);
+
+        ImageView image = new ImageView(value);
+        Circle circle = new Circle(50.0);
+        circle.setCenterX(50.0);
+        circle.setCenterY(50.0);
+        image.setClip(circle);
+        item.add(image, 0, 0);
+
+        Label info = new Label("Name: " + restaurant.getName() + "\nType: " + restaurant.getType().get(0) + "\t Number of seats: " + restaurant.getNumberOfSeats() + "\nLocation: " + restaurant.getLocation());
+        info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
+        item.add(info, 1, 0);
+
+        HBox ratingBox = new HBox(5.0);
+        ratingBox.setStyle("-fx-alignment: center;");
+
+        int maxRate = 5;
+        for (int i = 0; i < restaurant.getRating(); i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.filledStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+            maxRate--;
+        }
+        for (int i = 0; i < maxRate; i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.emptyStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+        }
+        item.add(ratingBox, 2, 0);
+
+        item.setOnMouseClicked(event -> {
+            SQLDataBase.deleteRestaurant(restaurant.getId() + "");
+            Tools.restaurants.clear();
+            SQLDataBase.loadRestaurant();
+            refreshContainer();
+        });
+
+        return item;
+    }
+
+    private GridPane fillThingsToDoItem(ThingsToDo thingsToDo) {
+        GridPane item = new GridPane();
+        ColumnConstraints col1 = new ColumnConstraints();
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setHgrow(Priority.SOMETIMES);
+        ColumnConstraints col3 = new ColumnConstraints();
+        item.getColumnConstraints().addAll(col1, col2, col3);
+        item.setHgap(10);
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+
+        URL url = null;
+        try {
+            url = new File(thingsToDo.getPhotos().get(0)).toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Image value = null;
+        if (url != null)
+            value = new Image(url.toString(), 100.0, 100.0, false, true);
+
+        ImageView image = new ImageView(value);
+        Circle circle = new Circle(50.0);
+        circle.setCenterX(50.0);
+        circle.setCenterY(50.0);
+        image.setClip(circle);
+        item.add(image, 0, 0);
+
+        Label info = new Label("Name: " + thingsToDo.getName() + "\nPrice: " + thingsToDo.getPrice() + " $\t" + "\nLocation: " + thingsToDo.getLocation());
+        info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
+        item.add(info, 1, 0);
+
+        HBox ratingBox = new HBox(5.0);
+        ratingBox.setStyle("-fx-alignment: center;");
+
+        int maxRate = 5;
+        for (int i = 0; i < thingsToDo.getRating(); i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.filledStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+            maxRate--;
+        }
+        for (int i = 0; i < maxRate; i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.emptyStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+        }
+        item.add(ratingBox, 2, 0);
+
+        item.setOnMouseClicked(event -> {
+            SQLDataBase.deleteThingsToDo(thingsToDo.getId() + "");
+            Tools.thingsToDos.clear();
+            SQLDataBase.loadThingsToDo();
+            refreshContainer();
+        });
+
+        return item;
+    }
+
+    private GridPane fillEntertainingItem(Entertaining entertaining){
+        GridPane item = new GridPane();
+        ColumnConstraints col1 = new ColumnConstraints();
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setHgrow(Priority.SOMETIMES);
+        ColumnConstraints col3 = new ColumnConstraints();
+        item.getColumnConstraints().addAll(col1, col2, col3);
+        item.setHgap(10);
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+
+        URL url = null;
+        try {
+            url = new File(entertaining.getPhotos().get(0)).toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Image value = null;
+        if (url != null)
+            value = new Image(url.toString(), 100.0, 100.0, false, true);
+
+        ImageView image = new ImageView(value);
+        Circle circle = new Circle(50.0);
+        circle.setCenterX(50.0);
+        circle.setCenterY(50.0);
+        image.setClip(circle);
+        item.add(image, 0, 0);
+
+        Label info = new Label("Name: " + entertaining.getName() + "\nPrice: " + entertaining.getPrice() + " $\t" + "\nLocation: " + entertaining.getLocation());
+        info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
+        item.add(info, 1, 0);
+
+        HBox ratingBox = new HBox(5.0);
+        ratingBox.setStyle("-fx-alignment: center;");
+
+        int maxRate = 5;
+        for (int i = 0; i < entertaining.getRating(); i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.filledStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+            maxRate--;
+        }
+        for (int i = 0; i < maxRate; i++) {
+            Button star = new Button();
+            star.setPrefSize(40.0, 40.0);
+            star.setStyle("-fx-shape: " + Tools.emptyStar);
+            star.setDisable(true);
+            ratingBox.getChildren().add(star);
+        }
+        item.add(ratingBox, 2, 0);
+
+        item.setOnMouseClicked(event -> {
+            SQLDataBase.deleteHotel(entertaining.getId() + "");
+            Tools.entertainings.clear();
+            SQLDataBase.loadEntertaining();
+            refreshContainer();
+        });
+
+        return item;
+    }
 }
