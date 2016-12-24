@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
@@ -97,7 +96,7 @@ public class AddThingsToDoActivity implements Initializable {
     }
 
     private String dateToString(DatePicker datePicker) {
-        return datePicker.getValue().getDayOfMonth() + "/" + datePicker.getValue().getMonth().getValue() + "/" + datePicker.getValue().getYear();
+        return String.format("%02d/%02d/%04d", datePicker.getValue().getDayOfMonth(), datePicker.getValue().getMonth().getValue(), datePicker.getValue().getYear());
     }
 
     private ArrayList<String> getAmenitites() {
