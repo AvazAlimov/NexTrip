@@ -19,11 +19,11 @@ public class Main extends Application {
         stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("../FXML/StartWindow.fxml"));
         primaryStage.getIcons().add(new Image("Resources/icon.png"));
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setTitle("NexTrip");
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.setMinWidth(1280);
         primaryStage.setMinHeight(720);
-        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 

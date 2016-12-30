@@ -1,21 +1,18 @@
 package Activities;
 
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
 
 public class StartActivity implements Initializable {
 
@@ -26,7 +23,7 @@ public class StartActivity implements Initializable {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), null));
         timeline.setCycleCount(3);
         timeline.setOnFinished(event -> {
-
+            Main.stage.setMaximized(true);
             try {
                 nextWindow();
             } catch (IOException e) {
@@ -36,7 +33,7 @@ public class StartActivity implements Initializable {
         timeline.play();
     }
 
-    public void nextWindow() throws IOException {
+    private void nextWindow() throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("../FXML/GuideWindow.fxml"));
         Scene scene = new Scene(parent);
         Main.stage.hide();
