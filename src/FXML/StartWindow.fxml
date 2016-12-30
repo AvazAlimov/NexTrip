@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.layout.GridPane?>
-
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.StartActivity">
 
     <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
-              AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" style="-fx-background-color: rgba(100,100,100,0.3)">
-
-
+              AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" style="-fx-background-color: black;">
 
         <ImageView fx:id="imageLogo" fitWidth="600" fitHeight="600">
-            <Image url="@../Resources/logo.png"/>
+            <Image url="@../Resources/logo.gif"/>
         </ImageView>
 
-        <Label fx:id="logoName" GridPane.halignment="CENTER" text="NexTrip" onMouseClicked="#nextWindow"/>
-
-
     </GridPane>
-    <stylesheets>
-        <URL value="@../CSSFiles/Start.css"/>
-    </stylesheets>
+
 </AnchorPane>

@@ -1,8 +1,3 @@
-.root {
-    -fx-background-image: url("/Resources/7.jpg");
-    -fx-background-size: stretch;
-}
-
 .label {
     -fx-text-fill: #ef6c00;
     -fx-font-size: 52;

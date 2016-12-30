@@ -2,6 +2,7 @@ package Classes;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("Duplicates")
 public class Guidance {
     private int id;
     private int rating;
