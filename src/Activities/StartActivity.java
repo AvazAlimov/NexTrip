@@ -21,8 +21,7 @@ public class StartActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), null));
-        timeline.setCycleCount(3);
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(3200), null));
         timeline.setOnFinished(event -> {
             try {
                 nextWindow();
@@ -41,8 +40,8 @@ public class StartActivity implements Initializable {
         Scene scene = new Scene(parent);
         Main.stage.getIcons().add(new Image("Resources/icon.png"));
         Main.stage.setTitle("NexTrip");
-        Main.stage.setMinWidth(1280);
-        Main.stage.setMinHeight(720);
+        Main.stage.setMinWidth(600);
+        Main.stage.setMinHeight(600);
         Main.stage.setMaximized(true);
         Main.stage.setScene(scene);
         Main.stage.show();
